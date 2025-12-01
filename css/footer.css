@@ -1,0 +1,64 @@
+/* footer.css - Estilo Base (Claro) para páginas internas */
+
+footer {
+    background-color: #f8fafc; /* Fondo claro */
+    color: var(--color-text);
+    border-top: 1px solid var(--color-border);
+    padding: 60px 0 20px 0;
+    font-size: 0.95rem;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    width: 90%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-col h4 {
+    color: var(--color-primary); /* Azul corporativo */
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+    color: var(--color-text-secondary);
+}
+
+.footer-col a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.footer-bottom p {
+    margin: 0;
+}

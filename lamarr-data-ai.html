@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMARR | DATA+AI - Lamarr Tech</title>
+    <!-- SEO Específico -->
+    <meta name="description" content="Inteligencia Artificial aplicada al negocio en Latam. Implementación de Data Lakes, Modelos Predictivos y soluciones Plug & Play (scaleAssist, scaleRep) para ventas y RR.HH.">
+    <meta name="keywords" content="Inteligencia Artificial Chile, Data Lake Modernization, Modelos Predictivos, Data Science, Automatización con IA, scaleAssist, scaleRep, AI Solutions Latam">
+    <link rel="canonical" href="https://www.lamarrtech.cl/lamarr-data-ai.html">
+    <!-- Fin SEO Específico -->
+
+    <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/page-section.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="css/service-page.css">
+    <link rel="stylesheet" href="css/home-footer.css">
+
+    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- ESTILOS EXCLUSIVOS VISTA DE ESCRITORIO --- */
+        .table-section-wrapper {
+            position: relative;
+            padding: 80px 0 120px 0;
+            overflow: hidden;
+            background-color: var(--bg-dark-section); 
+            color: white;
+        }
+
+        #data-table-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            background: rgba(255, 255, 255, 0.03); 
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.3); 
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            min-width: 700px;
+        }
+
+        thead {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            padding: 25px 30px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: background-color 0.2s;
+        }
+
+        td:first-child {
+            font-weight: 800;
+            color: white;
+            font-size: 1.1rem;
+            width: 20%;
+        }
+
+        tbody tr:hover td {
+            background-color: rgba(0, 212, 255, 0.05); 
+            color: white;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Ocultar elementos móviles en escritorio */
+        .mobile-data-table { display: none; }
+        
+        /* FIX para el grid de etapas en escritorio */
+        @media (min-width: 993px) {
+            .steps-grid { grid-template-columns: repeat(3, 1fr); }
+            .steps-grid .step-card { border-left: 1px solid #e2e8f0; border-top: none; padding-top: 10px; padding-left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER DE ESCRITORIO -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-azul-oscuro.png" alt="Lamarr Tech Logo"></a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active" data-lang-key="nav_servicios">SERVICIOS
+                            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li><a href="lamarr-cloud.html" data-lang-key="nav_servicios_cloud">CLOUD</a></li>
+                            <li><a href="lamarr-integrate.html" data-lang-key="nav_servicios_integrate">INTEGRATE</a></li>
+                            <li><a href="lamarr-data-ai.html" data-lang-key="nav_servicios_data_ai">DATA+AI</a></li>
+                            <li><a href="lamarr-secure.html" data-lang-key="nav_servicios_secure">SECURE</a></li>
+                            <li><a href="services-sap.html" data-lang-key="nav_servicios_sap">SAP</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-switcher">
+                <button class="lang-btn" aria-label="Seleccionar idioma">
+                    <span class="lang-btn-text">ES</span>
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="es">🇪🇸 ES (Español)</a>
+                    <a href="#" data-lang="pt">🇧🇷 PT (Português)</a>
+                    <a href="#" data-lang="en">🇺🇸 EN (English)</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
+            <div class="drawer-group">
+                <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
+                <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
+                <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
+                <a href="lamarr-data-ai.html" class="drawer-link sub-link active">DATA+AI</a>
+                <a href="lamarr-secure.html" class="drawer-link sub-link">SECURE</a>
+                <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
+            </div>
+            <a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a>
+            <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
+        </nav>
+        <div class="drawer-footer">
+            <div class="lang-options">
+                <button onclick="changeLang('es')" class="lang-opt active" data-lang="es">Español</button>
+                <button onclick="changeLang('en')" class="lang-opt" data-lang="en">English</button>
+                <button onclick="changeLang('pt')" class="lang-opt" data-lang="pt">Português</button>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <!-- FIN DRAWER -->
+    
+    <main>
+        <!-- HERO DARK -->
+        <section class="service-hero data-hero">
+            <canvas id="service-canvas"></canvas>
+            <div class="service-hero-content reveal active">
+                <span class="service-badge" data-lang-key="data_badge">Inteligencia de Negocio</span>
+                <h1 data-lang-key="data_h1">LAMARR | DATA+AI</h1>
+                <p data-lang-key="data_p1">Inteligencia que transforma datos en decisiones reales. Integramos nuestra experiencia técnica con soluciones de IA probadas, para que tu negocio escale con IA desde el primer día.</p>
+            </div>
+        </section>
+
+        <!-- CONTENIDO PRINCIPAL (CLARO) -->
+        <section class="page-section">
+            <div class="container">
+                
+                <div class="strategy-block reveal"> 
+                    <h3 data-lang-key="data_s1_h3">Filosofía 360</h3>
+                    <p data-lang-key="data_s1_p">Acompañamos a tu empresa desde la estrategia hasta la ejecución, sin importar en qué etapa de madurez digital se encuentre.</p>
+                </div>
+
+                <h2 class="section-subtitle reveal" data-lang-key="data_s2_h2">Etapas de Madurez</h2>
+
+                <!-- GRID DE ETAPAS (VISTA ESCRITORIO) -->
+                <div class="steps-grid">
+                    <div class="step-card reveal">
+                        <span class="step-number">01</span>
+                        <div class="step-content">
+                            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
+                            <h3 class="step-title" data-lang-key="data_s2_c1_h3">DATA READINESS</h3>
+                            <p class="step-desc" data-lang-key="data_s2_c1_p">Evaluamos tu punto de partida para usar IA con éxito. Realizamos un diagnóstico que analiza tu madurez tecnológica, la calidad de tus datos y la alineación de tu estrategia de IA con los objetivos de negocio.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-number">02</span>
+                        <div class="step-content">
+                            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" /></svg></div>
+                            <h3 class="step-title" data-lang-key="data_s2_c2_h3">DATALAKE</h3>
+                            <p class="step-desc" data-lang-key="data_s2_c2_p">Centraliza todos tus datos en una base segura y escalable. Integramos información de SAP, CRM, ERP, hojas de cálculo, aplicaciones web y sensores IoT en un solo entorno limpio y listo para análisis.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-number">03</span>
+                        <div class="step-content">
+                            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" /></svg></div>
+                            <h3 class="step-title" data-lang-key="data_s2_c3_h3">PREDICT & INSIGHTS</h3>
+                            <p class="step-desc" data-lang-key="data_s2_c3_p">Ve lo que está pasando y lo que viene. Con modelos predictivos y analítica avanzada, detectamos patrones, anticipamos comportamientos y generamos recomendaciones prácticas.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-number">04</span>
+                        <div class="step-content">
+                            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg></div>
+                            <h3 class="step-title" data-lang-key="data_s2_c4_h3">AI SOLUTIONS</h3>
+                            <p class="step-desc" data-lang-key="data_s2_c4_p">Soluciones Plug & Play de IA listas para usar (scaleAssist, scaleRep) que se integran de inmediato en tus procesos clave, sin desarrollos eternos ni inversiones iniciales altas.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-number">05</span>
+                        <div class="step-content">
+                            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg></div>
+                            <h3 class="step-title" data-lang-key="data_s2_c5_h3">AI FACTORY</h3>
+                            <p class="step-desc" data-lang-key="data_s2_c5_p">Desarrollo a la medida para tu industria. Ponemos a tu disposición equipos especializados en Gen AI, Machine Learning y Data Science para crear soluciones únicas.</p>
+                        </div>
+                    </div>
+                    <div class="step-card reveal">
+                        <span class="step-number">06</span>
+                        <div class="step-content">
+                            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg></div>
+                            <h3 class="step-title" data-lang-key="data_s2_c6_h3">DATA 360</h3>
+                            <p class="step-desc" data-lang-key="data_s2_c6_p">Tu ecosistema de datos y IA completo, bajo control. Combina todas nuestras soluciones en un entorno único, escalable y seguro en AWS, Google Cloud Platform o Huawei Cloud.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN GRID ESCRITORIO -->
+
+                <!-- GRID DE ETAPAS (VISTA MÓVIL) -->
+                <section class="mobile-section">
+                    <div class="container">
+                        <h2 class="section-title" data-lang-key="data_s2_h2">Etapas de Madurez</h2>
+                        <div class="mobile-snap-scroll">
+                            <div class="snap-card" style="background: #f8fafc;">
+                                <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                                <h3 data-lang-key="data_s2_c1_h3">DATA READINESS</h3>
+                                <p data-lang-key="data_s2_c1_p">Evaluación y diagnóstico de madurez tecnológica y calidad de datos.</p>
+                                <a href="contact.html" class="card-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="snap-card" style="background: #f8fafc;">
+                                <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+                                <h3 data-lang-key="data_s2_c2_h3">DATALAKE</h3>
+                                <p data-lang-key="data_s2_c2_p">Centralización segura y escalable de datos de SAP, CRM, ERP y IoT.</p>
+                                <a href="contact.html" class="card-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                            <div class="snap-card" style="background: #f8fafc;">
+                                <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                                <h3 data-lang-key="data_s2_c3_h3">PREDICT & INSIGHTS</h3>
+                                <p data-lang-key="data_s2_c3_p">Modelos predictivos para anticipar comportamientos y generar recomendaciones.</p>
+                                <a href="contact.html" class="card-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN GRID MÓVIL -->
+
+                <!-- TABLA DE ESCRITORIO -->
+                <section class="table-section-wrapper reveal">
+                    <canvas id="data-table-canvas"></canvas>
+
+                    <div class="container" style="position: relative; z-index: 2;">
+                        <h2 class="section-subtitle" data-lang-key="data_s3_h2">Soluciones IA Plug & Play</h2>
+                        
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th data-lang-key="data_s3_t_h1">Solución</th>
+                                        <th data-lang-key="data_s3_t_h2">Qué hace</th>
+                                        <th data-lang-key="data_s3_t_h3">Beneficio inmediato</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>scaleAssist</td>
+                                        <td data-lang-key="data_s3_t_r1_d1">Unifica datos de CRM, ERP y fuentes externas para una visión completa.</td>
+                                        <td data-lang-key="data_s3_t_r1_d2">Decisiones más rápidas y precisas.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>scaleRep</td>
+                                        <td data-lang-key="data_s3_t_r2_d1">Agentes de voz IA que califican leads y ejecutan encuestas 24/7.</td>
+                                        <td data-lang-key="data_s3_t_r2_d2">Ventas automatizadas y mejor experiencia cliente.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>scaleHR</td>
+                                        <td data-lang-key="data_s3_t_r3_d1">Reclutamiento inteligente: IA que entrevista, analiza y recomienda.</td>
+                                        <td data-lang-key="data_s3_t_r3_d2">Selección más rápida y con menor sesgo.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>scaleTrain</td>
+                                        <td data-lang-key="data_s3_t_r4_d1">Convierte presentaciones en cursos con narración y evaluación IA.</td>
+                                        <td data-lang-key="data_s3_t_r4_d2">Formación interna ágil y continua.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>scaleCapture</td>
+                                        <td data-lang-key="data_s3_t_r5_d1">Automatiza gestión documental y validación con IA.</td>
+                                        <td data-lang-key="data_s3_t_r5_d2">Ahorro de tiempo y detección de fraudes.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="contact-button-container" style="text-align: center; margin-top: 60px;">
+                            <a href="contact.html" class="btn-primary btn-glow" data-lang-key="data_s3_btn">Solicita un Assessment</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN TABLA ESCRITORIO -->
+
+                <!-- TABLA MÓVIL (Reemplaza la tabla de escritorio en móvil) -->
+                <section class="mobile-section bg-light mobile-data-table">
+                    <div class="container">
+                        <h2 class="section-title" data-lang-key="data_s3_h2">Soluciones IA Plug & Play</h2>
+                        <div class="data-card-list feature-list-vertical">
+                            <!-- Item 1: scaleAssist -->
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="fa-solid fa-robot"></i></div>
+                                <div class="feature-content">
+                                    <h3 style="color: var(--primary);">scaleAssist</h3>
+                                    <p data-lang-key="data_s3_t_r1_d1">Unifica datos de CRM, ERP y fuentes externas.</p>
+                                </div>
+                            </div>
+                            <!-- Item 2: scaleRep -->
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="fa-solid fa-headset"></i></div>
+                                <div class="feature-content">
+                                    <h3 style="color: var(--primary);">scaleRep</h3>
+                                    <p data-lang-key="data_s3_t_r2_d1">Agentes de voz IA que califican leads 24/7.</p>
+                                </div>
+                            </div>
+                            <!-- Item 3: scaleHR -->
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="fa-solid fa-users"></i></div>
+                                <div class="feature-content">
+                                    <h3 style="color: var(--primary);">scaleHR</h3>
+                                    <p data-lang-key="data_s3_t_r3_d1">Reclutamiento inteligente: IA que entrevista y recomienda.</p>
+                                </div>
+                            </div>
+                            <!-- Item 4: scaleTrain -->
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                <div class="feature-content">
+                                    <h3 style="color: var(--primary);">scaleTrain</h3>
+                                    <p data-lang-key="data_s3_t_r4_d1">Convierte presentaciones en cursos con narración y evaluación IA.</p>
+                                </div>
+                            </div>
+                            <!-- Item 5: scaleCapture -->
+                            <div class="feature-card">
+                                <div class="feature-icon-box"><i class="fa-solid fa-file-invoice"></i></div>
+                                <div class="feature-content">
+                                    <h3 style="color: var(--primary);">scaleCapture</h3>
+                                    <p data-lang-key="data_s3_t_r5_d1">Automatiza gestión documental y validación con IA.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; padding-top: 20px;">
+                            <a href="contact.html" class="btn-mobile-primary" data-lang-key="data_s3_btn">Solicita un Assessment</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN TABLA MÓVIL -->
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact_h4">Contacto</h4>
+                    <ul>
+                        <li><strong data-lang-key="footer_address_label">Dirección:</strong> Av nueva providencia 1881, of 1912.</li>
+                        <li><strong data-lang-key="footer_email_label">Email:</strong> contacto@lamarrtech.cl</li>
+                        <li><strong data-lang-key="footer_phone_label">Teléfono:</strong> +56 9 3199 3952</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="nav_servicios">Servicios</h4>
+                    <ul>
+                        <li><a href="lamarr-cloud.html" data-lang-key="footer_service_cloud">Cloud Solutions</a></li>
+                        <li><a href="lamarr-integrate.html" data-lang-key="footer_service_integrate">Integration Services</a></li>
+                        <li><a href="lamarr-data-ai.html" data-lang-key="footer_service_data_ai">Data & AI</a></li>
+                        <li><a href="lamarr-secure.html" data-lang-key="footer_service_secure">Cybersecurity</a></li>
+                        <li><a href="services-sap.html" data-lang-key="footer_service_sap">SAP Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links_h4">Empresa</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
+                        <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
+                        <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
+    <footer class="mobile-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="contact.html">Contacto</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-contact-info">
+                <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +56 9 3199 3952</p>
+            </div>
+            <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
+        </div>
+    </footer>
+    <!-- FIN FOOTER MÓVIL -->
+    
+    <script src="js/script.js"></script>
+    <script src="js/idiomas.js"></script>
+    <script src="js/mobile-script.js"></script>
+    
+    <!-- Script de animación de partículas (Ajustado para Dark Mode en la Tabla) -->
+    <script>
+        (function() {
+            function initParticleAnimation(canvasId, particleCount, color = 'rgba(255,255,255,0.7)', strokeColor = 'rgba(255,255,255,0.3)') {
+                const canvas = document.getElementById(canvasId);
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let particles = [];
+
+                function resize() {
+                    width = canvas.width = canvas.parentElement.offsetWidth;
+                    height = canvas.height = canvas.parentElement.offsetHeight;
+                }
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.5;
+                        this.vy = (Math.random() - 0.5) * 0.5;
+                        this.size = Math.random() * 3 + 1.5;
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if(this.x < 0 || this.x > width) this.vx *= -1;
+                        if(this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    draw() {
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function init() {
+                    resize();
+                    particles = [];
+                    for(let i=0; i<particleCount; i++) particles.push(new Particle());
+                    animate();
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    for(let i=0; i<particles.length; i++) {
+                        for(let j=i; j<particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            if(dist < 150) {
+                                let opacity = 0.3 - dist/600;
+                                let strokeStyle = strokeColor;
+                                if(strokeColor.includes('rgba')) {
+                                     strokeStyle = strokeColor.replace(/,[\s\d.]+\)/, `,${opacity})`);
+                                }
+                                ctx.strokeStyle = strokeStyle;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                window.addEventListener('resize', resize);
+                init();
+            }
+
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                // Hero Dark
+                initParticleAnimation('service-canvas', 40, 'rgba(34, 211, 238, 0.7)', 'rgba(34, 211, 238, 0.3)');
+                
+                // Tabla Dark (Partículas Cyan)
+                initParticleAnimation('data-table-canvas', 35, 'rgba(34, 211, 238, 0.5)', 'rgba(34, 211, 238, 0.2)');
+                
+                window.addEventListener('scroll', revealOnScroll);
+                revealOnScroll();
+            });
+        })();
+    </script>
+</body>
+</html>

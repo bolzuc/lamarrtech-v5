@@ -1,0 +1,720 @@
+/* service-page.css - ESTILOS UNIFICADOS PARA TODAS LAS PÁGINAS DE SERVICIO */
+
+:root {
+    /* Paleta Híbrida */
+    --bg-dark-hero: #020617;  
+    --bg-light: #ffffff;      
+    --bg-light-alt: #f8fafc;  
+    --text-main: #1e293b;     
+    --text-muted: #64748b;    
+    --accent-glow: #00d4ff;   
+    --color-primary: #0056b3; 
+    --bg-dark-section: #0f172a; 
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+/* =========================================
+   1. HERO GLOBAL (Para todas las páginas)
+   ========================================= */
+.service-hero {
+    position: relative;
+    height: 55vh; 
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+    overflow: hidden;
+    margin-bottom: 0;
+    color: white; 
+}
+
+/* Variación Cyan para Data */
+.service-hero.data-hero {
+    background: linear-gradient(180deg, #020617 0%, #082f49 100%);
+}
+
+#service-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    max-width: 900px;
+}
+
+.service-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: var(--accent-glow);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+}
+
+/* Ajuste de color badge para Data */
+.service-hero.data-hero .service-badge {
+    color: #22d3ee;
+    border-color: #22d3ee;
+    background: rgba(34, 211, 238, 0.1);
+}
+
+.service-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    color: white;
+}
+
+.service-hero p {
+    font-size: 1.25rem;
+    color: #cbd5e1; 
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* =========================================
+   2. ELEMENTOS COMUNES
+   ========================================= */
+.page-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-subtitle {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 800;
+    color: #0f172a; 
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-subtitle::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.strategy-block {
+    background: #f8fafc; 
+    border-left: 4px solid var(--color-primary); 
+    padding: 40px 50px;
+    border-radius: 12px; 
+    margin-bottom: 80px;
+    position: relative;
+    border: 1px solid #e2e8f0;
+    text-align: center; 
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strategy-block h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.strategy-block p {
+    font-size: 1.2rem; 
+    color: var(--text-main); 
+    font-weight: 400; 
+    line-height: 1.7;
+}
+
+/* =========================================
+   3. ESTILOS CLOUD & SAP (Grid 2x2)
+   ========================================= */
+.service-feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    margin-bottom: 60px;
+    max-width: 1000px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-feature-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0; 
+    border-radius: 16px;
+    padding: 40px 35px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%; 
+}
+
+.service-feature-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--color-primary);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-feature-icon {
+    width: 64px;
+    height: 64px;
+    background: #eff6ff; 
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    color: var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+.service-feature-item:hover .service-feature-icon {
+    background: var(--color-primary);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.service-feature-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.5;
+}
+
+.service-feature-content h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0f172a; 
+    line-height: 1.3;
+}
+
+.service-feature-content p {
+    font-size: 1rem;
+    color: #64748b; 
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================================
+   4. ESTILOS INTEGRATE (Timeline Sticky)
+   ========================================= */
+.process-layout-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+.sticky-image-container {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    z-index: 10;
+}
+
+.sticky-image-container img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.12); 
+    display: block;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.solid-process-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border-left: 3px solid #e2e8f0; 
+    margin-left: 15px;
+}
+
+.solid-process-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--color-primary) 0%, transparent 100%);
+    z-index: 1;
+}
+
+.solid-process-item {
+    position: relative;
+    padding-left: 40px; 
+    margin-bottom: 60px; 
+}
+
+.solid-process-item:last-child {
+    margin-bottom: 0;
+}
+
+.solid-process-item::before {
+    content: '';
+    position: absolute;
+    left: -10px; 
+    top: 6px;
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border: 4px solid var(--color-primary); 
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 4px #fff;
+}
+
+.solid-process-item:hover::before {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px #fff, 0 0 15px rgba(0, 86, 179, 0.4);
+    background-color: var(--color-primary);
+}
+
+.solid-process-item h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.solid-process-item p {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.section-title-clean {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+/* =========================================
+   5. ESTILOS DATA+AI
+   ========================================= */
+.dark-section {
+    background-color: var(--bg-dark-section);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 50% 0%, rgba(0, 212, 255, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Nuevo Grid Compacto de 3 columnas para Data */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    margin-bottom: 40px; 
+}
+
+/* Estilo "Data Point" (Sin tarjeta) */
+.step-card {
+    background: transparent; 
+    border: none; 
+    border-left: 1px solid #e2e8f0; 
+    padding: 10px 20px; 
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateX(5px); 
+    border-left-color: var(--accent-glow);
+    background: linear-gradient(90deg, rgba(248, 250, 252, 0.8), transparent);
+}
+
+.step-number {
+    display: block;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--accent-glow);
+    font-weight: 700;
+    margin-bottom: 10px;
+    opacity: 1; 
+    position: relative;
+    top: auto; right: auto;
+}
+
+.step-number::before {
+    content: '/ ';
+    color: #cbd5e1;
+}
+
+.step-content {
+    position: relative;
+    z-index: 1;
+}
+
+.step-icon {
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    color: var(--color-primary);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.step-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.step-title {
+    font-size: 1.15rem; 
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.step-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.layout-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 120px;
+}
+
+.sidebar-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.sidebar-desc {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.dark-solutions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dark-solution-item {
+    background: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.dark-solution-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--accent-glow);
+    transform: translateX(10px);
+}
+
+.ds-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent-glow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ds-content h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 5px 0;
+}
+
+.ds-content p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.ds-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent-glow);
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   6. ANIMACIONES
+   ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   7. SECCIÓN CLOUD EXPLORER (CORREGIDO)
+   ========================================= */
+.cloud-explorer-section {
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(#e2e8f0 1px, transparent 1px),
+        radial-gradient(#e2e8f0 1px, transparent 1px);
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+    /* PADDING SUPERIOR ELIMINADO para acercar al texto anterior */
+    padding: 0px 0 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Contenedor Principal (Lienzo) --- */
+.cloud-ecosystem-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 2 / 1; 
+    margin: 0 auto;
+    max-height: 600px; 
+    /* MARGIN TOP AUMENTADO para separar el título de la nube */
+    margin-top: 60px;
+}
+
+/* --- SVG y Líneas --- */
+.cloud-connection-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.cloud-path-bg {
+    fill: none;
+    stroke: #0056b3; /* COLOR AZUL EXPLÍCITO */
+    stroke-width: 3;
+    /* LÍNEA SÓLIDA */
+    stroke-dasharray: 0 !important; 
+    opacity: 1; /* OPACIDAD TOTAL */
+}
+
+/* Eliminamos la línea animada duplicada */
+.cloud-path-animated {
+    display: none;
+}
+
+/* --- Burbujas (Nodos) --- */
+.cloud-bubble {
+    position: absolute;
+    width: 280px; 
+    height: 280px;
+    margin-left: -140px; 
+    margin-top: -140px;
+    
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.05),
+        0 5px 15px rgba(0, 0, 0, 0.03),
+        inset 0 0 0 1px rgba(255, 255, 255, 1);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px; 
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* --- Posicionamiento en ARCO SUPERIOR --- */
+.pos-1 { top: 75%; left: 15%; }
+.pos-2 { top: 35%; left: 37%; }
+.pos-3 { top: 35%; left: 63%; }
+.pos-4 { top: 75%; left: 85%; }
+
+
+/* Animaciones */
+.cloud-bubble { animation: gentleFloat 6s ease-in-out infinite; }
+.pos-2 { animation-delay: 1.5s; }
+.pos-3 { animation-delay: 0.5s; }
+.pos-4 { animation-delay: 2s; }
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Hover */
+.cloud-bubble:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 
+        0 25px 50px rgba(0, 86, 179, 0.15),
+        0 0 0 2px var(--color-primary);
+    z-index: 20;
+    border-color: transparent;
+}
+
+/* Contenido Interno */
+.bubble-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: #eff6ff; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.cloud-bubble:hover .bubble-icon-wrapper {
+    background: var(--color-primary);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.bubble-icon {
+    width: 36px; 
+    height: 36px;
+    color: var(--color-primary);
+    transition: color 0.3s ease;
+}
+
+.cloud-bubble:hover .bubble-icon {
+    color: #ffffff;
+}
+
+.bubble-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    padding: 0 5px; 
+}
+
+.bubble-desc {
+    font-size: 0.9rem; 
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- CTA Integrado en la Base Recta --- */
+.cloud-cta-integrated {
+    position: absolute;
+    /* Ajustado para el nuevo viewBox/altura */
+    top: 90%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    /* Fondo para ocultar la línea detrás del botón */
+    background: #f8fafc; 
+    padding: 10px 30px;
+    border-radius: 50px; 
+}
+
+/* =========================================
+   8. RESPONSIVIDAD GLOBAL
+   ========================================= */
+
+@media (max-width: 992px) {
+    /* Ajustes Generales */
+    .service-feature-list { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; gap: 30px; }
+    .step-card { border-left: none; border-top: 1px solid #e2e8f0; padding-top: 20px; padding-left: 0; }
+    .process-layout-container { grid-template-columns: 1fr; gap: 50px; }
+    .sticky-image-container { position: relative; top: 0; order: -1; margin-bottom: 30px; }
+    .layout-sidebar { grid-template-columns: 1fr; gap: 40px; }
+    .sidebar-sticky { position: relative; top: 0; margin-bottom: 20px; text-align: center; }
+    .dark-solution-item { flex-direction: column; text-align: center; align-items: center; }
+    .service-hero h1 { font-size: 2.5rem; }
+
+    /* Ajustes Específicos Cloud Explorer */
+    .cloud-explorer-section { padding: 60px 0; height: auto; }
+    .cloud-ecosystem-container { aspect-ratio: auto; height: auto; max-height: none; display: flex; flex-direction: column; align-items: center; gap: 40px; margin-top: 0; padding-left: 20px; }
+    .cloud-connection-svg { display: none; }
+    .cloud-ecosystem-container::before { content: ''; position: absolute; top: 20px; bottom: 20px; left: 50%; width: 2px; background: repeating-linear-gradient(to bottom, var(--color-primary) 0, var(--color-primary) 6px, transparent 6px, transparent 12px); opacity: 0.3; z-index: 0; transform: translateX(-50%); }
+    .cloud-bubble { position: relative; top: auto !important; left: auto !important; margin: 0 !important; width: 100%; max-width: 320px; height: auto; min-height: 280px; animation: none; }
+    
+    /* CTA en móvil */
+    .cloud-cta-integrated { position: relative; top: auto; bottom: auto; left: auto; transform: none; margin-top: 40px; padding: 0; background: transparent; }
+}

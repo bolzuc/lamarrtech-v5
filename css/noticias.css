@@ -1,0 +1,401 @@
+/* noticias.css - Ajuste: Alianzas estilo "Smart List" (Sin Tarjetas) */
+
+:root {
+    --color-primary: #0056b3;
+    --color-text: #1e293b;
+    --color-text-secondary: #64748b;
+    --color-border: #e2e8f0;
+    --bg-light: #ffffff;
+    --bg-section: #f8fafc;
+    --accent-glow: #00d4ff;
+}
+
+/* =========================================
+   1. HERO DE NOTICIAS
+   ========================================= */
+.news-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+    color: white;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.news-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    color: #ffffff !important; 
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.news-hero p {
+    font-size: 1.1rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   2. DESTACADO (WEBINAR) - ESTILO DARK CARD
+   ========================================= */
+.highlight-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.highlight-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, #020617, #0f172a); 
+    padding: 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.5), transparent);
+}
+
+.highlight-badge {
+    display: inline-block;
+    background-color: rgba(0, 212, 255, 0.15);
+    color: var(--accent-glow);
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    width: fit-content;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.highlight-container h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.highlight-container p {
+    font-size: 1.15rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+/* =========================================
+   3. ESTILO "TECH STREAM" (NOTICIAS PASADAS)
+   ========================================= */
+.tech-stream-section {
+    padding: 80px 0;
+    background-color: #f8fafc;
+    position: relative;
+}
+
+.stream-header {
+    margin-bottom: 50px;
+    padding-left: 20px;
+    border-left: 4px solid var(--color-text-secondary);
+}
+
+.stream-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.tech-stream-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 0 20px;
+    border-left: 2px solid #e2e8f0; 
+}
+
+@media (min-width: 768px) {
+    .tech-stream-container {
+        margin: 0 auto;
+    }
+}
+
+.stream-item {
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 50px;
+}
+
+.stream-item:last-child {
+    padding-bottom: 0;
+}
+
+.stream-node {
+    position: absolute;
+    left: -9px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border: 3px solid var(--color-text-secondary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.stream-item:hover .stream-node {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
+    transform: scale(1.1);
+}
+
+.stream-meta {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+.stream-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 10px;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.stream-item:hover .stream-title {
+    color: var(--color-primary);
+}
+
+.stream-description {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   4. SECCIÓN ALIANZAS - DISEÑO "SMART LIST" (NUEVO)
+   ========================================= */
+.alliance-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+}
+
+.section-title-center {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin-bottom: 60px;
+}
+
+/* Contenedor de la lista */
+.alliance-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-border);
+}
+
+/* Fila Individual */
+.alliance-item {
+    padding: 50px 20px;
+    border-bottom: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: 2fr 3fr; /* Proporción Título / Descripción */
+    gap: 40px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+}
+
+/* Efecto Hover: Fondo sutil y línea activa */
+.alliance-item:hover {
+    background-color: #f8fafc;
+    border-bottom-color: var(--color-primary);
+}
+
+/* Columna Izquierda: Encabezado */
+.alliance-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.alliance-category {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.8;
+}
+
+.alliance-header h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+/* Columna Derecha: Contenido */
+.alliance-body {
+    display: flex;
+    align-items: center;
+}
+
+.alliance-body p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* =========================================
+   5. CTA FOOTER - ESTILO INDEX (Animado)
+   ========================================= */
+.news-cta-section {
+    position: relative;
+    background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    overflow: hidden; 
+}
+
+/* Canvas para animación de partículas */
+#cta-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; 
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.news-cta-container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.news-cta-container h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.news-cta-container p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Botón Blanco CTA - Estilo Píldora */
+.btn-white-pill {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--color-primary);
+    font-weight: 700;
+    padding: 14px 40px;
+    border-radius: 50px; 
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-white-pill:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Pequeño Outline */
+.btn-small-outline {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-small-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .alliance-item {
+        grid-template-columns: 1fr; /* Colapsar a una columna */
+        gap: 20px;
+        padding: 40px 0;
+    }
+    .alliance-header h3 { font-size: 1.7rem; margin-bottom: 10px; }
+}
+
+@media (max-width: 768px) {
+    .news-hero h1 { font-size: 2.2rem; }
+    .stream-header h2 { font-size: 1.6rem; }
+    .highlight-container { padding: 30px; }
+    .highlight-container h2 { font-size: 1.8rem; }
+}

@@ -1,0 +1,30 @@
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+.slide-in-header {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.slide-in-header.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slide-in {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-in.show {
+    transform: translateY(0);
+    opacity: 1;
+}

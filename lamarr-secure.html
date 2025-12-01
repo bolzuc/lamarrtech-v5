@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMARR | SECURE - Lamarr Tech</title>
+    <!-- SEO Específico -->
+    <meta name="description" content="Ciberseguridad y Resiliencia de negocio en Latam. Servicios de Cyber Backup, Disaster Recovery (DRaaS) y Advanced Security contra Ransomware para ambientes Cloud.">
+    <meta name="keywords" content="Cyberseguridad Cloud, Disaster Recovery como Servicio, Backup Microsoft 365, Advanced Security, Protección Ransomware, Seguridad Cloud Latam">
+    <link rel="canonical" href="https://www.lamarrtech.cl/lamarr-secure.html">
+    <!-- Fin SEO Específico -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
+    <link rel="shortcut icon" href="img/infinity-modern-bluedark.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/infinity-modern-bluedark.png">
+    
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/page-section.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-footer.css"> 
+    <!-- CSS Específico para Secure -->
+    <link rel="stylesheet" href="css/service-page.css">
+
+    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- ESTILOS EXCLUSIVOS PARA SECURE (CLEAN TECH) DE ESCRITORIO --- */
+        
+        .secure-section {
+            background-color: #ffffff;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text-main);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .secure-section::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(0, 86, 179, 0.05) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .secure-section .section-subtitle {
+            color: #0f172a;
+            margin-bottom: 60px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .secure-section .section-subtitle::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--color-primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .secure-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .secure-card {
+            background: #ffffff;
+            border: 1px solid var(--color-primary); 
+            border-radius: 20px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.05);
+        }
+
+        .secure-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(0, 212, 255, 0.08); 
+            box-shadow: 0 15px 30px rgba(0, 86, 179, 0.15);
+            z-index: 10;
+        }
+
+        .secure-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+            color: var(--color-primary);
+            stroke-width: 1.5;
+            background: #f0f9ff;
+            padding: 10px;
+            border-radius: 12px;
+            box-sizing: content-box;
+            transition: all 0.3s ease;
+        }
+
+        .secure-card:hover .secure-icon {
+            background: #ffffff;
+            color: var(--color-primary);
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .secure-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .secure-card p {
+            font-size: 1rem;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .card-wide {
+            grid-column: span 2;
+        }
+
+        .secure-cta-container {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* Ocultar elementos de escritorio en móvil */
+        @media (max-width: 992px) {
+            .secure-bento-grid { display: none; }
+            .card-wide { grid-column: span 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER DE ESCRITORIO -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-azul-oscuro.png" alt="Lamarr Tech Logo"></a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active" data-lang-key="nav_servicios">SERVICIOS
+                            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li><a href="lamarr-cloud.html" data-lang-key="nav_servicios_cloud">CLOUD</a></li>
+                            <li><a href="lamarr-integrate.html" data-lang-key="nav_servicios_integrate">INTEGRATE</a></li>
+                            <li><a href="lamarr-data-ai.html" data-lang-key="nav_servicios_data_ai">DATA+AI</a></li>
+                            <li><a href="lamarr-secure.html" data-lang-key="nav_servicios_secure">SECURE</a></li>
+                            <li><a href="services-sap.html" data-lang-key="nav_servicios_sap">SAP</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-switcher">
+                <button class="lang-btn" aria-label="Seleccionar idioma">
+                    <span class="lang-btn-text">ES</span>
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="es">🇪🇸 ES (Español)</a>
+                    <a href="#" data-lang="pt">🇧🇷 PT (Português)</a>
+                    <a href="#" data-lang="en">🇺🇸 EN (English)</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
+            <div class="drawer-group">
+                <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
+                <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
+                <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
+                <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
+                <a href="lamarr-secure.html" class="drawer-link sub-link active">SECURE</a>
+                <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
+            </div>
+            <a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a>
+            <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
+        </nav>
+        <div class="drawer-footer">
+            <div class="lang-options">
+                <button onclick="changeLang('es')" class="lang-opt active" data-lang="es">Español</button>
+                <button onclick="changeLang('en')" class="lang-opt" data-lang="en">English</button>
+                <button onclick="changeLang('pt')" class="lang-opt" data-lang="pt">Português</button>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <!-- FIN DRAWER -->
+    
+    <main>
+        <!-- HERO (Dark con partículas Celestes - Consistencia) -->
+        <section class="service-hero">
+            <canvas id="service-canvas"></canvas>
+            
+            <div class="service-hero-content reveal active">
+                <span class="service-badge" data-lang-key="secure_badge">Ciberseguridad y Resiliencia</span>
+                <h1 data-lang-key="secure_h1">LAMARR | SECURE</h1>
+                <p data-lang-key="secure_p1">Ciberprotección nativa para tu negocio. Ofrecemos una plataforma integrada de backup, DR, seguridad avanzada y monitoreo continuo, potenciada por las mejores alianzas tecnológicas.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE SERVICIOS (Diseño Bento Grid BLANCO - ESCRITORIO) -->
+        <section class="secure-section">
+            <div class="container">
+                
+                <h2 class="section-subtitle reveal" data-lang-key="secure_s1_h2">Productos y Servicios de Ciberprotección</h2>
+                
+                <!-- BENTO GRID (ESCRITORIO) -->
+                <div class="secure-bento-grid">
+                    
+                    <div class="secure-card card-wide reveal">
+                        <div class="secure-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                        </div>
+                        <h3 data-lang-key="secure_s1_c1_h3">Cyber Backup & Recovery</h3>
+                        <p data-lang-key="secure_s1_c1_p">Copias de seguridad rápidas y fiables de cualquier carga de trabajo. Almacenamiento seguro en nuestra nube, AWS, GCP o local, con restauración instantánea de datos críticos.</p>
+                    </div>
+
+                    <div class="secure-card reveal">
+                        <div class="secure-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h3 data-lang-key="secure_s1_c3_h3">Advanced Security</h3>
+                        <p data-lang-key="secure_s1_c3_p">Protección proactiva contra ransomware y malware impulsada por IA. Antivirus, antimalware y análisis de vulnerabilidades en una sola solución.</p>
+                    </div>
+
+                    <div class="secure-card reveal">
+                        <div class="secure-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                        <h3 data-lang-key="secure_s1_c2_h3">Disaster Recovery (DRaaS)</h3>
+                        <p data-lang-key="secure_s1_c2_p">Recuperación ante desastres como servicio. Continuidad de negocio garantizada con failover a nuestra nube.</p>
+                    </div>
+
+                    <div class="secure-card reveal">
+                        <div class="secure-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        </div>
+                        <h3 data-lang-key="secure_s1_c4_h3">Endpoint Defense</h3>
+                        <p data-lang-key="secure_s1_c4_p">Protección inteligente para estaciones de trabajo y servidores contra malware y amenazas desconocidas.</p>
+                    </div>
+
+                    <div class="secure-card reveal">
+                        <div class="secure-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c0-1.7-1.3-3-3-3h-11a3 3 0 0 1-3-3c0-1.6 1.2-2.9 2.8-3a5 5 0 0 1 9.8-1.2 3 3 0 0 1 4.8 2.5c0 .2 0 .3-.1.5a3 3 0 0 1 2.6 2.8c0 1.6-1.3 3-2.9 3z"/></svg>
+                        </div>
+                        <h3 data-lang-key="secure_s1_c5_h3">SaaS Protect</h3>
+                        <p data-lang-key="secure_s1_c5_p">Protección completa para Microsoft 365 y Google Workspace. Backups nube a nube para correos y archivos.</p>
+                    </div>
+
+                </div>
+
+                <div class="secure-cta-container reveal">
+                    <a href="contact.html" class="btn-primary btn-glow" data-lang-key="secure_s1_btn">Agenda una evaluación de seguridad</a>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA ESCRITORIO -->
+
+        <!-- VISTA MÓVIL -->
+        <section class="mobile-section">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="secure_s1_h2">Productos de Protección</h2>
+                
+                <div class="feature-list-vertical">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-box-archive"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="secure_s1_c1_h3">Cyber Backup & Recovery</h3>
+                            <p data-lang-key="secure_s1_c1_p">Copias rápidas y restauración instantánea en nube o local.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-house-medical"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="secure_s1_c2_h3">Disaster Recovery (DRaaS)</h3>
+                            <p data-lang-key="secure_s1_c2_p">DRaaS: Continuidad de negocio con failover a nuestra nube.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-shield-virus"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="secure_s1_c3_h3">Advanced Security</h3>
+                            <p data-lang-key="secure_s1_c3_p">Protección IA contra ransomware y análisis de vulnerabilidades.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-laptop-medical"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="secure_s1_c4_h3">Endpoint Defense</h3>
+                            <p data-lang-key="secure_s1_c4_p">Protección inteligente para estaciones de trabajo.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-cloud"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="secure_s1_c5_h3">SaaS Protect</h3>
+                            <p data-lang-key="secure_s1_c5_p">Protección completa para Microsoft 365 y Google Workspace.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; padding-top: 20px;">
+                    <a href="contact.html" class="btn-mobile-primary" data-lang-key="secure_s1_btn">Agenda una evaluación de seguridad</a>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA MÓVIL -->
+    </main>
+
+    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact_h4">Contacto</h4>
+                    <ul>
+                        <li><strong data-lang-key="footer_address_label">Dirección:</strong> Av nueva providencia 1881, of 1912.</li>
+                        <li><strong data-lang-key="footer_email_label">Email:</strong> contacto@lamarrtech.cl</li>
+                        <li><strong data-lang-key="footer_phone_label">Teléfono:</strong> +56 9 3199 3952</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="nav_servicios">Servicios</h4>
+                    <ul>
+                        <li><a href="lamarr-cloud.html" data-lang-key="footer_service_cloud">Cloud Solutions</a></li>
+                        <li><a href="lamarr-integrate.html" data-lang-key="footer_service_integrate">Integration Services</a></li>
+                        <li><a href="lamarr-data-ai.html" data-lang-key="footer_service_data_ai">Data & AI</a></li>
+                        <li><a href="lamarr-secure.html" data-lang-key="footer_service_secure">Cybersecurity</a></li>
+                        <li><a href="services-sap.html" data-lang-key="footer_service_sap">SAP Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links_h4">Empresa</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
+                        <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
+                        <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
+    <footer class="mobile-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="contact.html">Contacto</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-contact-info">
+                <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +56 9 3199 3952</p>
+            </div>
+            <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
+        </div>
+    </footer>
+    <!-- FIN FOOTER MÓVIL -->
+    
+    <script src="js/script.js"></script>
+    <script src="js/idiomas.js"></script>
+    <script src="js/mobile-script.js"></script>
+    
+    <script>
+        (function() {
+            // Animación Partículas (Celeste/Cian en Hero)
+            function initParticleAnimation(canvasId, particleCount = 40) {
+                const canvas = document.getElementById(canvasId);
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let particles = [];
+
+                function resize() {
+                    width = canvas.width = canvas.parentElement.offsetWidth;
+                    height = canvas.height = canvas.parentElement.offsetHeight;
+                }
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.5;
+                        this.vy = (Math.random() - 0.5) * 0.5;
+                        this.size = Math.random() * 3 + 1.5;
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if(this.x < 0 || this.x > width) this.vx *= -1;
+                        if(this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    draw() {
+                        // Color Celeste (Cian)
+                        ctx.fillStyle = 'rgba(0, 212, 255, 0.7)'; 
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function init() {
+                    resize();
+                    for(let i=0; i<particleCount; i++) particles.push(new Particle());
+                    animate();
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    for(let i=0; i<particles.length; i++) {
+                        for(let j=i; j<particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            if(dist < 150) {
+                                // Color Celeste (Cian)
+                                ctx.strokeStyle = `rgba(0, 212, 255, ${0.3 - dist/600})`;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                window.addEventListener('resize', resize);
+                init();
+            }
+
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                initParticleAnimation('service-canvas', 40);
+                window.addEventListener('scroll', revealOnScroll);
+                revealOnScroll();
+            });
+        })();
+    </script>
+</body>
+</html>

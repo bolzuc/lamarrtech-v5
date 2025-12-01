@@ -1,0 +1,127 @@
+/* Actualización de componentes generales */
+
+/* Estilo para las Cards Generales */
+.card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Estilos específicos para tarjetas de detalles de servicio */
+.service-detail-card {
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    padding: 25px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.service-detail-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Ajuste de íconos en servicios */
+.service-feature-icon {
+    background-color: rgba(0, 86, 179, 0.08) !important;
+    color: var(--color-primary) !important;
+    border-radius: 12px !important; 
+    padding: 12px !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-feature-item:hover .service-feature-icon {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+/* =========================================================
+   ESTILO DE BOTONES "GLOW" (Global para toda la web)
+   ========================================================= */
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary); /* Azul base */
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    
+    /* Efecto inicial sutil */
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Efecto Hover: Encendido "Neón" */
+.btn-primary:hover {
+    background-color: #0066cc; 
+    transform: translateY(-3px) scale(1.02);
+    color: white;
+    /* Resplandor azul neón */
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5), 0 0 40px rgba(0, 86, 179, 0.3);
+    border-color: rgba(255,255,255,0.4);
+}
+
+/* Brillo animado que cruza el botón al hacer hover */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    transition: 0.6s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+    opacity: 1;
+    transition: 0.6s;
+}
+
+/* Botón Secundario (Borde) */
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 10px 26px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.4);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios SAP - Lamarr Tech</title>
+    <!-- SEO Específico -->
+    <meta name="description" content="Consultoría funcional y técnica experta en SAP Business One (B1) y S/4HANA en Chile. Migraciones, soporte 24/7 y optimización de procesos logísticos y financieros.">
+    <meta name="keywords" content="SAP Business One Consultoría, Migración SAP S/4HANA, Soporte SAP B1 Chile, Optimización Procesos SAP, SAP BTP Integration, SAP Cloud Hosting">
+    <link rel="canonical" href="https://www.lamarrtech.cl/services-sap.html">
+    <!-- Fin SEO Específico -->
+
+    <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
+    
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="css/service-page.css"> 
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-footer.css"> 
+    
+    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER DE ESCRITORIO -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-azul-oscuro.png" alt="Lamarr Tech Logo"></a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active" data-lang-key="nav_servicios">SERVICIOS
+                            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li><a href="lamarr-cloud.html" data-lang-key="nav_servicios_cloud">CLOUD</a></li>
+                            <li><a href="lamarr-integrate.html" data-lang-key="nav_servicios_integrate">INTEGRATE</a></li>
+                            <li><a href="lamarr-data-ai.html" data-lang-key="nav_servicios_data_ai">DATA+AI</a></li>
+                            <li><a href="lamarr-secure.html" data-lang-key="nav_servicios_secure">SECURE</a></li>
+                            <li><a href="services-sap.html" data-lang-key="nav_servicios_sap">SAP</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-switcher">
+                <button class="lang-btn" aria-label="Seleccionar idioma">
+                    <span class="lang-btn-text">ES</span>
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="es">🇪🇸 ES (Español)</a>
+                    <a href="#" data-lang="pt">🇧🇷 PT (Português)</a>
+                    <a href="#" data-lang="en">🇺🇸 EN (English)</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
+            <div class="drawer-group">
+                <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
+                <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
+                <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
+                <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
+                <a href="lamarr-secure.html" class="drawer-link sub-link">SECURE</a>
+                <a href="services-sap.html" class="drawer-link sub-link active">SAP</a>
+            </div>
+            <a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a>
+            <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
+        </nav>
+        <div class="drawer-footer">
+            <div class="lang-options">
+                <button onclick="changeLang('es')" class="lang-opt active" data-lang="es">Español</button>
+                <button onclick="changeLang('en')" class="lang-opt" data-lang="en">English</button>
+                <button onclick="changeLang('pt')" class="lang-opt" data-lang="pt">Português</button>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <!-- FIN DRAWER -->
+    
+    <main>
+        <!-- HERO DARK -->
+        <section class="service-hero">
+            <canvas id="service-canvas"></canvas>
+            
+            <div class="service-hero-content reveal active">
+                <!-- INICIO: AJUSTE BADGE -->
+                <span class="service-badge" data-lang-key="sap_badge">Ecosistema SAP</span>
+                <!-- FIN: AJUSTE BADGE -->
+                <h1 data-lang-key="sap_h1">LAMARR | SAP</h1>
+                <p><strong data-lang-key="sap_s1">El poder de SAP, llevado a su máximo desempeño.</strong><br>
+                <span data-lang-key="sap_p1">Evolucionamos tu sistema para que sea más eficiente, integrado y escalable.</span></p>
+            </div>
+        </section>
+
+        <!-- ESTRATEGIA (Blanco) -->
+        <section class="page-section" style="padding: 40px 0;">
+            <div class="container">
+                <div class="strategy-block reveal" style="margin-bottom: 20px; padding: 30px;"> 
+                    <p data-lang-key="sap_p2" style="margin-bottom: 0;">Combinamos experiencia operativa con SAP BTP para automatizar y escalar. Tu entorno SAP se adapta a tu estrategia, no al revés.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS: TARJETAS BLANCAS (PIRÁMIDE 3-2 - ESCRITORIO) -->
+        <section class="sap-white-services-section">
+            <div class="container">
+                <h2 class="section-subtitle reveal" style="margin-bottom: 50px;" data-lang-key="sap_s2_h2">Nuestros Servicios SAP</h2>
+
+                <div class="sap-cards-grid">
+                    
+                    <!-- Tarjeta 1 -->
+                    <div class="sap-card-clean reveal">
+                        <div class="sap-card-clean-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+                        </div>
+                        <h3 data-lang-key="sap_s2_c1_h3">Consultoría Funcional & Mejora de Procesos</h3>
+                        <p data-lang-key="sap_s2_c1_p">Optimizamos tu operación financiera, logística, contable y de abastecimiento para simplificar, controlar y acelerar tareas clave.</p>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="sap-card-clean reveal">
+                        <div class="sap-card-clean-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                        </div>
+                        <h3 data-lang-key="sap_s2_c2_h3">Implementación y Actualización de Versiones</h3>
+                        <p>Implementación y reparametrización en SAP Business One. Migración a SAP B1 10.0 (SQL / HANA). Evolución de SAP ECC hacia S/4 HANA.</p>
+                    </div>
+
+                    <!-- Tarjeta 3 -->
+                    <div class="sap-card-clean reveal">
+                        <div class="sap-card-clean-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                        </div>
+                        <h3 data-lang-key="sap_s2_c3_h3">Soporte Técnico & Performance SAP</h3>
+                        <p data-lang-key="sap_s2_c3_p">Administración de bases de datos, tuning, resolución de incidencias y continuidad operativa. Estabilidad y rendimiento 24/7.</p>
+                    </div>
+
+                    <!-- Tarjeta 4 -->
+                    <div class="sap-card-clean reveal">
+                        <div class="sap-card-clean-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                        </div>
+                        <h3 data-lang-key="sap_s2_c4_h3">SAP BTP & Conectividad</h3>
+                        <p data-lang-key="sap_s2_c4_p">Integramos SAP con CRM, e-commerce, aplicaciones internas y nube. Automatización, APIs, workflows y datos centralizados.</p>
+                    </div>
+
+                    <!-- Tarjeta 5 -->
+                    <div class="sap-card-clean reveal">
+                        <div class="sap-card-clean-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg>
+                        </div>
+                        <h3 data-lang-key="sap_s2_c5_h3">SAP en la Nube (AWS, Google Cloud Platform, Huawei Cloud)</h3>
+                        <p data-lang-key="sap_s2_c5_p">Arquitecturas seguras, escalables y de alta disponibilidad, con optimización FinOps para reducir costos.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA ESCRITORIO -->
+
+        <!-- VISTA MÓVIL -->
+        <section class="mobile-section">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="sap_s2_h2">Nuestros Servicios SAP</h2>
+                
+                <div class="feature-list-vertical">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="sap_s2_c1_h3">Consultoría Funcional</h3>
+                            <p data-lang-key="sap_s2_c1_p">Optimizamos finanzas y logística.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-gears"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="sap_s2_c2_h3">Implementación</h3>
+                            <p>Ciclo completo: B1, HANA y S/4HANA.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-headset"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="sap_s2_c3_h3">Soporte y Performance</h3>
+                            <p data-lang-key="sap_s2_c3_p">Continuidad y tuning 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-cloud"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="sap_s2_c5_h3">SAP en la Nube</h3>
+                            <p data-lang-key="sap_s2_c5_p">Arquitecturas seguras en AWS, GCP o Huawei.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-strategy-block"> 
+                    <p data-lang-key="sap_p2">Combinamos experiencia operativa con SAP BTP para automatizar y escalar. Tu entorno SAP se adapta a tu estrategia, no al revés.</p>
+                </div>
+                
+                <div style="text-align: center; padding-top: 20px;">
+                    <a href="contact.html" class="btn-mobile-primary" data-lang-key="sap_s3_btn">Evoluciona tu SAP hoy</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASOS REALES (Mismo estilo Dark + Partículas - Intacto) -->
+        <section class="sap-results-section reveal">
+            <canvas class="sap-particles-canvas" id="results-canvas"></canvas>
+            
+            <div class="container" style="position: relative; z-index: 2;">
+                <h2 class="section-subtitle" style="color: white; border-bottom-color: var(--accent-glow); margin-bottom: 30px;" data-lang-key="sap_s3_h2">Resultados Reales</h2>
+                
+                <div class="sap-results-list">
+                    <div class="result-item">
+                        <span class="result-marker">►</span>
+                        <span data-lang-key="sap_s3_l1">Migración SAP B1 a AWS: <strong>-35% costos</strong>.</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-marker">►</span>
+                        <span data-lang-key="sap_s3_l2">Integración E-commerce: <strong>Tiempo real</strong>.</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-marker">►</span>
+                        <span data-lang-key="sap_s3_l3">Optimización SAP ECC: <strong>+60% velocidad</strong>.</span>
+                    </div>
+                </div>
+
+                <div class="contact-button-container" style="text-align: center; margin-top: 40px;">
+                    <a href="contact.html" class="btn-primary btn-glow" data-lang-key="sap_s3_btn">Evoluciona tu SAP hoy</a>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA ESCRITORIO -->
+
+        <!-- VISTA MÓVIL -->
+        <section class="mobile-section bg-light">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="sap_s3_h2">Resultados Reales</h2>
+                <div class="data-card-list">
+                    <div class="data-card-item">
+                        <div class="data-card-title">Migración B1 a AWS</div>
+                        <span class="data-card-benefit">-35% costos</span>
+                    </div>
+                    <div class="data-card-item">
+                        <div class="data-card-title">Integración E-commerce</div>
+                        <span class="data-card-benefit">Tiempo real</span>
+                    </div>
+                    <div class="data-card-item">
+                        <div class="data-card-title">Optimización ECC</div>
+                        <span class="data-card-benefit">+60% velocidad</span>
+                    </div>
+                </div>
+                <div style="text-align: center; padding-top: 20px;">
+                    <a href="contact.html" class="btn-mobile-primary" data-lang-key="sap_s3_btn">Evoluciona tu SAP hoy</a>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA MÓVIL -->
+    </main>
+
+    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact_h4">Contacto</h4>
+                    <ul>
+                        <li><strong data-lang-key="footer_address_label">Dirección:</strong> Av nueva providencia 1881, of 1912.</li>
+                        <li><strong data-lang-key="footer_email_label">Email:</strong> contacto@lamarrtech.cl</li>
+                        <li><strong data-lang-key="footer_phone_label">Teléfono:</strong> +56 9 3199 3952</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="nav_servicios">Servicios</h4>
+                    <ul>
+                        <li><a href="lamarr-cloud.html" data-lang-key="footer_service_cloud">Cloud Solutions</a></li>
+                        <li><a href="lamarr-integrate.html" data-lang-key="footer_service_integrate">Integration Services</a></li>
+                        <li><a href="lamarr-data-ai.html" data-lang-key="footer_service_data_ai">Data & AI</a></li>
+                        <li><a href="lamarr-secure.html" data-lang-key="footer_service_secure">Cybersecurity</a></li>
+                        <li><a href="services-sap.html" data-lang-key="footer_service_sap">SAP Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links_h4">Empresa</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
+                        <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
+                        <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
+    <footer class="mobile-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="contact.html">Contacto</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-contact-info">
+                <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +56 9 3199 3952</p>
+            </div>
+            <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
+        </div>
+    </footer>
+    <!-- FIN FOOTER MÓVIL -->
+    
+    <script src="js/script.js"></script>
+    <!-- Incluir idiomas.js para que las claves se procesen -->
+    <script src="js/idiomas.js"></script>
+    <script src="js/mobile-script.js"></script>
+    
+    <script>
+        (function() {
+            function initParticleAnimation(canvas, particleCount = 30, color = 'rgba(34, 211, 238, 0.7)', strokeColor = 'rgba(34, 211, 238, 0.3)') {
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let particles = [];
+
+                function resize() {
+                    const parent = canvas.parentElement;
+                    width = canvas.width = parent.offsetWidth;
+                    height = canvas.height = parent.offsetHeight;
+                }
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.3; 
+                        this.vy = (Math.random() - 0.5) * 0.3;
+                        this.size = Math.random() * 2 + 1; 
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if(this.x < 0 || this.x > width) this.vx *= -1;
+                        if(this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    draw() {
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function init() {
+                    resize();
+                    particles = [];
+                    for(let i=0; i<particleCount; i++) particles.push(new Particle());
+                    animate();
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    for(let i=0; i<particles.length; i++) {
+                        for(let j=i; j<particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            if(dist < 120) { 
+                                let opacity = 0.3 - dist/400;
+                                ctx.strokeStyle = strokeColor.replace('0.3)', opacity + ')'); 
+                                ctx.lineWidth = 0.5;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                init();
+                window.addEventListener('resize', () => { resize(); });
+            }
+
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const heroCanvas = document.getElementById('service-canvas');
+                initParticleAnimation(heroCanvas, 40, 'rgba(34, 211, 238, 0.7)', 'rgba(34, 211, 238, 0.3)');
+
+                const darkCanvases = document.querySelectorAll('.sap-particles-canvas');
+                darkCanvases.forEach(canvas => {
+                    initParticleAnimation(canvas, 35, 'rgba(34, 211, 238, 0.6)', 'rgba(34, 211, 238, 0.2)');
+                });
+
+                window.addEventListener('scroll', revealOnScroll);
+                revealOnScroll();
+            });
+        })();
+    </script>
+</body>
+</html>

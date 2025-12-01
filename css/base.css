@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
+
+:root {
+    /* Paleta Corporativa */
+    --color-primary: #0056b3; 
+    --color-accent: #00d4ff; 
+    --color-text: #1e293b;
+    --color-text-secondary: #475569;
+    --color-background: #ffffff;
+    --color-bg-light: #f8f9fa;
+    --color-border: #e2e8f0;
+    
+    /* Tipografía */
+    --font-primary: 'Open Sans', sans-serif;     /* Cuerpo */
+    --font-heading: 'Montserrat', sans-serif;    /* Títulos */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+h1 { font-size: 2.8rem; } /* Ajustado para no ser gigante en móvil */
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #003d80;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}

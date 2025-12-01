@@ -1,0 +1,145 @@
+/* premium-theme.css - CORREGIDO PARA ICONOS Y HOVER */
+
+/* Refinamientos de UI para sensación Premium */
+
+/* Animación de fondo sutil para el Hero */
+@keyframes sweepGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero.hero-premium {
+    /* Fondo degradado profundo y profesional */
+    background: linear-gradient(-45deg, #051024, #001f3f, #003366, #051024);
+    background-size: 400% 400%;
+    animation: sweepGradient 15s ease infinite;
+    padding: 140px 0 100px 0; /* Más aire arriba para el header sticky */
+    color: white;
+}
+
+.hero-premium h1 {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-weight: 800;
+    font-family: var(--font-heading);
+}
+
+.hero-premium .hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    font-size: 1.15rem;
+}
+
+/* === ESTILOS PARA LOS NUEVOS ICONOS PREMIUM === */
+.card-icon-container {
+    width: 64px;
+    height: 64px;
+    background: #f0f7ff; /* Fondo azul muy suave por defecto */
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 86, 179, 0.1);
+}
+
+.card-icon-svg {
+    width: 32px;
+    height: 32px;
+    color: var(--color-primary);
+    stroke-width: 1.8;
+    transition: all 0.4s ease;
+}
+
+/* Efecto Hover en la Tarjeta - SIN TAPAR EL ICONO */
+.hero-solution-card:hover .card-icon-container {
+    background: var(--color-primary);
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+}
+
+.hero-solution-card:hover .card-icon-svg {
+    color: #ffffff; /* Icono se vuelve blanco */
+}
+
+/* Tarjetas de Servicios en el Hero (Base override) */
+.hero-solution-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 16px; /* Bordes más suaves */
+    padding: 35px 25px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Eliminar la línea lateral si existía, o mejorarla */
+.hero-solution-card::before {
+    display: none; 
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004494;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
+}
+
+.btn-outline {
+    border-radius: 50px;
+    color: var(--color-primary);
+    border-color: transparent;
+    font-weight: 600;
+    background: rgba(0, 86, 179, 0.05);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--color-primary);
+    color: white;
+    padding-left: 32px; /* Efecto de desplazamiento */
+}
+
+/* Sección Mapa y Presencia */
+.presencia-section-header {
+    background: linear-gradient(135deg, var(--color-primary), #003366);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.2);
+}
+
+.presencia-tabla-container {
+    border: none;
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.presencia-tabla-body th {
+    background-color: #f8fafc;
+    color: var(--color-text-secondary);
+    font-weight: 700;
+}
+
+/* Footer más limpio */
+footer {
+    background-color: #f8fafc;
+    color: var(--color-text-secondary);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9rem;
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Lamarr Tech</title>
+    <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
+    
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/page-section.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-footer.css"> 
+    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER DE ESCRITORIO -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-azul-oscuro.png" alt="Lamarr Tech Logo"></a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-lang-key="nav_servicios">SERVICIOS
+                            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li><a href="lamarr-cloud.html" data-lang-key="nav_servicios_cloud">CLOUD</a></li>
+                            <li><a href="lamarr-integrate.html" data-lang-key="nav_servicios_integrate">INTEGRATE</a></li>
+                            <li><a href="lamarr-data-ai.html" data-lang-key="nav_servicios_data_ai">DATA+AI</a></li>
+                            <li><a href="lamarr-secure.html" data-lang-key="nav_servicios_secure">SECURE</a></li>
+                            <li><a href="services-sap.html" data-lang-key="nav_servicios_sap">SAP</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="noticias.html" class="active" data-lang-key="nav_noticias">NOTICIAS</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-switcher">
+                <button class="lang-btn" aria-label="Seleccionar idioma">
+                    <span class="lang-btn-text">ES</span>
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="es">🇪🇸 ES (Español)</a>
+                    <a href="#" data-lang="pt">🇧🇷 PT (Português)</a>
+                    <a href="#" data-lang="en">🇺🇸 EN (English)</a>
+                </div>
+            </div>
+
+            <!-- BOTÓN MÓVIL (Activo en móvil por CSS) -->
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
+            <div class="drawer-group">
+                <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
+                <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
+                <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
+                <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
+                <a href="lamarr-secure.html" class="drawer-link sub-link">SECURE</a>
+                <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
+            </div>
+            <a href="noticias.html" class="drawer-link active" data-lang-key="nav_noticias">NOTICIAS</a>
+            <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
+        </nav>
+        <div class="drawer-footer">
+            <div class="lang-options">
+                <button onclick="changeLang('es')" class="lang-opt active" data-lang="es">Español</button>
+                <button onclick="changeLang('en')" class="lang-opt" data-lang="en">English</button>
+                <button onclick="changeLang('pt')" class="lang-opt" data-lang="pt">Português</button>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <!-- FIN DRAWER -->
+
+    <main>
+        <!-- HERO -->
+        <section class="news-hero">
+            <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8;"></canvas>
+            <div class="container" style="position: relative; z-index: 2;">
+                <h1 data-lang-key="news_h1" style="color: white !important;">Noticias: Lo que estamos construyendo</h1>
+                <p data-lang-key="news_p1" style="color: #e2e8f0 !important;">Crecemos junto a nuestros partners, nuestros clientes y nuestra comunidad. Cada paso fortalece nuestra capacidad de entregar soluciones integradas, seguras y escalables en SAP, Cloud e IA.</p>
+            </div>
+        </section>
+
+        <!-- 1. PRÓXIMO EVENTO (WEBINAR) -->
+        <section class="highlight-section reveal">
+            <div class="highlight-container">
+                <div class="highlight-content">
+                    <span class="highlight-badge">WEBINAR EXCLUSIVO</span>
+                    <h2 data-lang-key="news_s3_c1_h3">Potencia tu SAP Business One en la Nube</h2>
+                    <p data-lang-key="news_s3_c1_p">¿Tu infraestructura limita tu crecimiento? Descubre cómo migrar SAP Business One a la nube puede reducir costos operativos, mejorar la seguridad y garantizar la continuidad de tu operación.</p>
+                    
+                    <a href="https://www.lamarrtech.cl/Landing%20Page%20Webinar%20SAP%20B1/landing.html" target="_blank" class="btn-primary" data-lang-key="news_s3_c1_btn">Reserva tu cupo ahora</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. EVENTOS PASADOS (TECH STREAM) -->
+        <section class="tech-stream-section">
+            <div class="container">
+                
+                <div class="stream-header reveal">
+                    <h2 data-lang-key="news_s2_h2">Eventos y Noticias Pasadas</h2>
+                </div>
+
+                <div class="tech-stream-container reveal">
+                    
+                    <!-- Item 1 -->
+                    <div class="stream-item">
+                        <div class="stream-node"></div>
+                        <div class="stream-content">
+                            <span class="stream-meta">RECONOCIMIENTO</span>
+                            <h3 class="stream-title" data-lang-key="news_s2_c1_h3">Huawei Cloud reconoce a Lamarr como Partner con Potencial</h3>
+                            <p class="stream-description" data-lang-key="news_s2_c1_p">Lamarr participó en el Huawei Cloud Summit, donde fuimos reconocidos como Partner con Potencial en la región por nuestra experiencia en modernización SAP, estrategias multicloud y arquitecturas híbridas. Este hito refleja nuestro compromiso con soluciones de alto impacto, con ejecución técnica propia y acompañamiento continuo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="stream-item">
+                        <div class="stream-node"></div>
+                        <div class="stream-content">
+                            <span class="stream-meta">EVENTO PRESENCIAL</span>
+                            <h3 class="stream-title" data-lang-key="news_s2_c2_h3">Encuentro Ejecutivo: SAP Business One en Huawei Cloud</h3>
+                            <p class="stream-description" data-lang-key="news_s2_c2_p">Realizamos un encuentro ejecutivo enfocado en organizaciones que operan SAP Business One y buscan optimizar su infraestructura en la nube. El evento se centró en presentar rutas de transición claras, casos de éxito reales y modelos de arquitectura eficientes en Huawei Cloud.</p>
+                            <a href="noticia-sap-huawei.html" class="stream-link" style="color: var(--color-primary);" data-lang-key="news_s2_c2_btn">Leer resumen del evento →</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="stream-item">
+                        <div class="stream-node"></div>
+                        <div class="stream-content">
+                            <span class="stream-meta">WEBINAR EJECUTIVO</span>
+                            <h3 class="stream-title" data-lang-key="news_s2_c3_h3">El Fin de Soporte de SAP ECC: Estrategia y Acción</h3>
+                            <p class="stream-description" data-lang-key="news_s2_c3_p">En un encuentro ejecutivo reciente, conversamos junto a Noventiq sobre el fin de soporte de SAP ECC, sus implicancias y las opciones de transición hacia SAP en la nube. El enfoque fue claro: tomar decisiones informadas, no apresuradas.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ALIANZAS ESTRATÉGICAS (SMART LIST / SIN TARJETAS) -->
+        <section class="alliance-section">
+            <div class="container">
+                <h2 class="section-title-center" data-lang-key="news_s1_h2">Nuevas Alianzas Estratégicas</h2>
+
+                <div class="alliance-list reveal">
+                    
+                    <!-- Fila 1 -->
+                    <div class="alliance-item">
+                        <div class="alliance-header">
+                            <span class="alliance-category">DESARROLLO COMERCIAL</span>
+                            <h3 data-lang-key="news_s1_c1_h3">Lamarr + WIT</h3>
+                        </div>
+                        <div class="alliance-body">
+                            <p data-lang-key="news_s1_c1_p">Hemos formalizado una alianza con WIT para fortalecer la apertura y calificación de oportunidades comerciales en Chile y LATAM. Este trabajo conjunto nos permite llegar a empresas que buscan modernizar SAP y escalar hacia arquitecturas multicloud, con acompañamiento consultivo y visión estratégica.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fila 2 -->
+                    <div class="alliance-item">
+                        <div class="alliance-header">
+                            <span class="alliance-category">CIBERSEGURIDAD</span>
+                            <h3 data-lang-key="news_s1_c2_h3">Lamarr + Araucaria Software</h3>
+                        </div>
+                        <div class="alliance-body">
+                            <p data-lang-key="news_s1_c2_p">Junto a La Araucaria Software, estamos desarrollando soluciones orientadas a ciberseguridad aplicada, protección de datos críticos y monitoreo inteligente de riesgos. La combinación de ingeniería segura + integración SAP + arquitectura cloud nos permite entregar soluciones escalables, eficientes y alineadas a los desafíos actuales.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3 -->
+                    <div class="alliance-item">
+                        <div class="alliance-header">
+                            <span class="alliance-category">CONVENIO MARCO</span>
+                            <h3 data-lang-key="news_s1_c3_h3">Alianza con Noventiq</h3>
+                        </div>
+                        <div class="alliance-body">
+                            <p data-lang-key="news_s1_c3_p">Este convenio formaliza nuestra capacidad de ejecutar proyectos SAP + Cloud de manera conjunta, asegurando continuidad, trazabilidad y escalabilidad en la entrega de servicios.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FOOTER -->
+        <section class="news-cta-section">
+            <canvas id="cta-canvas"></canvas>
+            
+            <div class="news-cta-container reveal">
+                <h3 data-lang-key="news_cta_h3">No te pierdas nuestras futuras invitaciones</h3>
+                <p data-lang-key="news_cta_p">Si no quieres perderte nuestros próximos eventos y quieres que te invitemos directamente a tu correo, regístrate en nuestra página de contacto.</p>
+                <a href="contact.html" class="btn-white-pill" data-lang-key="news_cta_btn">Inscríbete aquí</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact_h4">Contacto</h4>
+                    <ul>
+                        <li><strong data-lang-key="footer_address_label">Dirección:</strong> Av nueva providencia 1881, of 1912.</li>
+                        <li><strong data-lang-key="footer_email_label">Email:</strong> contacto@lamarrtech.cl</li>
+                        <li><strong data-lang-key="footer_phone_label">Teléfono:</strong> +56 9 3199 3952</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="nav_servicios">Servicios</h4>
+                    <ul>
+                        <li><a href="lamarr-cloud.html" data-lang-key="footer_service_cloud">Cloud Solutions</a></li>
+                        <li><a href="lamarr-integrate.html" data-lang-key="footer_service_integrate">Integration Services</a></li>
+                        <li><a href="lamarr-data-ai.html" data-lang-key="footer_service_data_ai">Data & AI</a></li>
+                        <li><a href="lamarr-secure.html" data-lang-key="footer_service_secure">Cybersecurity</a></li>
+                        <li><a href="services-sap.html" data-lang-key="footer_service_sap">SAP Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links_h4">Empresa</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
+                        <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
+                        <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
+    <footer class="mobile-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="contact.html">Contacto</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-contact-info">
+                <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +56 9 3199 3952</p>
+            </div>
+            <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
+        </div>
+    </footer>
+    <!-- FIN FOOTER MÓVIL -->
+    
+    <script src="js/script.js"></script>
+    <script src="js/idiomas.js"></script>
+    <script src="js/mobile-script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            
+            const checkScroll = () => {
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - 100) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', checkScroll);
+            checkScroll(); 
+
+            // Partículas
+            function initParticleAnimation(canvasId, particleCount = 60, color = 'rgba(0, 212, 255, 0.9)', strokeColor = 'rgba(0, 212, 255, 0.5)') {
+                const canvas = document.getElementById(canvasId);
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let width, height, particles = [];
+
+                function resize() {
+                    width = canvas.width = canvas.parentElement.offsetWidth;
+                    height = canvas.height = canvas.parentElement.offsetHeight;
+                }
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.3;
+                        this.vy = (Math.random() - 0.5) * 0.3;
+                        this.size = Math.random() * 2 + 1;
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if(this.x < 0 || this.x > width) this.vx *= -1;
+                        if(this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    draw() {
+                        ctx.fillStyle = color;
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function init() {
+                    resize();
+                    for(let i=0; i<particleCount; i++) particles.push(new Particle());
+                    animate();
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    for(let i=0; i<particles.length; i++) {
+                        for(let j=i; j<particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            if(dist < 150) {
+                                let opacity = 0.5 - dist/300; 
+                                if(strokeColor.includes('rgba')) {
+                                    ctx.strokeStyle = strokeColor.replace(/[\d\.]+\)$/g, opacity + ')');
+                                } else {
+                                    ctx.strokeStyle = strokeColor;
+                                }
+                                ctx.lineWidth = 0.5;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                init();
+                window.addEventListener('resize', resize);
+            }
+
+            initParticleAnimation('hero-canvas', 60);
+            initParticleAnimation('cta-canvas', 40); 
+        });
+    </script>
+</body>
+</html>

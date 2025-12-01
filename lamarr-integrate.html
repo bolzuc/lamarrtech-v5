@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMARR | INTEGRATE - Lamarr Tech</title>
+    <!-- SEO Específico -->
+    <meta name="description" content="Servicios de Integración End-to-End en LATAM. Conectamos SAP BTP, APIs, bases de datos y plataformas Cloud (AWS, GCP) para una operación sin silos ni fricción.">
+    <meta name="keywords" content="Integración SAP BTP, Conectividad Híbrida, Integración de APIs, Flujos de Datos ETL, Eliminación de Silos de Datos, Automatización de Procesos SAP">
+    <link rel="canonical" href="https://www.lamarrtech.cl/lamarr-integrate.html">
+    <!-- Fin SEO Específico -->
+
+    <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
+    
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/components.css">
+    
+    <!-- CSS Específicos -->
+    <link rel="stylesheet" href="css/service-page.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home-footer.css"> <!-- Footer Oscuro -->
+
+    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
+    <link rel="stylesheet" href="css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER DE ESCRITORIO -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="img/logo-azul-oscuro.png" alt="Lamarr Tech Logo"></a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="active" data-lang-key="nav_servicios">SERVICIOS
+                            <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                        </a>
+                        <ul class="dropdown-content">
+                            <li><a href="lamarr-cloud.html" data-lang-key="nav_servicios_cloud">CLOUD</a></li>
+                            <li><a href="lamarr-integrate.html" data-lang-key="nav_servicios_integrate">INTEGRATE</a></li>
+                            <li><a href="lamarr-data-ai.html" data-lang-key="nav_servicios_data_ai">DATA+AI</a></li>
+                            <li><a href="lamarr-secure.html" data-lang-key="nav_servicios_secure">SECURE</a></li>
+                            <li><a href="services-sap.html" data-lang-key="nav_servicios_sap">SAP</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
+                    <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-switcher">
+                <button class="lang-btn" aria-label="Seleccionar idioma">
+                    <span class="lang-btn-text">ES</span>
+                    <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="lang-dropdown">
+                    <a href="#" data-lang="es">🇪🇸 ES (Español)</a>
+                    <a href="#" data-lang="pt">🇧🇷 PT (Português)</a>
+                    <a href="#" data-lang="en">🇺🇸 EN (English)</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL) -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <nav class="drawer-nav">
+            <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
+            <div class="drawer-group">
+                <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
+                <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
+                <a href="lamarr-integrate.html" class="drawer-link sub-link active">INTEGRATE</a>
+                <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
+                <a href="lamarr-secure.html" class="drawer-link sub-link">SECURE</a>
+                <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
+            </div>
+            <a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a>
+            <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
+        </nav>
+        <div class="drawer-footer">
+            <div class="lang-options">
+                <button onclick="changeLang('es')" class="lang-opt active" data-lang="es">Español</button>
+                <button onclick="changeLang('en')" class="lang-opt" data-lang="en">English</button>
+                <button onclick="changeLang('pt')" class="lang-opt" data-lang="pt">Português</button>
+            </div>
+        </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <!-- FIN DRAWER -->
+    
+    <main>
+        <!-- HERO DARK CON ANIMACIÓN -->
+        <section class="service-hero">
+            <canvas id="service-canvas"></canvas> 
+            
+            <div class="service-hero-content reveal active">
+                <span class="service-badge" data-lang-key="integrate_badge">Conectividad Total</span>
+                <h1 data-lang-key="integrate_h1">LAMARR | INTEGRATE</h1>
+                <p data-lang-key="integrate_p1">Conectamos tus sistemas, datos y aplicaciones. Creamos flujos de información fluidos entre SAP, tus plataformas cloud y aplicaciones de terceros para una operación unificada.</p>
+            </div>
+        </section>
+
+        <!-- CONTENIDO CLARO (VISTA ESCRITORIO) -->
+        <section class="page-section">
+            <div class="container">
+                
+                <div class="strategy-block reveal"> 
+                    <p data-lang-key="integrate_s1_p">En el núcleo de la transformación digital está la integración. LAMARR | INTEGRATE asegura que tus aplicaciones críticas (ERP, CRM, SCM) se comuniquen de manera eficiente, eliminando silos de datos y automatizando procesos de negocio de extremo a extremo.</p>
+                </div>
+
+                <div class="process-layout-container">
+                    
+                    <!-- Columna Izquierda: Lista estilo Timeline Sólido -->
+                    <div class="reveal">
+                        <h2 class="section-title-clean" data-lang-key="integrate_s1_h2">Integra tu Ecosistema Tecnológico</h2>
+
+                        <ul class="solid-process-list">
+                            <li class="solid-process-item">
+                                <h3 data-lang-key="integrate_s1_l1">SAP Cloud Platform Integration (CPI)</h3>
+                                <p>Diseño y gestión de flujos de integración robustos. Conectamos tu ERP SAP con el mundo exterior de forma segura y escalable.</p>
+                            </li>
+
+                            <li class="solid-process-item">
+                                <h3 data-lang-key="integrate_s1_l2">Conectividad Híbrida</h3>
+                                <p>Unificamos tus entornos On-Premise y Multi-Cloud. Creamos puentes seguros para que tus sistemas legacy hablen con la nube moderna.</p>
+                            </li>
+
+                            <li class="solid-process-item">
+                                <h3 data-lang-key="integrate_s1_l3">Integración de APIs</h3>
+                                <p>Creamos, publicamos y gestionamos APIs para exponer tus servicios de negocio, facilitando la innovación y la conexión con partners.</p>
+                            </li>
+
+                            <li class="solid-process-item">
+                                <h3 data-lang-key="integrate_s1_l4">Flujos de Datos (ETL/ELT)</h3>
+                                <p>Movemos tus datos de forma segura y eficiente. Pipelines automatizados para alimentar tus lagos de datos y plataformas de IA.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Columna Derecha: Imagen Visual Sticky -->
+                    <div class="sticky-image-container reveal">
+                        <img src="img/lamarr-integrate-visual.png" alt="Ecosistema de Integración SAP y Cloud">
+                    </div>
+                </div>
+
+                <div class="contact-button-container reveal" style="text-align: center; margin-top: 50px;">
+                    <a href="contact.html" class="btn-primary btn-glow" data-lang-key="integrate_s1_btn">Conecta tu ecosistema hoy</a>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA ESCRITORIO -->
+
+        <!-- VISTA MÓVIL -->
+        <section class="mobile-section">
+            <div class="container">
+                <h2 class="section-title" data-lang-key="integrate_s1_h2">Integra tu Ecosistema</h2>
+
+                <div class="feature-list-vertical">
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="integrate_s1_l1">SAP Cloud Platform (CPI)</h3>
+                            <p>Diseño y gestión de flujos de integración seguros.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-bezier-curve"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="integrate_s1_l2">Conectividad Híbrida</h3>
+                            <p>Unificamos entornos On-Premise y Multi-Cloud.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-plug"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="integrate_s1_l3">Integración de APIs</h3>
+                            <p>Creamos y gestionamos APIs para tus servicios.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon-box"><i class="fa-solid fa-database"></i></div>
+                        <div class="feature-content">
+                            <h3 data-lang-key="integrate_s1_l4">Flujos de Datos (ETL)</h3>
+                            <p>Pipelines automatizados para analítica y IA.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile-strategy-block">
+                    <p data-lang-key="integrate_s1_p">Asegura que tus aplicaciones críticas (ERP, CRM, SCM) se comuniquen de manera eficiente, eliminando silos de datos.</p>
+                </div>
+                
+                <div style="text-align: center; padding-top: 20px;">
+                    <a href="contact.html" class="btn-mobile-primary" data-lang-key="integrate_s1_btn">Conecta tu ecosistema hoy</a>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VISTA MÓVIL -->
+    </main>
+
+    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
+    <footer class="home-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_contact_h4">Contacto</h4>
+                    <ul>
+                        <li><strong data-lang-key="footer_address_label">Dirección:</strong> Av nueva providencia 1881, of 1912.</li>
+                        <li><strong data-lang-key="footer_email_label">Email:</strong> contacto@lamarrtech.cl</li>
+                        <li><strong data-lang-key="footer_phone_label">Teléfono:</strong> +56 9 3199 3952</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="nav_servicios">Servicios</h4>
+                    <ul>
+                        <li><a href="lamarr-cloud.html" data-lang-key="footer_service_cloud">Cloud Solutions</a></li>
+                        <li><a href="lamarr-integrate.html" data-lang-key="footer_service_integrate">Integration Services</a></li>
+                        <li><a href="lamarr-data-ai.html" data-lang-key="footer_service_data_ai">Data & AI</a></li>
+                        <li><a href="lamarr-secure.html" data-lang-key="footer_service_secure">Cybersecurity</a></li>
+                        <li><a href="services-sap.html" data-lang-key="footer_service_sap">SAP Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-lang-key="footer_links_h4">Empresa</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
+                        <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
+                        <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
+    <footer class="mobile-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="contact.html">Contacto</a>
+                <a href="noticias.html">Noticias</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-contact-info">
+                <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>
+                <p><i class="fa-brands fa-whatsapp"></i> +56 9 3199 3952</p>
+            </div>
+            <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
+        </div>
+    </footer>
+    <!-- FIN FOOTER MÓVIL -->
+    
+    <script src="js/script.js"></script>
+    <script src="js/idiomas.js"></script>
+    <script src="js/mobile-script.js"></script>
+    
+    <script>
+        (function() {
+            // Animación Partículas
+            function initParticleAnimation(canvasId, particleCount = 40) {
+                const canvas = document.getElementById(canvasId);
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let width, height;
+                let particles = [];
+
+                function resize() {
+                    width = canvas.width = canvas.parentElement.offsetWidth;
+                    height = canvas.height = canvas.parentElement.offsetHeight;
+                }
+                
+                class Particle {
+                    constructor() {
+                        this.x = Math.random() * width;
+                        this.y = Math.random() * height;
+                        this.vx = (Math.random() - 0.5) * 0.5;
+                        this.vy = (Math.random() - 0.5) * 0.5;
+                        this.size = Math.random() * 3 + 1.5;
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if(this.x < 0 || this.x > width) this.vx *= -1;
+                        if(this.y < 0 || this.y > height) this.vy *= -1;
+                    }
+                    draw() {
+                        // Color celeste brillante para las partículas
+                        ctx.fillStyle = 'rgba(0, 212, 255, 0.7)'; 
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                }
+
+                function init() {
+                    resize();
+                    for(let i=0; i<particleCount; i++) particles.push(new Particle());
+                    animate();
+                }
+
+                function animate() {
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(p => { p.update(); p.draw(); });
+                    for(let i=0; i<particles.length; i++) {
+                        for(let j=i; j<particles.length; j++) {
+                            const dx = particles[i].x - particles[j].x;
+                            const dy = particles[i].y - particles[j].y;
+                            const dist = Math.sqrt(dx*dx + dy*dy);
+                            if(dist < 150) {
+                                // Color celeste para las conexiones
+                                ctx.strokeStyle = `rgba(0, 212, 255, ${0.3 - dist/600})`;
+                                ctx.beginPath();
+                                ctx.moveTo(particles[i].x, particles[i].y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                window.addEventListener('resize', resize);
+                init();
+            }
+
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const windowHeight = window.innerHeight;
+                const elementVisible = 150;
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                initParticleAnimation('service-canvas', 40);
+                window.addEventListener('scroll', revealOnScroll);
+                revealOnScroll();
+            });
+        })();
+    </script>
+</body>
+</html>

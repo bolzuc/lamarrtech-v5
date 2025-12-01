@@ -1,0 +1,122 @@
+.services {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--color-background);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    justify-items: center; 
+    position: relative; 
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; 
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: #0056b3;
+}
+
+.service-section {
+    padding: 80px 0;
+    text-align: left;
+}
+
+.service-carousel {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.service-carousel img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.services-section {
+    background-color: var(--color-background);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.service-content {
+    display: flex;
+    align-items: center;
+}
+
+.service-image {
+    width: 40%;
+    margin-right: 30px;
+}
+
+.service-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.service-details {
+    width: 60%;
+}
+
+.contact-section-services {
+    background-color: var(--color-background);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-section-services h2 {
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.contact-section-services p {
+    margin-bottom: 30px;
+}
+
+.contact-section-services .cta-button {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-section-services .cta-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.google-cloud-card {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.infinity-symbol-inline {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: center;
+}

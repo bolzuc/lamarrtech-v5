@@ -38,7 +38,7 @@
                 <ul>
                     <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
                     <li class="dropdown">
-                        <a href="#" class="active" data-lang-key="nav_servicios">SERVICIOS
+                        <a href="#" data-lang-key="nav_servicios">SERVICIOS
                             <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
                         </a>
                         <ul class="dropdown-content">
@@ -68,7 +68,7 @@
 
             <button class="menu-toggle" aria-label="Abrir menú">
                 <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
     </header>
@@ -80,7 +80,7 @@
             <div class="drawer-group">
                 <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
                 <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
-                <a href="lamarr-integrate.html" class="drawer-link sub-link active">INTEGRATE</a>
+                <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
                 <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
                 <a href="lamarr-secure.html" class="drawer-link sub-link">SECURE</a>
                 <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
@@ -111,55 +111,59 @@
             </div>
         </section>
 
-        <!-- CONTENIDO CLARO (VISTA ESCRITORIO) -->
-        <section class="page-section">
-            <div class="container">
-                
-                <div class="strategy-block reveal"> 
-                    <p data-lang-key="integrate_s1_p">En el núcleo de la transformación digital está la integración. LAMARR | INTEGRATE asegura que tus aplicaciones críticas (ERP, CRM, SCM) se comuniquen de manera eficiente, eliminando silos de datos y automatizando procesos de negocio de extremo a extremo.</p>
-                </div>
-
-                <div class="process-layout-container">
+        <!-- INICIO: CONTENIDO ESCRITORIO (SE OCULTA EN MÓVIL) -->
+        <div class="desktop-only-content">
+            <!-- CONTENIDO CLARO (VISTA ESCRITORIO) -->
+            <section class="page-section">
+                <div class="container">
                     
-                    <!-- Columna Izquierda: Lista estilo Timeline Sólido -->
-                    <div class="reveal">
-                        <h2 class="section-title-clean" data-lang-key="integrate_s1_h2">Integra tu Ecosistema Tecnológico</h2>
-
-                        <ul class="solid-process-list">
-                            <li class="solid-process-item">
-                                <h3 data-lang-key="integrate_s1_l1">SAP Cloud Platform Integration (CPI)</h3>
-                                <p>Diseño y gestión de flujos de integración robustos. Conectamos tu ERP SAP con el mundo exterior de forma segura y escalable.</p>
-                            </li>
-
-                            <li class="solid-process-item">
-                                <h3 data-lang-key="integrate_s1_l2">Conectividad Híbrida</h3>
-                                <p>Unificamos tus entornos On-Premise y Multi-Cloud. Creamos puentes seguros para que tus sistemas legacy hablen con la nube moderna.</p>
-                            </li>
-
-                            <li class="solid-process-item">
-                                <h3 data-lang-key="integrate_s1_l3">Integración de APIs</h3>
-                                <p>Creamos, publicamos y gestionamos APIs para exponer tus servicios de negocio, facilitando la innovación y la conexión con partners.</p>
-                            </li>
-
-                            <li class="solid-process-item">
-                                <h3 data-lang-key="integrate_s1_l4">Flujos de Datos (ETL/ELT)</h3>
-                                <p>Movemos tus datos de forma segura y eficiente. Pipelines automatizados para alimentar tus lagos de datos y plataformas de IA.</p>
-                            </li>
-                        </ul>
+                    <div class="strategy-block reveal"> 
+                        <p data-lang-key="integrate_s1_p">En el núcleo de la transformación digital está la integración. LAMARR | INTEGRATE asegura que tus aplicaciones críticas (ERP, CRM, SCM) se comuniquen de manera eficiente, eliminando silos de datos y automatizando procesos de negocio de extremo a extremo.</p>
                     </div>
 
-                    <!-- Columna Derecha: Imagen Visual Sticky -->
-                    <div class="sticky-image-container reveal">
-                        <img src="img/lamarr-integrate-visual.png" alt="Ecosistema de Integración SAP y Cloud">
+                    <div class="process-layout-container">
+                        
+                        <!-- Columna Izquierda: Lista estilo Timeline Sólido -->
+                        <div class="reveal">
+                            <h2 class="section-title-clean" data-lang-key="integrate_s1_h2">Integra tu Ecosistema Tecnológico</h2>
+
+                            <ul class="solid-process-list">
+                                <li class="solid-process-item">
+                                    <h3 data-lang-key="integrate_s1_l1">SAP Cloud Platform Integration (CPI)</h3>
+                                    <p>Diseño y gestión de flujos de integración robustos. Conectamos tu ERP SAP con el mundo exterior de forma segura y escalable.</p>
+                                </li>
+
+                                <li class="solid-process-item">
+                                    <h3 data-lang-key="integrate_s1_l2">Conectividad Híbrida</h3>
+                                    <p>Unificamos tus entornos On-Premise y Multi-Cloud. Creamos puentes seguros para que tus sistemas legacy hablen con la nube moderna.</p>
+                                </li>
+
+                                <li class="solid-process-item">
+                                    <h3 data-lang-key="integrate_s1_l3">Integración de APIs</h3>
+                                    <p>Creamos, publicamos y gestionamos APIs para exponer tus servicios de negocio, facilitando la innovación y la conexión con partners.</p>
+                                </li>
+
+                                <li class="solid-process-item">
+                                    <h3 data-lang-key="integrate_s1_l4">Flujos de Datos (ETL/ELT)</h3>
+                                    <p>Movemos tus datos de forma segura y eficiente. Pipelines automatizados para alimentar tus lagos de datos y plataformas de IA.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Columna Derecha: Imagen Visual Sticky -->
+                        <div class="sticky-image-container reveal">
+                            <img src="img/lamarr-integrate-visual.png" alt="Ecosistema de Integración SAP y Cloud">
+                        </div>
+                    </div>
+
+                    <div class="contact-button-container reveal" style="text-align: center; margin-top: 50px;">
+                        <a href="contact.html" class="btn-primary btn-glow" data-lang-key="integrate_s1_btn">Conecta tu ecosistema hoy</a>
                     </div>
                 </div>
-
-                <div class="contact-button-container reveal" style="text-align: center; margin-top: 50px;">
-                    <a href="contact.html" class="btn-primary btn-glow" data-lang-key="integrate_s1_btn">Conecta tu ecosistema hoy</a>
-                </div>
-            </div>
-        </section>
-        <!-- FIN VISTA ESCRITORIO -->
+            </section>
+            <!-- FIN VISTA ESCRITORIO -->
+        </div>
+        <!-- FIN: CONTENIDO ESCRITORIO -->
 
         <!-- VISTA MÓVIL -->
         <section class="mobile-section">
@@ -237,7 +241,7 @@
                         <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
                         <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
                         <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
-                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech-spa" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -253,7 +257,7 @@
             <div class="footer-links">
                 <a href="contact.html">Contacto</a>
                 <a href="noticias.html">Noticias</a>
-                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech-spa" target="_blank">LinkedIn</a>
             </div>
             <div class="footer-contact-info">
                 <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>

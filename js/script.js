@@ -1,5 +1,4 @@
-
-// Función para establecer el idioma
+// Función para establecer el idioma (Mantenida)
 function setLanguage(lang) {
     // translations se carga desde idiomas.js
     if (!translations[lang]) {
@@ -16,8 +15,6 @@ function setLanguage(lang) {
             // Manejar diferentes tipos de elementos (ej. placeholders en inputs)
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 if (element.placeholder !== undefined) {
-                    // Solo actualiza si 'placeholder' es una propiedad válida (evita errores en selects)
-                    // Y si el placeholder actual no es un espacio (usado para la animación de label flotante)
                     if(element.placeholder.trim().length > 0 || !element.placeholder) {
                          element.placeholder = translationData[key];
                     }
@@ -32,22 +29,13 @@ function setLanguage(lang) {
             }
              else {
                 // Para la mayoría de los elementos (p, h1, a, span, button, strong, etc.)
-                
-                // --- INICIO DE LA MODIFICACIÓN ---
-                // Verificamos si el elemento tiene hijos que sean elementos (como el SVG de la flecha)
-                const hasChildElements = Array.from(element.childNodes).some(node => node.nodeType === 1); // 1 = Element Node
+                const hasChildElements = Array.from(element.childNodes).some(node => node.nodeType === 1); 
 
-                if (hasChildElements && element.firstChild && element.firstChild.nodeType === 3) { // 3 = Text Node
-                    // Si tiene hijos elementos (SVG) Y su primer hijo es un nodo de texto
-                    // Solo reemplazamos el contenido de ese primer nodo de texto.
-                    // Esto preserva el SVG que viene después.
-                    element.firstChild.textContent = translationData[key] + " "; // Añadir espacio para separar del icono
+                if (hasChildElements && element.firstChild && element.firstChild.nodeType === 3) {
+                    element.firstChild.textContent = translationData[key] + " "; 
                 } else {
-                    // Si no tiene hijos elementos (es solo texto) o no empieza con texto,
-                    // usamos innerHTML para renderizar tags como <br> y <strong>
                     element.innerHTML = translationData[key];
                 }
-                // --- FIN DE LA MODIFICACIÓN ---
             }
         } else {
             // console.warn(`Clave de traducción no encontrada para '${key}' en '${lang}'`);
@@ -57,7 +45,6 @@ function setLanguage(lang) {
     // Guardar preferencia en localStorage
     localStorage.setItem('lang', lang);
 
-    // --- INICIO: MODIFICACIÓN PARA MÚLTIPLES BOTONES ---
     // Actualizar TODOS los botones principales
     const langBtnTexts = document.querySelectorAll('.lang-btn-text');
     if (langBtnTexts) {
@@ -83,65 +70,127 @@ function setLanguage(lang) {
             dropdown.classList.remove('show');
         });
     }
-    // --- FIN: MODIFICACIÓN PARA MÚLTIPLES BOTONES ---
 }
+
+
+// --- FUNCIÓN SCROLLSPY (Solo para Index.html) ---
+function activateScrollSpy(sectionIds, navLinksSelector) {
+    const desktopNavLinks = document.querySelectorAll(navLinksSelector);
+    
+    if (desktopNavLinks.length === 0) return;
+
+    // Crear mapa de enlaces por href (usamos ID para mapear)
+    const navMap = {};
+    desktopNavLinks.forEach(link => {
+        let href = link.getAttribute('href');
+        if (href.startsWith('#')) {
+            href = href.substring(1);
+        } else if (href.toLowerCase().includes('index.html') || href === 'javascript:void(0);') {
+            // Mapeamos el enlace "INICIO" y el enlace "SERVICIOS" (dropdown sin href)
+            href = 'hero-section'; // Asumimos que el inicio es el Hero
+        }
+        navMap[href] = link;
+    });
+
+    const headerHeight = 70;
+    const rootMarginValue = `-${headerHeight}px 0px 0px 0px`; 
+
+    const observerOptions = {
+        root: null, 
+        rootMargin: rootMarginValue, 
+        threshold: 0 
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio > 0) {
+                const targetId = entry.target.id;
+
+                // Limpiamos todos los estados activos del menú principal y drawer
+                document.querySelectorAll('.desktop-nav a').forEach(a => {
+                    // Mantener el estado activo en los sub-enlaces de servicio
+                    if (!a.closest('.dropdown-content')) {
+                        a.classList.remove('active');
+                    }
+                });
+                document.querySelectorAll('.drawer-nav a').forEach(a => a.classList.remove('active'));
+
+                // Marcar el enlace directo del menú principal
+                const targetLink = document.querySelector(`.desktop-nav a[href="#${targetId}"]`) || document.querySelector(`.desktop-nav a[href*="${targetId.replace('-mobile', '')}.html"]`);
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+
+                // Marcar el enlace directo del drawer
+                const drawerLink = document.querySelector(`.mobile-drawer a[href="#${targetId}"]`) || document.querySelector(`.mobile-drawer a[href*="${targetId.replace('-mobile', '')}.html"]`); 
+                if (drawerLink) {
+                    drawerLink.classList.add('active');
+                }
+                
+                // --- Lógica Especial para el Dropdown SERVICIOS ---
+                if (targetId.includes('services-section')) {
+                     // 1. Marcar el enlace padre "SERVICIOS" en el desktop
+                     const desktopDropdown = document.querySelector('.desktop-nav .dropdown a[data-lang-key="nav_servicios"]');
+                     if (desktopDropdown) desktopDropdown.classList.add('active');
+
+                     // 2. Marcar el enlace "SERVICIOS" en el drawer
+                     const mobileServiceLink = document.querySelector('.drawer-nav a[data-lang-key="nav_servicios"]');
+                     if (mobileServiceLink) mobileServiceLink.classList.add('active');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observar cada sección por ID
+    sectionIds.forEach(id => {
+        const target = document.getElementById(id);
+        if (target) {
+            observer.observe(target);
+        }
+    });
+}
+// --- FIN FUNCIÓN SCROLLSPY ---
 
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    function initMobileMenu() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mobileNavContainer = document.querySelector('.mobile-nav-container');
-        const menuIconOpen = document.querySelector('#menu-icon-open');
-        const menuIconClose = document.querySelector('#menu-icon-close');
+    // Función para activar el estado activo del enlace al cargar (para páginas de servicio)
+    function activateNavOnLoad() {
+        // Obtenemos el nombre de archivo actual (ej: lamarr-cloud.html)
+        const currentPath = window.location.pathname.split('/').pop().toLowerCase() || 'index.html';
 
-        if (menuToggle && mobileNavContainer && menuIconOpen && menuIconClose) {
-            menuToggle.addEventListener('click', function() {
-                mobileNavContainer.classList.toggle('open');
+        document.querySelectorAll('.desktop-nav a, .drawer-nav a').forEach(a => {
+            const hrefPath = a.getAttribute('href')?.split('/').pop().toLowerCase() || 'index.html';
+            
+            // 1. Marcar el sub-enlace o enlace principal si es la página actual
+            if (hrefPath === currentPath) {
+                a.classList.add('active');
                 
-                const isOpen = mobileNavContainer.classList.contains('open');
-                menuIconOpen.style.display = isOpen ? 'none' : 'block';
-                menuIconClose.style.display = isOpen ? 'block' : 'none';
-            });
-        }
+                // 2. Marcar el enlace padre "SERVICIOS" si es una página de servicio
+                if (['lamarr-cloud.html', 'lamarr-integrate.html', 'lamarr-data-ai.html', 'lamarr-secure.html', 'services-sap.html'].includes(currentPath)) {
+                    
+                    // Marcar en escritorio (el elemento A que tiene el data-lang-key="nav_servicios")
+                    const desktopDropdown = document.querySelector('.desktop-nav .dropdown a[data-lang-key="nav_servicios"]');
+                    if (desktopDropdown) desktopDropdown.classList.add('active');
 
-        const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
-        submenuToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const submenuContent = this.nextElementSibling;
-                const arrow = this.querySelector('.dropdown-arrow');
-
-                if (submenuContent && submenuContent.classList.contains('mobile-submenu-content')) {
-                    if (submenuContent.style.maxHeight) {
-                        submenuContent.style.maxHeight = null;
-                        if (arrow) {
-                            arrow.classList.remove('rotated');
-                        }
-                    } else {
-                        submenuContent.style.maxHeight = submenuContent.scrollHeight + "px";
-                        if (arrow) {
-                            arrow.classList.add('rotated');
-                        }
-                    }
+                    // Marcar en móvil (el enlace de "SERVICIOS" en el drawer)
+                    const mobileServiceLink = document.querySelector('.drawer-nav a[data-lang-key="nav_servicios"]');
+                    if (mobileServiceLink) mobileServiceLink.classList.add('active');
                 }
-            });
+            } else {
+                 a.classList.remove('active');
+            }
         });
     }
 
-    // --- INICIO: MODIFICADO - Función para MÚLTIPLES botones de idioma ---
     function initLanguageSwitcher() {
-        // Find ALL switcher components on the page
         const switchers = document.querySelectorAll('.language-switcher');
-
         if (switchers.length === 0) return;
 
-        // Cierra todos los dropdowns si se hace clic fuera
         window.addEventListener('click', function(e) {
             switchers.forEach(switcher => {
                 const dropdown = switcher.querySelector('.lang-dropdown');
                 if (dropdown && dropdown.classList.contains('show')) {
-                    // Si el clic fue fuera del switcher actual
                     if (!switcher.contains(e.target)) {
                         dropdown.classList.remove('show');
                     }
@@ -149,66 +198,59 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-        // Asignar eventos a CADA switcher
         switchers.forEach(switcher => {
             const langBtn = switcher.querySelector('.lang-btn');
             const langDropdown = switcher.querySelector('.lang-dropdown');
 
             if (langBtn && langDropdown) {
-                // 1. Abrir/Cerrar ESTE dropdown con SU botón
                 langBtn.addEventListener('click', function(e) {
-                    e.stopPropagation(); // Evita que el clic se propague al window
-                    
-                    // Primero, cierra otros dropdowns abiertos
+                    e.stopPropagation(); 
                     switchers.forEach(otherSwitcher => {
                         if (otherSwitcher !== switcher) {
                             otherSwitcher.querySelector('.lang-dropdown')?.classList.remove('show');
                         }
                     });
-                    
-                    // Luego, alterna el actual
                     langDropdown.classList.toggle('show');
                 });
 
-                // 2. Evita que el clic en el dropdown lo cierre
                 langDropdown.addEventListener('click', function(e) {
                     e.stopPropagation();
                 });
 
-                // 3. Asignar eventos a los enlaces de idioma
                 const langLinks = langDropdown.querySelectorAll('a[data-lang]');
                 langLinks.forEach(link => {
                     link.addEventListener('click', function(e) {
                         e.preventDefault();
                         const selectedLang = this.getAttribute('data-lang');
-                        // 'setLanguage' está definido globalmente
                         setLanguage(selectedLang); 
-                        // Oculta ESTE dropdown después de seleccionar (ya lo hace setLanguage, pero por si acaso)
                         langDropdown.classList.remove('show'); 
                     });
                 });
             }
         });
     }
-    // --- FIN MODIFICADO ---
 
-
-    function initAnimations() {
-        // ... (código de animación existente si lo hay) ...
-    }
 
     // --- Carga inicial ---
-    // Verificamos que 'translations' se haya cargado desde idiomas.js
     if (typeof translations === 'undefined') {
         console.error("Error: El archivo idiomas.js no se cargó o no se cargó a tiempo.");
         return;
     }
 
-    initAnimations();
-    initMobileMenu();
-    initLanguageSwitcher(); // Llamada a la función actualizada
+    // Nota: initMobileMenu ya está en mobile-script.js
+    activateNavOnLoad(); // Ejecutar lógica de activación de enlaces al cargar
+    initLanguageSwitcher(); 
     
-    // Establecer idioma al cargar la página
-    const savedLang = localStorage.getItem('lang') || 'es'; // 'es' como default
+    const savedLang = localStorage.getItem('lang') || 'es'; 
     setLanguage(savedLang);
+
+    // --- ACTIVACIÓN DEL SCROLLSPY (Solo en Index) ---
+    const path = window.location.pathname.split('/').pop().toLowerCase() || 'index.html';
+    if (path === 'index.html' || path === '') {
+        // Usamos los IDs de las secciones principales del index para el ScrollSpy
+        const sectionIds = ['hero-section', 'services-section-mobile', 'partners-section', 'presencia-global', 'cta-final-section']; 
+        
+        // El selector apunta solo a los enlaces de anclaje de la navegación de escritorio (que tienen hash o son el padre)
+        activateScrollSpy(sectionIds, '.desktop-nav a');
+    }
 });

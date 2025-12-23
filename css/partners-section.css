@@ -145,39 +145,50 @@
 /* --- FIN: Nuevos estilos del Slider --- */
 
 
-@media (max-width: 768px) {
+@media (max-width: 992px) { /* Usamos 992px para sincronizar con mobile-style.css */
     .partners-slider-container {
         width: 100%; 
     }
 
-    /* Mostrar flechas también en móvil si es necesario, o mantenerlas ocultas */
-    .slider-arrow {
-        display: none; /* Dejamos ocultas las flechas en móvil para una interfaz más limpia */
+    /* Ocultamos las flechas y puntos del slider de escritorio en vista móvil */
+    .slider-arrow, .slider-dots {
+        display: none !important;
     }
 
-    .partners-slide {
-        padding: 0 10px; /* Ajuste de padding en móvil */
-        justify-content: space-evenly; /* Distribuir uniformemente los logos */
+    /* El .partners-grid-mobile se controla su display en mobile-style.css, aseguramos el estilo aquí */
+    
+    .partners-grid-mobile {
+        /* Aseguramos que el contenedor de logos ocupe todo el ancho disponible */
+        width: 100%;
+        max-width: 100%;
     }
 
     .partner-item {
-        max-width: 30%; /* Para que quepan 3-4 logos mejor en móvil */
+        max-width: 45%; /* Para que los logos sean más grandes y visibles, 2 por fila */
         padding: 0 8px;
-        width: auto; /* Dejar que flex lo calcule mejor en móvil */
+        width: 100%; /* Ocupar el ancho permitido por max-width */
+        /* Eliminamos el ancho base en móvil para que flex lo maneje mejor */
     }
 
     .partner-item img {
-        /* CAMBIO: Logos más pequeños en móvil */
-        height: 45px; 
-        max-width: 120px; /* Ancho máximo en móvil */
+        /* FIX CRÍTICO DE VISIBILIDAD: Aumentamos el tamaño máximo para que sean legibles */
+        height: auto; /* Altura automática */
+        max-height: 80px; /* Altura máxima para control */
+        max-width: 100%; /* Ocupar todo el ancho disponible */
+        min-width: 80px; /* Asegurar un tamaño mínimo */
+        
         filter: grayscale(0%); /* Quitar grayscale en móvil */
-        opacity: 1;
+        opacity: 1; /* Quitar opacidad en móvil */
+        
+        /* Aseguramos que el logo del partner esté centrado verticalmente */
+        align-self: center;
     }
 
-    /* CAMBIO: Ajuste específico para el logo de Huawei en móvil */
-    .partner-item img[alt="Logo Huawei"] {
-        padding: 4px 9px; /* Ajuste de padding en móvil */
-        max-width: 140px;
-        height: 45px;
+    /* FIX CRÍTICO: Ajuste específico para el logo de Huawei en móvil para que se centre mejor con el padding. */
+    .partner-item img[alt="Logo Huawei"], .dark-logo-bg img[alt="Logo WIT"] {
+        padding: 8px 10px; /* Ajuste de padding en móvil */
+        max-height: 80px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 }

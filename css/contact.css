@@ -38,6 +38,7 @@
     -webkit-backdrop-filter: blur(8px);
     border-radius: 12px;
     padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .contact-form-container h2 {
@@ -255,66 +256,78 @@
         display: block;
     }
     .contact-video-wrapper {
-        position: relative;
-        padding-top: 56.25%;
-        height: 0;
-        z-index: 1;
+        display: none; /* Ocultar video en móvil para optimizar rendimiento */
     }
-    .contact-infinity-video {
-        opacity: 1;
-    }
+    /* --- MEJORAS VISUALES EN EL FORMULARIO MÓVIL --- */
     .contact-form-container {
         border-radius: 0;
-        padding: 40px 15px;
+        padding: 25px 20px; /* Reducir padding */
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
-        background: var(--color-background);
+        background: var(--color-background); /* Fondo Blanco */
+        box-shadow: none;
+        margin-top: 0;
     }
     .contact-form-container h2 {
-        color: var(--color-text);
+        color: var(--color-text); /* Título oscuro */
+        font-size: 2.2rem;
     }
     .storytelling-text {
-        color: var(--color-text-secondary);
+        color: var(--color-text-secondary); /* Texto gris */
+        font-size: 1rem;
+        margin-bottom: 15px;
     }
     
+    /* Campos de formulario */
     #lamarr-contact-form input,
     #lamarr-contact-form textarea,
     #lamarr-contact-form select {
-        background: #fff;
+        background: #f8fafc; /* Fondo gris claro */
         border: 1px solid var(--color-border);
         color: var(--color-text);
+        padding: 12px;
+        font-size: 0.95rem;
     }
     #lamarr-contact-form input:focus,
     #lamarr-contact-form textarea:focus,
     #lamarr-contact-form select:focus {
         border-color: var(--color-primary);
-        box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
         background-color: #fff;
     }
+    
+    /* Etiquetas Flotantes */
     #lamarr-contact-form label {
-        color: #999;
-        background-color: var(--color-background);
-    }
-
-    #lamarr-contact-form label.label-select {
-        top: -10px;
-        font-size: 0.8em;
-        color: var(--color-primary);
-        background-color: var(--color-background);
+        color: var(--color-text-secondary);
+        background-color: transparent;
+        top: 12px;
+        left: 12px;
+        font-size: 0.95rem;
     }
 
     #lamarr-contact-form input:focus + label,
     #lamarr-contact-form textarea:focus + label,
     #lamarr-contact-form input:not(:placeholder-shown) + label,
-    #lamarr-contact-form textarea:not(:placeholder-shown) + label {
-        top: -10px;
-        font-size: 0.8em;
-        color: var(--color-primary);
-        background-color: var(--color-background);
+    #lamarr-contact-form textarea:not(:placeholder-shown) + label,
+    #lamarr-contact-form label.label-select {
+        top: -8px;
+        font-size: 0.75rem;
+        color: var(--color-primary); /* Texto de etiqueta en azul */
+        background-color: var(--color-background); /* Fondo blanco para aislar */
+        padding: 0 4px;
+        left: 10px;
     }
-    
-    #lamarr-contact-form select:invalid {
-        color: #999;
+
+    #lamarr-contact-form textarea {
+        min-height: 120px;
+    }
+
+    /* Botón */
+    #lamarr-contact-form button {
+        width: 100%;
+        padding: 14px 30px;
+        font-weight: 700;
+        border-radius: 50px;
     }
 }
 

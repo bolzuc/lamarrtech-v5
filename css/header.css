@@ -154,6 +154,8 @@ nav.desktop-nav li.dropdown:hover .dropdown-arrow {
     z-index: 1200;
 }
 
+/* CORRECCIÓN: Evitar que el menú de idioma en el header se oculte en móvil si está presente */
+/* Este div ya se oculta correctamente con mobile-style.css en móvil si está en el header */
 .language-switcher:hover .lang-dropdown {
     opacity: 1;
     visibility: visible;
@@ -191,87 +193,45 @@ nav.desktop-nav li.dropdown:hover .dropdown-arrow {
     border: none;
     cursor: pointer;
     color: var(--color-text);
+    position: relative; /* Para posicionar los íconos de hamburguesa/cierre */
+    z-index: 1001; /* Asegurar que esté por encima de la navegación desktop */
 }
 
-/* --- MENÚ MÓVIL --- */
+/* Manejo de íconos en el toggle: Ocultamos el cierre por defecto */
+/* Se invierte la lógica: por defecto se muestra la hamburguesa */
+.menu-toggle #menu-icon-open {
+    display: block; 
+}
+.menu-toggle #menu-icon-close {
+    display: none; 
+}
+
+/* Cuando el toggle tiene la clase 'active' (añadida por JS), mostramos el ícono de cierre */
+.menu-toggle.active #menu-icon-open {
+    display: none;
+}
+
+.menu-toggle.active #menu-icon-close {
+    display: block;
+}
+
+
+/* --- MENÚ MÓVIL (Clásico, si existe, lo ocultamos) --- */
 /*
-   NOTA: Esta sección se oculta si la página está usando el patrón de código único,
-   donde el Drawer Menu se inyecta y controla por mobile-style.css
+   NOTA: Esta sección se comenta o mantiene en display: none
+   para dar control total al Drawer/Overlay de mobile-style.css
 */
 
 .mobile-nav-container {
     display: none; 
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border-top: 1px solid var(--color-border);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    z-index: 999;
-    padding: 20px;
-    overflow-y: auto;
-    max-height: calc(100vh - 70px);
-}
-
-.mobile-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.mobile-nav li {
-    border-bottom: 1px solid #f1f1f1;
-}
-
-.mobile-nav li:last-child {
-    border-bottom: none;
-}
-
-.mobile-nav a {
-    display: block;
-    padding: 15px 0;
-    text-decoration: none;
-    color: var(--color-text);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-/* Submenú Móvil */
-.mobile-submenu-content {
-    display: none;
-    background-color: #f8f9fa;
-    padding-left: 20px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.mobile-submenu-content.active {
-    display: block;
-}
-
-.mobile-submenu-content li {
-    border-bottom: none;
-}
-
-.mobile-submenu-content a {
-    font-size: 0.95rem;
-    padding: 10px 0;
-    color: var(--color-text-secondary);
-}
-
-/* Switcher Idioma Móvil */
-.mobile-nav .language-switcher {
-    margin-top: 20px;
-    display: block;
+    /* ... (resto de estilos mobile-nav-container) ... */
 }
 
 /* --- MEDIA QUERIES --- */
 @media (max-width: 992px) {
     nav.desktop-nav { display: none; }
-    .nav-wrapper .language-switcher { display: none; }
+    /* El language-switcher se oculta en mobile-style.css, pero lo aseguramos aquí también si no está en el drawer */
+    .language-switcher { display: none; } 
     .menu-toggle { display: block; }
-    /* Si estás usando la estructura clásica de escritorio: */
-    /* .mobile-nav-container.active { display: block; } */
-    /* Si estás usando el patrón de código único: El control es por mobile-style.css */
+    /* Ya no necesitamos .mobile-nav-container.active */
 }

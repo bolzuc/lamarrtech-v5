@@ -1,4 +1,4 @@
-/* home-footer.css - Estilos exclusivos para el footer del Index */
+/* home-footer.css - Estilos exclusivos para el footer del Index (Aplicados Globalmente) */
 
 /* Sobreescribimos los estilos base solo cuando este archivo se carga */
 
@@ -8,6 +8,8 @@ footer.home-footer {
     border-top: 1px solid #1e293b;
     padding-top: 80px;
     position: relative;
+    /* Aseguramos que el contenido esté centrado en el footer de escritorio */
+    text-align: left; 
 }
 
 /* Efecto de luz superior */
@@ -40,9 +42,24 @@ footer.home-footer .footer-col h4::after {
     box-shadow: 0 0 8px var(--color-primary);
 }
 
+/* --- AJUSTE CRÍTICO: FORZAR COLUMNAS EN ESCRITORIO --- */
+/* Esta regla asegura el diseño de 3 columnas en la imagen (image_088023.png) */
+/* El display: grid ya está en .footer-grid, pero reforzamos la columna aquí */
+@media (min-width: 992px) {
+    footer.home-footer .footer-grid {
+        display: grid;
+        /* Forzar 3 columnas de ancho similar */
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 40px;
+        text-align: left; /* Asegurar alineación izquierda del contenido de la grilla */
+    }
+}
+
+
 /* Enlaces en modo oscuro */
 footer.home-footer .footer-col a {
     color: #94a3b8;
+    text-align: left; /* Asegurar que los enlaces también se alineen a la izquierda */
 }
 
 footer.home-footer .footer-col a:hover {
@@ -67,4 +84,20 @@ footer.home-footer .footer-bottom {
     color: #64748b;
     padding-top: 30px;
     padding-bottom: 30px;
+    text-align: center; /* El copyright suele ir centrado */
+}
+
+/* Estilos de footer móvil (se asegura el fondo oscuro) */
+footer.mobile-footer {
+    background-color: #020617 !important; /* Fondo oscuro forzado */
+    color: #94a3b8 !important;
+    border-top: 1px solid #1e293b !important;
+}
+
+footer.mobile-footer .footer-links a {
+    color: #cbd5e1 !important;
+}
+
+footer.mobile-footer .footer-contact-info p {
+    color: #94a3b8 !important;
 }

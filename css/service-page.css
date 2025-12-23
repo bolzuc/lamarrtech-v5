@@ -835,8 +835,10 @@ body {
 
 /* RESPONSIVIDAD SAP */
 @media (max-width: 768px) {
-    .sap-cards-grid {
-        gap: 20px;
+    /* OCULTAR ELEMENTOS DE ESCRITORIO */
+    .sap-cards-grid,
+    .sap-results-list {
+        display: none;
     }
     
     .sap-card-clean {

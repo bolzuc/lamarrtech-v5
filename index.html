@@ -231,6 +231,7 @@
         }
 
         /* --- LAYOUTS MÓVILES (Index) --- */
+        /* Estas clases se ocultan en móvil por mobile-style.css */
         .mobile-snap-scroll, .partners-grid-mobile { display: none; }
 
         @media (max-width: 767px) {
@@ -253,7 +254,8 @@
             
             <nav class="desktop-nav">
                 <ul>
-                    <li><a href="index.html" class="active" data-lang-key="nav_inicio">INICIO</a></li>
+                    <!-- Desktop: INICIO (Clase 'active' la maneja JS) -->
+                    <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
                     <li class="dropdown">
                         <a href="#" data-lang-key="nav_servicios">SERVICIOS
                             <svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
@@ -267,6 +269,7 @@
                         </ul>
                     </li>
                     <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
+                    <!-- Desktop: CONTACTO (Clase 'active' la maneja JS) -->
                     <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
                 </ul>
             </nav>
@@ -283,10 +286,10 @@
                 </div>
             </div>
 
-            <!-- BOTÓN MÓVIL (Activo en móvil por CSS) -->
+            <!-- BOTÓN MÓVIL (Activo en móvil por CSS/JS) -->
             <button class="menu-toggle" aria-label="Abrir menú">
                 <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
     </header>
@@ -294,16 +297,19 @@
     <!-- DRAWER MENU (NAVEGACIÓN MÓVIL AGRESIVA) -->
     <div class="mobile-drawer" id="mobile-drawer">
         <nav class="drawer-nav">
-            <a href="index.html" class="drawer-link active" data-lang-key="nav_inicio">INICIO</a>
+            <!-- Mobile: INICIO (Clase 'active' la maneja JS) -->
+            <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
             <div class="drawer-group">
                 <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
+                <!-- Sub-enlaces de servicios -->
                 <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
                 <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
                 <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
                 <a href="lamarr-secure.html" class="drawer-link sub-link">SECURE</a>
                 <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
             </div>
-            <a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a>
+            <li><a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a></li>
+            <!-- Mobile: CONTACTO (Clase 'active' la maneja JS) -->
             <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
         </nav>
         <div class="drawer-footer">
@@ -328,7 +334,7 @@
                     
                     <a href="contact.html" class="btn-primary hero-cta" data-lang-key="hero_cta_btn">Agenda una Consultoría Gratuita</a>
 
-                    <!-- SECCIÓN DE TARJETAS (VISTA DE ESCRITORIO) -->
+                    <!-- SECCIÓN DE TARJETAS (VISTA DE ESCRITORIO - Se oculta en móvil) -->
                     <div id="services-container" class="hero-solutions-grid" style="margin-top: 60px;">
                         <div class="hero-solution-card">
                             <div class="card-icon-container">
@@ -376,7 +382,7 @@
                     </div>
                     <!-- FIN VISTA DE ESCRITORIO -->
 
-                    <!-- SECCIÓN DE TARJETAS MÓVILES (VISTA MÓVIL) -->
+                    <!-- SECCIÓN DE TARJETAS MÓVILES (VISTA MÓVIL - Se MUESTRA en móvil) -->
                     <div class="mobile-snap-scroll">
                         <div class="snap-card">
                             <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
@@ -419,6 +425,7 @@
             <div class="container">
                 <h2 data-lang-key="partners_h2">Aliados que construyen un futuro con Lamarr</h2>
                 
+                <!-- SLIDER DE ESCRITORIO (Oculto en móvil) -->
                 <div class="partners-slider-container">
                     <div class="partners-slider-track">
                         <div class="partners-slide">
@@ -465,7 +472,7 @@
                     </div>
                 </div>
 
-                <!-- GRUPO DE LOGOS MÓVIL -->
+                <!-- GRUPO DE LOGOS MÓVIL (Se muestra en móvil) -->
                 <div class="partners-grid-mobile">
                     <div class="partner-item"><img src="img/logos/Amazon_Web_Services-Logo.png" alt="Logo AWS"></div>
                     <div class="partner-item"><img src="img/logos/google-cloud-platform.png" alt="Logo Google Cloud"></div>
@@ -485,7 +492,7 @@
 
                 <div class="presencia-grid">
                     <div id="map-container">
-                        <div id="map"></div>
+                                                <div id="map"></div>
                     </div>
                     
                     <div class="presencia-tabla-container">
@@ -574,7 +581,7 @@
                         <li><a href="index.html" data-lang-key="footer_link_home">Inicio</a></li>
                         <li><a href="noticias.html" data-lang-key="footer_link_news">Noticias</a></li>
                         <li><a href="contact.html" data-lang-key="footer_link_contact">Contacto</a></li>
-                        <li><a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://www.linkedin.com/company/lamarr-tech-spa" target="_blank">LinkedIn</a></li>
                     </ul>
                 </div>
             </div>
@@ -590,7 +597,7 @@
             <div class="footer-links">
                 <a href="contact.html">Contacto</a>
                 <a href="noticias.html">Noticias</a>
-                <a href="https://www.linkedin.com/company/lamarr-tech" target="_blank">LinkedIn</a>
+                <a href="https://www.linkedin.com/company/lamarr-tech-spa" target="_blank">LinkedIn</a>
             </div>
             <div class="footer-contact-info">
                 <p><i class="fa-solid fa-envelope"></i> contacto@lamarrtech.cl</p>
@@ -672,17 +679,17 @@
                 }).addTo(map);
 
                 const logoIcon = L.divIcon({
-                    html: '<img src="img/infinity-modern-bluedark.png" alt="Lamarr Tech HQ">',
-                    className: 'marker-hq-logo',
-                    iconSize: [28, 28],
-                    iconAnchor: [14, 14]
+                    html: '<div class="marker-hq-logo"><img src="img/infinity-modern-bluedark.png" alt="Lamarr Tech HQ"></div>',
+                    className: '', // No className aquí, usamos el div interno
+                    iconSize: [40, 40], // Tamaño ajustado
+                    iconAnchor: [20, 20]
                 });
 
                 const icons = {
                     hq: logoIcon,
-                    hub: L.divIcon({ className: 'custom-marker marker-hub', iconSize: [24, 24], iconAnchor: [12, 12] }),
-                    delivery: L.divIcon({ className: 'custom-marker marker-delivery', iconSize: [24, 24], iconAnchor: [12, 12] }),
-                    desarrollo: L.divIcon({ className: 'custom-marker marker-desarrollo', iconSize: [24, 24], iconAnchor: [12, 12] })
+                    hub: L.divIcon({ html: '<div class="custom-marker marker-hub"></div>', className: 'custom-marker-wrapper', iconSize: [24, 24], iconAnchor: [12, 12] }),
+                    delivery: L.divIcon({ html: '<div class="custom-marker marker-delivery"></div>', className: 'custom-marker-wrapper', iconSize: [24, 24], iconAnchor: [12, 12] }),
+                    desarrollo: L.divIcon({ html: '<div class="custom-marker marker-desarrollo"></div>', className: 'custom-marker-wrapper', iconSize: [24, 24], iconAnchor: [12, 12] })
                 };
                 
                 function getIcon(tipo) {

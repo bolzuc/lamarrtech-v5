@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Lamarr Tech</title>
-    <!-- Favicon - NUEVO -->
     <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
     <link rel="shortcut icon" href="img/infinity-modern-bluedark.png" type="image/png">
     <link rel="apple-touch-icon" href="img/infinity-modern-bluedark.png">
@@ -12,18 +11,15 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/contact.css">
-    <!-- Se mantiene el footer.css base, pero se añade home-footer.css para el estilo completo -->
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/home-footer.css"> 
     <link rel="stylesheet" href="css/animations.css">
     
-    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
     <link rel="stylesheet" href="css/mobile-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
 </head>
 <body>
-    <!-- HEADER DE ESCRITORIO -->
     <header>
         <div class="container">
             <div class="logo">
@@ -45,7 +41,6 @@
                         </ul>
                     </li>
                     <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
-                    <!-- Se remueve la clase active estática: JS la aplica si es la página actual -->
                     <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
                 </ul>
             </nav>
@@ -62,7 +57,6 @@
                 </div>
             </div>
 
-            <!-- BOTÓN MÓVIL (Activo en móvil por CSS) -->
             <button class="menu-toggle" aria-label="Abrir menú">
                 <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -70,7 +64,6 @@
         </div>
     </header>
 
-    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL) -->
     <div class="mobile-drawer" id="mobile-drawer">
         <nav class="drawer-nav">
             <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
@@ -83,7 +76,6 @@
                 <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
             </div>
             <a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a>
-            <!-- Se remueve la clase active estática: JS la aplica si es la página actual -->
             <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
         </nav>
         <div class="drawer-footer">
@@ -95,8 +87,6 @@
         </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay"></div>
-    <!-- FIN DRAWER -->
-
     <main>
         <section class="contact-hero-section">
             <div class="contact-video-wrapper">
@@ -107,12 +97,10 @@
             
             <div class="container">
                 <div class="contact-form-container">
-                    <h2 data-lang-key="contact_h2">Iniciemos la Conversación</h2>
+                    <h2 data-lang-key="contact_h2">Hablemos de tu escenario</h2>
+                    
                     <p class="storytelling-text" data-lang-key="contact_p1">
-                        Has explorado nuestra innovación global en IA y nuestra ejecución experta en Cloud y SAP. Has visto cómo transformamos datos en resultados para líderes de la industria.
-                    </p>
-                    <p class="storytelling-text" data-lang-key="contact_p2">
-                        Ahora, es tu turno. Cada gran transformación comienza con una simple conversación. Ya sea que tengas un desafío complejo de migración, un proyecto de IA o una consulta sobre optimización, nuestro equipo está listo para escucharte.
+                        Ayudamos a equipos TI y gerencias a reducir riesgos, mejorar la estabilidad de SAP y escalar plataformas Cloud. Cuéntanos tu desafío actual y un experto te contactará (sin vendedores, solo consultores).
                     </p>
 
                     <form id="lamarr-contact-form">
@@ -135,12 +123,12 @@
                             <label for="telefono" data-lang-key="form_phone">Teléfono (Opcional)</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="empresa" name="empresa" placeholder=" ">
-                            <label for="empresa" data-lang-key="form_company">Nombre de la Empresa (Opcional)</label>
+                            <input type="text" id="empresa" name="empresa" required placeholder=" ">
+                            <label for="empresa" data-lang-key="form_company">Nombre de la Empresa</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="cargo" name="cargo" placeholder=" ">
-                            <label for="cargo" data-lang-key="form_role">Cargo (Opcional)</label>
+                            <input type="text" id="cargo" name="cargo" required placeholder=" ">
+                            <label for="cargo" data-lang-key="form_role">Cargo</label>
                         </div>
                         <div class="form-group">
                             <select id="servicio" name="servicio" required>
@@ -158,7 +146,7 @@
                             <textarea id="message" name="message" required placeholder=" "></textarea>
                             <label for="message" data-lang-key="form_message">Mensaje</label>
                         </div>
-                        <!-- BOTÓN AZUL CORPORATIVO CORREGIDO -->
+                        
                         <button type="submit" class="btn-primary" data-lang-key="form_submit_btn">Enviar</button>
                         
                         <p style="margin-top: 15px; font-size: 0.95rem; color: #a5c9ff;" data-lang-key="form_response_time">
@@ -180,7 +168,6 @@
         </div>
     </div>
 
-    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
     <footer class="home-footer">
         <div class="container">
             <div class="footer-grid">
@@ -218,7 +205,6 @@
         </div>
     </footer>
     
-    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
     <footer class="mobile-footer">
         <div class="container">
             <div class="footer-links">
@@ -233,9 +219,6 @@
             <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
         </div>
     </footer>
-    <!-- FIN FOOTER MÓVIL -->
-     
-    <!-- Se carga el script principal de JS que ahora incluye la lógica de idioma -->
     <script src="js/script.js"></script>
     <script src="js/idiomas.js"></script>
     <script src="js/mobile-script.js"></script>

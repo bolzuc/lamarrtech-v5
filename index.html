@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <!-- INICIO: AJUSTE SEO -->
     <meta name="description" content="Consultoría experta en SAP Business One y S/4HANA, Migración Multicloud (AWS, GCP, Huawei Cloud), e Inteligencia Artificial aplicada al negocio en Chile y Latam.">
     <meta name="keywords" content="SAP Business One Chile, S/4HANA Chile, Migración AWS Latam, Consultoría SAP Santiago, IA para empresas Chile, Integración SAP Cloud, Cloud Consulting Chile, Transformación Digital Latam">
-    <!-- FIN: AJUSTE SEO -->
     <meta name="author" content="Lamarr Tech">
     <link rel="canonical" href="https://www.lamarrtech.cl/">
 
@@ -75,14 +73,11 @@
     <link rel="stylesheet" href="css/header.css">
     
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/footer.css"> <!-- Estilo base -->
-    <link rel="stylesheet" href="css/home-footer.css"> <!-- Estilo específico Home -->
-    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/footer.css"> <link rel="stylesheet" href="css/home-footer.css"> <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/partners-section.css">
     <link rel="stylesheet" href="css/premium-theme.css">
     <link rel="stylesheet" href="css/hero.css">
     
-    <!-- NUEVOS ESTILOS MÓVILES (CRÍTICO) -->
     <link rel="stylesheet" href="css/mobile-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -241,11 +236,70 @@
             #map { height: 350px; }
             .presencia-tabla-body td { display: block; width: 100%; }
         }
+
+        /* === QUICK WINS: Estilos específicos para evitar conflictos === */
+        
+        /* ESTILO CORREGIDO DEL BOTÓN SECUNDARIO */
+        .btn-hero-outline {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid #ffffff;
+            color: #ffffff !important; /* Forzamos color blanco */
+            background: transparent;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 15px;
+            vertical-align: middle; /* Alineación vertical corregida */
+            box-shadow: none; 
+        }
+
+        .btn-hero-outline:hover {
+            background-color: #ffffff;
+            color: var(--color-primary, #0056b3) !important;
+            border-color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Alineación del botón primario para asegurar consistencia */
+        .hero-cta {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        .trust-metrics {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Ajuste móvil para los botones */
+        @media (max-width: 767px) {
+            .btn-hero-outline {
+                display: block;
+                margin-left: 0;
+                margin-top: 15px;
+                text-align: center;
+                width: 100%;
+            }
+            .hero-cta {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
     
-    <!-- HEADER DE ESCRITORIO (VISIBILIDAD CONTROLADA POR mobile-style.css) -->
     <header>
         <div class="container">
             <div class="logo">
@@ -254,7 +308,6 @@
             
             <nav class="desktop-nav">
                 <ul>
-                    <!-- Desktop: INICIO (Clase 'active' la maneja JS) -->
                     <li><a href="index.html" data-lang-key="nav_inicio">INICIO</a></li>
                     <li class="dropdown">
                         <a href="#" data-lang-key="nav_servicios">SERVICIOS
@@ -269,7 +322,6 @@
                         </ul>
                     </li>
                     <li><a href="noticias.html" data-lang-key="nav_noticias">NOTICIAS</a></li>
-                    <!-- Desktop: CONTACTO (Clase 'active' la maneja JS) -->
                     <li><a href="contact.html" data-lang-key="nav_contacto">CONTACTO</a></li>
                 </ul>
             </nav>
@@ -286,7 +338,6 @@
                 </div>
             </div>
 
-            <!-- BOTÓN MÓVIL (Activo en móvil por CSS/JS) -->
             <button class="menu-toggle" aria-label="Abrir menú">
                 <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                 <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -294,14 +345,11 @@
         </div>
     </header>
 
-    <!-- DRAWER MENU (NAVEGACIÓN MÓVIL AGRESIVA) -->
     <div class="mobile-drawer" id="mobile-drawer">
         <nav class="drawer-nav">
-            <!-- Mobile: INICIO (Clase 'active' la maneja JS) -->
             <a href="index.html" class="drawer-link" data-lang-key="nav_inicio">INICIO</a>
             <div class="drawer-group">
                 <span class="drawer-label" data-lang-key="nav_servicios">SERVICIOS</span>
-                <!-- Sub-enlaces de servicios -->
                 <a href="lamarr-cloud.html" class="drawer-link sub-link">CLOUD</a>
                 <a href="lamarr-integrate.html" class="drawer-link sub-link">INTEGRATE</a>
                 <a href="lamarr-data-ai.html" class="drawer-link sub-link">DATA+AI</a>
@@ -309,7 +357,6 @@
                 <a href="services-sap.html" class="drawer-link sub-link">SAP</a>
             </div>
             <li><a href="noticias.html" class="drawer-link" data-lang-key="nav_noticias">NOTICIAS</a></li>
-            <!-- Mobile: CONTACTO (Clase 'active' la maneja JS) -->
             <a href="contact.html" class="drawer-link highlight" data-lang-key="nav_contacto">CONTACTO</a>
         </nav>
         <div class="drawer-footer">
@@ -321,20 +368,24 @@
         </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay"></div>
-    <!-- FIN DRAWER -->
-
     <main>
         <section class="hero hero-premium">
             <canvas id="hero-canvas"></canvas>
             
             <div class="hero-content">
                 <div class="container">
-                    <h1 data-lang-key="hero_h1">Conectamos tu ecosistema tecnológico con soporte humano experto.</h1>
-                    <p class="hero-subtitle" data-lang-key="hero_p">Integramos tus plataformas clave (SAP, Cloud, Data & Apps) para una operación fluida. Te acompañamos con consultores expertos, no con tickets. Garantizamos rendimiento y escalabilidad.</p>
+                    <h1 data-lang-key="hero_h1">Expertos en SAP y Cloud que aseguran la continuidad de tu operación</h1>
+                    <p class="hero-subtitle" data-lang-key="hero_p">Acompañamos a empresas en la estabilización, modernización y evolución de su ecosistema tecnológico, con foco en resultados de negocio.</p>
                     
-                    <a href="contact.html" class="btn-primary hero-cta" data-lang-key="hero_cta_btn">Agenda una Consultoría Gratuita</a>
+                    <div style="margin-top: 35px;">
+                        <a href="contact.html" class="btn-primary hero-cta" data-lang-key="hero_cta_btn">Agenda una Asesoría Gratuita</a>
+                        <a href="#services-container" class="btn-hero-outline">Conoce nuestros servicios</a>
+                    </div>
 
-                    <!-- SECCIÓN DE TARJETAS (VISTA DE ESCRITORIO - Se oculta en móvil) -->
+                    <div class="trust-metrics">
+                        +15 Años de Experiencia &nbsp;|&nbsp; Proyectos en LatAm &nbsp;|&nbsp; Partners Certificados
+                    </div>
+
                     <div id="services-container" class="hero-solutions-grid" style="margin-top: 60px;">
                         <div class="hero-solution-card">
                             <div class="card-icon-container">
@@ -380,9 +431,6 @@
                             <a href="services-sap.html" class="btn-primary" data-lang-key="card_sap_btn">Ver SAP</a>
                         </div>
                     </div>
-                    <!-- FIN VISTA DE ESCRITORIO -->
-
-                    <!-- SECCIÓN DE TARJETAS MÓVILES (VISTA MÓVIL - Se MUESTRA en móvil) -->
                     <div class="mobile-snap-scroll">
                         <div class="snap-card">
                             <div class="card-icon"><i class="fa-solid fa-cloud"></i></div>
@@ -415,9 +463,7 @@
                             <a href="services-sap.html" class="card-link">Ver más <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
-                    <!-- FIN VISTA MÓVIL -->
-
-                </div>
+                    </div>
             </div>
         </section>
 
@@ -425,7 +471,6 @@
             <div class="container">
                 <h2 data-lang-key="partners_h2">Aliados que construyen un futuro con Lamarr</h2>
                 
-                <!-- SLIDER DE ESCRITORIO (Oculto en móvil) -->
                 <div class="partners-slider-container">
                     <div class="partners-slider-track">
                         <div class="partners-slide">
@@ -472,7 +517,6 @@
                     </div>
                 </div>
 
-                <!-- GRUPO DE LOGOS MÓVIL (Se muestra en móvil) -->
                 <div class="partners-grid-mobile">
                     <div class="partner-item"><img src="img/logos/Amazon_Web_Services-Logo.png" alt="Logo AWS"></div>
                     <div class="partner-item"><img src="img/logos/google-cloud-platform.png" alt="Logo Google Cloud"></div>
@@ -538,22 +582,19 @@
             </div>
         </section>
 
-        <!-- NUEVA SECCIÓN: Call to Action TECNOLÓGICO CON CANVAS ANIMADO -->
         <section class="cta-final-section cta-tech-design">
-            <canvas id="cta-canvas"></canvas> <!-- Canvas para partículas -->
-            <div class="container">
+            <canvas id="cta-canvas"></canvas> <div class="container">
                 <div class="cta-logo-wrapper">
                     <img src="img/logo-azul-oscuro.png" alt="Lamarr Tech" class="cta-logo-img">
                 </div>
-                <h2 data-lang-key="cta_final_h2">¿Listo para transformar tu negocio?</h2>
-                <p data-lang-key="cta_final_p">Hablemos de tus desafíos y cómo la tecnología puede resolverlos.</p>
-                <a href="contact.html" class="btn-primary btn-glow" data-lang-key="cta_final_btn">Contáctanos</a>
+                <h2 data-lang-key="cta_final_h2">¿Tu operación necesita estabilidad y escala?</h2>
+                <p data-lang-key="cta_final_p">Hablemos de tu escenario y cómo la tecnología puede resolver tus desafíos críticos.</p>
+                <a href="contact.html" class="btn-primary btn-glow" data-lang-key="cta_final_btn">Hablemos de tu escenario</a>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER ESCRITORIO (Se oculta en móvil) -->
     <footer class="home-footer">
         <div class="container">
             <div class="footer-grid">
@@ -591,7 +632,6 @@
         </div>
     </footer>
     
-    <!-- FOOTER MÓVIL (Se muestra en móvil) -->
     <footer class="mobile-footer">
         <div class="container">
             <div class="footer-links">
@@ -606,8 +646,6 @@
             <p class="copyright" data-lang-key="footer_copyright">&copy; 2025 Lamarr Tech.</p>
         </div>
     </footer>
-    <!-- FIN FOOTER MÓVIL -->
-    
     <script>
         function makeCurved(from, to, factor) {
             const latLngs = [from, to];
@@ -784,7 +822,6 @@
         });
     </script>
 
-    <!-- SCRIPT DE ANIMACIÓN DE PARTÍCULAS 3D LIGERO MEJORADO Y REUTILIZABLE -->
     <script>
         (function() {
             // Función constructora de la animación

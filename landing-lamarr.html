@@ -1,1153 +1,905 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecosistema Digital Integral - Lamarr Tech</title>
-    <meta name="description" content="Estrategia unificada: Core SAP, Infraestructura Cloud y Decisiones con IA.">
-    <meta name="robots" content="noindex, nofollow">
+    <!-- Google Tag Manager (Conservado de tu original) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KPNM8M49');</script>
+    <!-- End Google Tag Manager -->
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>Lamarr Tech - Ecosistema Digital Integral</title>
+    <meta name="description" content="Estrategia unificada: Core SAP, Infraestructura Cloud y Decisiones con IA. Modernizamos tu empresa.">
+    
     <!-- Favicon -->
     <link rel="icon" href="img/infinity-modern-bluedark.png" type="image/png">
-
-    <!-- Fuentes Google Fonts -->
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Iconos FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Configuración de Colores Tailwind para Lamarr -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        lamarr: {
+                            dark: '#020617',       /* Fondo Principal */
+                            blue: '#001f3f',       /* Azul Navy */
+                            cyan: '#00d4ff',       /* Acento Principal (Cian) */
+                            cyanDim: 'rgba(0, 212, 255, 0.1)',
+                            text: '#cbd5e1',       /* Texto secundario */
+                            glass: 'rgba(255, 255, 255, 0.05)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'slideUp': 'slideUp 0.8s ease-out forwards',
+                        'zoomIn': 'zoomIn 1.4s ease-out forwards',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        zoomIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(0, 212, 255, 0.3)' },
+                            '50%': { boxShadow: '0 0 30px rgba(0, 212, 255, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* --- THEME: FLUID TECH & DARK MODE EVOLVED --- */
-        :root {
-            --tech-bg-gradient: linear-gradient(180deg, #001f3f 0%, #020617 100%);
-            --tech-bg-dark: #020617;
-            --tech-cyan: #00d4ff;
-            --tech-cyan-dim: rgba(0, 212, 255, 0.1);
-            --tech-blue-action: #0056b3;
-            --tech-blue-glow: #004494;
-            --tech-glass: rgba(255, 255, 255, 0.03);
-            --tech-glass-border: rgba(255, 255, 255, 0.1);
-            --tech-text-main: #ffffff;
-            --tech-text-sub: #cbd5e1;
-            --tech-text-muted: #94a3b8;
-            --font-heading: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
-        }
-
-        /* RESET & BASE */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
+        /* Estilos Globales y Utilidades */
         body {
-            background: var(--tech-bg-dark);
-            color: var(--tech-text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: white; margin-bottom: 1rem; }
-        p { color: var(--tech-text-sub); margin-bottom: 1rem; }
-        a { text-decoration: none; transition: 0.3s ease; }
-        ul { list-style: none; }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* UTILITIES */
-        .text-cyan { color: var(--tech-cyan); }
-        .text-center { text-align: center; }
-        .text-gradient {
-            background: linear-gradient(90deg, #fff, var(--tech-text-sub));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .section-padding { padding: 100px 0; }
-        .relative { position: relative; }
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* --- HEADER GLASS --- */
-        .glass-header {
-            position: fixed;
-            top: 20px; left: 50%;
-            transform: translateX(-50%);
-            width: 95%; max-width: 1200px;
-            background: rgba(2, 6, 23, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--tech-glass-border);
-            border-radius: 50px;
-            padding: 12px 30px;
-            z-index: 1000;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .logo-text {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.5rem;
+            background-color: #020617;
             color: white;
-            letter-spacing: -1px;
-        }
-        .logo-text span { color: var(--tech-cyan); }
-
-        .btn-header {
-            background: var(--tech-cyan-dim);
-            border: 1px solid var(--tech-cyan);
-            color: var(--tech-cyan);
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .btn-header:hover { background: var(--tech-cyan); color: #000; box-shadow: 0 0 15px var(--tech-cyan); }
-
-        /* --- HERO SECTION --- */
-        .fluid-hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: var(--tech-bg-gradient);
-            padding-top: 120px;
-            overflow: hidden;
-        }
-
-        #tech-particles {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
-        }
-
-        .hero-layout {
-            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center;
-        }
-
-        .tech-badge {
-            display: inline-block; padding: 8px 20px;
-            border-radius: 50px;
-            background: rgba(0, 86, 179, 0.2);
-            border: 1px solid var(--tech-blue-action);
-            color: #60a5fa;
-            font-size: 0.8rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 25px;
+            font-family: 'Open Sans', sans-serif;
         }
         
-        .tech-badge i { margin-right: 8px; }
-
-        .hero-text h1 {
-            font-size: 3.2rem; line-height: 1.15; font-weight: 800;
-            text-shadow: 0 0 30px rgba(0,0,0,0.6);
-            margin-bottom: 25px;
-        }
-        
-        .text-cyan-block { 
-            color: var(--tech-cyan); 
-            display: block; 
-            text-shadow: 0 0 35px rgba(0, 212, 255, 0.4);
+        h1, h2, h3, h4, h5, .font-heading {
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .hero-description { font-size: 1.2rem; max-width: 90%; margin-bottom: 40px; color: var(--tech-text-sub); }
+        /* Scrollbars ocultas para carruseles móviles */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
-        .cta-pill {
-            display: inline-flex; align-items: center; gap: 15px;
-            padding: 18px 45px;
-            border-radius: 50px;
-            background: linear-gradient(90deg, var(--tech-blue-action) 0%, #004494 100%);
-            color: white; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
-            border: 1px solid rgba(255,255,255,0.2);
-            box-shadow: 0 4px 20px rgba(0, 86, 179, 0.4);
+        /* Botón Primario Lamarr (Estilo Neón) */
+        .btn-primary {
+            background: linear-gradient(90deg, #0056b3 0%, #00d4ff 100%);
+            color: white;
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-        }
-        
-        /* SHINE EFFECT FOR BUTTONS */
-        .cta-pill::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
-            transform: skewX(-25deg);
-            transition: 0.5s;
-        }
-        
-        .cta-pill:hover::after {
-            left: 150%;
-            transition: 0.7s ease-in-out;
-        }
-
-        .cta-pill:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 35px rgba(0, 212, 255, 0.6);
-            border-color: var(--tech-cyan);
-        }
-
-        /* ORB VISUAL */
-        .hero-visual { display: flex; justify-content: center; position: relative; }
-        .floating-orb-container {
-            width: 380px; height: 380px; position: relative;
-            animation: float 6s ease-in-out infinite;
-        }
-        .glass-orb {
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 212, 255, 0.3);
-            border-radius: 50%;
-            width: 100%; height: 100%;
-            position: relative;
-            box-shadow: inset 0 0 60px rgba(0, 212, 255, 0.15);
-            display: flex; align-items: center; justify-content: center;
         }
         
-        .center-logo {
-            width: 90px;
-            filter: brightness(0) saturate(100%) invert(80%) sepia(35%) saturate(579%) hue-rotate(170deg) brightness(102%) contrast(102%);
-            z-index: 10;
-        }
-        
-        .satellite {
-            position: absolute; width: 65px; height: 65px;
-            background: #0f172a; border: 1px solid var(--tech-cyan);
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
-            transition: transform 0.3s ease;
-            padding: 12px;
-        }
-        
-        /* CAMBIO: Separamos el hover general para controlarlo mejor */
-        .satellite:hover { border-color: white; }
-        
-        .logo-cloud { 
-            width: 100%; height: 100%; object-fit: contain; 
-            filter: none; 
-            transition: transform 0.3s;
-        }
-        
-        /* Posiciones y Hovers Específicos para evitar saltos */
-        .sat-1 { 
-            top: 10%; left: 50%; 
-            transform: translateX(-50%); 
-        } 
-        /* FIX: Mantenemos el translateX al hacer hover en el satélite 1 */
-        .sat-1:hover { transform: translateX(-50%) scale(1.1); }
-
-        .sat-2 { 
-            bottom: 20%; left: 10%; 
-            transform: none; 
-        } 
-        .sat-2:hover { transform: scale(1.1); }
-
-        .sat-3 { 
-            bottom: 20%; right: 10%; 
-            transform: none; 
-        }
-        .sat-3:hover { transform: scale(1.1); }
-
-        .orbit-ring {
-            position: absolute; top: 10%; left: 10%; right: 10%; bottom: 10%;
-            border: 1px dashed rgba(0, 212, 255, 0.3); border-radius: 50%;
-            animation: spin 25s linear infinite; pointer-events: none;
-        }
-        
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-
-        /* --- NEW SECTION: VALUE FLOW DIAGRAM --- */
-        .flow-section { background: #050b1a; padding: 100px 0; overflow: hidden; }
-        .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; text-align: center; }
-        .section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 80px auto; color: var(--tech-text-muted); }
-
-        .flow-container {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            position: relative;
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+            transform: translateY(-2px);
         }
 
-        .flow-line-animated {
-            position: absolute;
-            top: 50px; left: 0; width: 100%; height: 4px;
-            background: linear-gradient(90deg, rgba(0,212,255,0.1) 0%, var(--tech-cyan) 50%, rgba(0,212,255,0.1) 100%);
-            background-size: 200% 100%;
-            animation: flowGradient 3s linear infinite;
-            z-index: 0;
-            opacity: 0.6;
-            border-radius: 2px;
-        }
-
-        @keyframes flowGradient {
-            0% { background-position: 100% 0; }
-            100% { background-position: -100% 0; }
-        }
-
-        .flow-step {
-            position: relative; z-index: 1;
-            width: 22%; text-align: center;
-        }
-
-        .step-icon-box {
-            width: 100px; height: 100px; margin: 0 auto 25px;
-            background: #020617;
-            border: 2px solid var(--tech-cyan);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 2.5rem; color: var(--tech-cyan);
-            box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .flow-step:hover .step-icon-box {
-            transform: scale(1.1);
-            background: rgba(0, 212, 255, 0.1);
-            box-shadow: 0 0 50px rgba(0, 212, 255, 0.4);
-        }
-
-        .flow-step h4 { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .flow-step p { font-size: 0.9rem; line-height: 1.5; color: var(--tech-text-sub); }
-
-        /* --- SOLUTIONS CATALOG --- */
-        .solutions-section { padding: 100px 0; background: var(--tech-bg-dark); }
-        
-        .tech-grid-4 {
-            display: grid; 
-            /* CAMBIO: Forzamos 2 columnas para una simetría perfecta 2x2 en escritorio */
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .glass-card-pro {
-            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
-            border: 1px solid var(--tech-glass-border);
-            border-radius: 20px;
-            padding: 35px 30px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            display: flex; flex-direction: column;
-        }
-
-        .glass-card-pro:hover {
-            border-color: var(--tech-cyan);
-            background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
-            transform: translateY(-8px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-        }
-
-        .glass-card-pro::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--tech-cyan), transparent);
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .glass-card-pro:hover::before { opacity: 1; }
-
-        .card-icon-pro { 
-            font-size: 2rem; color: #64748b; margin-bottom: 20px; 
-            transition: 0.3s;
-        }
-        .glass-card-pro:hover .card-icon-pro { color: var(--tech-cyan); filter: drop-shadow(0 0 10px var(--tech-cyan)); }
-        
-        .glass-card-pro h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; }
-        .glass-card-pro > p { font-size: 0.95rem; color: var(--tech-text-sub); margin-bottom: 20px; min-height: 60px; }
-
-        .tech-checklist {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 15px;
-            margin-top: auto;
-        }
-        
-        .tech-checklist li {
-            display: flex; align-items: start; gap: 10px;
-            font-size: 0.85rem; color: var(--tech-text-muted);
-            margin-bottom: 8px;
-        }
-        
-        .tech-checklist li i {
-            color: var(--tech-cyan);
-            font-size: 0.8rem;
-            margin-top: 4px;
-        }
-
-        /* --- TRUST BAR --- */
-        .trust-bar {
-            background: linear-gradient(90deg, #020617 0%, #0f172a 50%, #020617 100%);
-            padding: 25px 0;
-            border-top: 1px solid var(--tech-glass-border);
-            border-bottom: 1px solid var(--tech-glass-border);
-            text-align: center;
-        }
-        .trust-text {
-            font-family: var(--font-heading);
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: #94a3b8;
-            text-transform: uppercase;
+        /* Botón Outline */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00d4ff;
+            color: #00d4ff;
             font-weight: 600;
         }
-        .trust-text span { color: var(--tech-cyan); margin: 0 10px; }
-
-        /* ------------------------------------------- */
-        /* --- REDISEÑO COMPLETO FORMULARIO (V2) --- */
-        /* ------------------------------------------- */
-        
-        .contact-section {
-            padding: 100px 0 120px 0;
-            position: relative;
-            overflow: hidden;
-            /* Background noise opcional para textura */
-            background-image: radial-gradient(circle at 50% 50%, rgba(2, 6, 23, 0.9) 0%, #020617 100%);
-        }
-        
-        /* Efecto de luz ambiental detrás del panel */
-        .glow-bg-form {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 1200px; height: 1200px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 60%);
-            z-index: 0; pointer-events: none;
+        .btn-outline:hover {
+            background: #00d4ff;
+            color: #020617;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
         }
 
-        /* 1. EL CONTENEDOR (The Glass Panel) */
-        .form-glass-panel {
-            background: rgba(255, 255, 255, 0.03); /* Fondo muy transparente */
-            backdrop-filter: blur(20px); /* Desenfoque fuerte */
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 212, 255, 0.15); /* Borde sutil degradado simulado */
-            border-radius: 24px;
-            padding: 60px 50px;
-            max-width: 750px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 5;
-            box-shadow: 
-                0 0 0 1px rgba(0,0,0,0.2), /* Inner border dark */
-                0 20px 50px rgba(0,0,0,0.5), /* Deep shadow */
-                inset 0 0 60px rgba(255,255,255,0.02); /* Inner subtle glow */
-            overflow: hidden;
-        }
-        
-        /* Borde superior brillante sutil (Top Highlight) */
-        .form-glass-panel::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.5), transparent);
+        /* Efectos de Vidrio (Glassmorphism) */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Tipografía del Formulario */
-        .form-header-cyber h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-        }
-        
-        .form-header-cyber p {
-            font-size: 1rem;
-            color: var(--tech-text-sub);
-            margin-bottom: 40px;
-        }
-
-        .cyber-form-v2 { display: flex; flex-direction: column; gap: 15px; }
-
-        /* 2. LOS INPUTS (Underline Style & Icons) */
-        .input-group-tech {
-            position: relative;
-            margin-bottom: 25px; /* Espacio entre campos */
-        }
-
-        /* Icono dentro del input */
-        .field-icon {
-            position: absolute;
-            left: 0;
-            top: 14px; /* Alinear con el texto */
-            color: #64748b;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            pointer-events: none; /* Click through */
-        }
-
-        .cyber-input-tech {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Gris sutil */
-            padding: 12px 0 12px 35px; /* Padding izquierdo para dejar espacio al icono */
-            color: white;
-            font-family: var(--font-body);
-            font-size: 1.1rem;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border-radius: 0;
-            appearance: none;
-        }
-
-        /* Placeholder trick para select */
-        select.cyber-input-tech { cursor: pointer; color: white; }
-        select.cyber-input-tech option { background: #020617; color: white; padding: 12px; }
-        select.cyber-input-tech:invalid { color: #64748b; } /* Color placeholder simulado */
-        
-        /* Ajuste específico para el Textarea */
-        textarea.cyber-input-tech {
-            resize: vertical;
-            min-height: 50px;
-            line-height: 1.5;
-        }
-
-        /* ESTADO FOCUS (Animación Crítica) */
-        .cyber-input-tech:focus {
-            outline: none;
-            border-bottom-color: var(--tech-cyan); /* Cian Eléctrico */
-            box-shadow: 0 15px 20px -10px rgba(0, 212, 255, 0.25); /* Sombra de luz hacia arriba */
-            padding-left: 35px;
-        }
-
-        /* Efecto en Icono y Label al hacer Focus */
-        .cyber-input-tech:focus ~ .field-icon,
-        .cyber-input-tech:not(:placeholder-shown) ~ .field-icon {
-            color: var(--tech-cyan);
+        /* Glow Text */
+        .text-glow {
             text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
         }
 
-        .input-label-tech {
-            position: absolute;
-            top: 12px; left: 35px; /* Alineado con el padding del input */
-            color: #94a3b8;
-            font-size: 1.1rem;
-            pointer-events: none;
-            transition: 0.3s ease;
+        /* Animaciones de sección */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-
-        /* Floating Label Logic */
-        .cyber-input-tech:focus ~ .input-label-tech,
-        .cyber-input-tech:not(:placeholder-shown) ~ .input-label-tech {
-            top: -20px;
-            left: 0;
-            font-size: 0.85rem;
-            color: var(--tech-cyan);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        /* 3. BOTÓN DE ENVÍO (The Trigger) */
-        .trigger-btn-neon {
-            width: 100%;
-            padding: 20px;
-            margin-top: 20px;
-            border: none;
-            border-radius: 9999px; /* Píldora completa */
-            background: linear-gradient(90deg, #0056b3 0%, #00d4ff 100%); /* Azul a Cian */
-            color: white;
-            font-family: var(--font-heading);
-            font-weight: 800;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5); /* Glow Externo intenso */
-            transition: all 0.3s ease;
-        }
-
-        .trigger-btn-neon:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 40px rgba(0, 212, 255, 0.8); /* Glow más fuerte al hover */
-        }
-
-        /* Animación de Brillo (Shine Effect) */
-        .trigger-btn-neon::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -150%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
-            transform: skewX(-20deg);
-            animation: shine-pass 4s infinite; /* Cada 4 segundos */
-        }
-
-        @keyframes shine-pass {
-            0% { left: -150%; }
-            10% { left: 150%; } /* Pasa rápido */
-            100% { left: 150%; } /* Espera el resto del tiempo */
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
-        /* Footer del form */
-        .form-security-note {
-            text-align: center;
-            margin-top: 25px;
-            color: #64748b;
-            font-size: 0.85rem;
-            display: flex; align-items: center; justify-content: center; gap: 8px;
+        /* Menu Movil */
+        #mobile-menu-overlay {
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(20px);
         }
 
-        /* --- FOOTER AVANZADO (NUEVO) --- */
-        .tech-footer {
-            background: #010409; /* Más oscuro que el body */
-            border-top: 1px solid var(--tech-glass-border);
-            padding-top: 80px;
-            position: relative;
-        }
-
-        .tech-footer::before {
-            content: '';
-            position: absolute; top: 0; left: 0; width: 100%; height: 1px;
-            background: linear-gradient(90deg, transparent, var(--tech-cyan), transparent);
-            opacity: 0.3;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 60px;
-            padding-bottom: 60px;
-        }
-
-        .footer-brand p {
-            font-size: 0.95rem;
-            color: var(--tech-text-sub);
-            margin-top: 20px;
-            max-width: 300px;
-        }
-
-        .footer-col h4 {
-            color: white;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links li { margin-bottom: 12px; }
-        
-        .footer-links a {
-            color: var(--tech-text-muted);
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-        }
-
-        .footer-links a:hover {
-            color: var(--tech-cyan);
-            transform: translateX(5px);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
-        }
-
-        .social-icons {
-            display: flex; gap: 15px; margin-top: 25px;
-        }
-
-        .social-btn {
-            width: 40px; height: 40px;
+        /* Loader para Video */
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-left-color: #00d4ff;
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            display: flex; align-items: center; justify-content: center;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
         }
-
-        .social-btn:hover {
-            background: var(--tech-cyan);
-            color: #000;
-            box-shadow: 0 0 15px var(--tech-cyan);
-            border-color: var(--tech-cyan);
-            transform: translateY(-3px);
-        }
-
-        .copyright-bar {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 30px 0;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #64748b;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .legal-links a { color: #64748b; margin-left: 20px; transition: 0.3s; }
-        .legal-links a:hover { color: var(--tech-cyan); }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
-            .hero-layout { grid-template-columns: 1fr; text-align: center; gap: 50px; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .hero-visual { transform: scale(0.9); }
-            
-            .flow-container { flex-direction: column; align-items: center; gap: 40px; }
-            .flow-line-animated { 
-                width: 4px; height: 100%; 
-                left: 50%; top: 0; transform: translateX(-50%);
-                background: linear-gradient(180deg, rgba(0,212,255,0.1) 0%, var(--tech-cyan) 50%, rgba(0,212,255,0.1) 100%);
-                background-size: 100% 200%;
-                animation: flowGradientVert 3s linear infinite;
-            }
-            @keyframes flowGradientVert { 0% { background-position: 0 0; } 100% { background-position: 0 200%; } }
-
-            .flow-step { width: 100%; max-width: 400px; }
-            .step-icon-box { width: 80px; height: 80px; font-size: 2rem; }
-            
-            .tech-grid-4 { grid-template-columns: 1fr; }
-            .form-glass-panel { padding: 40px 25px; width: 100%; border-radius: 16px; }
-            
-            /* Footer Responsive */
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-            .footer-brand p { margin: 20px auto; }
-            .social-icons { justify-content: center; }
-            .copyright-bar { flex-direction: column; gap: 15px; }
-            .legal-links a { margin: 0 10px; }
-            
-            .desktop-only { display: none; }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-lamarr-cyan selection:text-lamarr-dark pb-24 md:pb-0">
 
-    <!-- HEADER -->
-    <header class="glass-header">
-        <!-- CAMBIO: Agregado el Isotipo junto al texto con Flexbox -->
-        <div class="logo-wrapper" style="display: flex; align-items: center; gap: 10px;">
-            <img src="img/infinity-modern-bluedark.png" alt="Lamarr Tech" style="height: 28px; filter: brightness(0) invert(1);">
-            <div class="logo-text">LAMARR <span>TECH</span></div>
-        </div>
-        <a href="#diagnostico" class="btn-header desktop-only">Agendar Diagnóstico</a>
-    </header>
-
-    <main>
-        <!-- HERO SECTION: Ecosistema Completo -->
-        <section class="fluid-hero">
-            <canvas id="tech-particles"></canvas>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPNM8M49"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <!-- NAV MÓVIL Y DESKTOP -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-[60] transition-all duration-300 bg-lamarr-dark/90 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center relative">
             
-            <div class="container relative">
-                <div class="hero-layout">
-                    <div class="hero-text reveal">
-                        <span class="tech-badge"><i class="fa-solid fa-layer-group"></i> ECOSISTEMA DIGITAL 360°</span>
-                        <h1>Conecta tu <span class="text-cyan-block">Core SAP</span> Escala en la Nube y Decide con IA.</h1>
-                        
-                        <!-- CAMBIO: Texto generalizado, se eliminó la referencia al webinar -->
-                        <p class="hero-description">La estrategia integral para tu negocio: Una arquitectura unificada donde tu ERP, tu Nube y tus Datos trabajan como uno solo.</p>
-                        
-                        <div class="hero-actions">
-                            <a href="#diagnostico" class="cta-pill">
-                                INICIAR TRANSFORMACIÓN <i class="fa-solid fa-arrow-right-long"></i>
-                            </a>
-                        </div>
+            <!-- Logo Izquierda -->
+            <a href="#inicio" class="flex items-center gap-3 group z-[70] relative">
+                <!-- Ajustar src con tu logo real -->
+                <img src="img/infinity-modern-bluedark.png" alt="Lamarr Logo" class="h-10 md:h-12 w-auto filter brightness-0 invert">
+                <div class="font-heading font-bold text-xl md:text-2xl text-white tracking-tight">
+                    LAMARR <span class="text-lamarr-cyan">TECH</span>
+                </div>
+            </a>
+
+            <!-- Menú Escritorio -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-white text-sm uppercase tracking-wider font-medium hover:text-lamarr-cyan transition-colors relative group">
+                    Inicio
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-lamarr-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#solucion" class="text-white text-sm uppercase tracking-wider font-medium hover:text-lamarr-cyan transition-colors relative group">
+                    Soluciones
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-lamarr-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#diagnostico" class="btn-primary px-5 py-2 rounded-full text-sm font-bold shadow-lg shadow-lamarr-cyan/20">
+                    Agendar Diagnóstico
+                </a>
+            </div>
+
+            <!-- Botón Hamburguesa -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none relative z-[70] w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors">
+                <div class="space-y-1.5 w-6">
+                    <span class="block w-full h-0.5 bg-white transition-transform duration-300 origin-center" id="hamburger-top"></span>
+                    <span class="block w-full h-0.5 bg-white transition-opacity duration-300" id="hamburger-middle"></span>
+                    <span class="block w-full h-0.5 bg-white transition-transform duration-300 origin-center" id="hamburger-bottom"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menú Móvil Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[50] transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center md:hidden">
+        <div class="flex flex-col space-y-8 text-center w-full px-8">
+            <a href="#inicio" class="mobile-link text-3xl font-heading font-bold text-white hover:text-lamarr-cyan transition-colors">Inicio</a>
+            <a href="#solucion" class="mobile-link text-3xl font-heading font-bold text-white hover:text-lamarr-cyan transition-colors">Soluciones</a>
+            <a href="#beneficios" class="mobile-link text-3xl font-heading font-bold text-white hover:text-lamarr-cyan transition-colors">Beneficios</a>
+            <div class="w-16 h-1 bg-lamarr-cyan/30 mx-auto rounded-full"></div>
+            <a href="#diagnostico" class="mobile-link btn-primary py-4 px-8 rounded-full text-xl font-bold shadow-xl mx-auto w-full max-w-xs">Contacto</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION: Estructura de Video -->
+    <header id="inicio" class="min-h-[90vh] md:min-h-screen flex items-center pt-28 pb-12 relative overflow-hidden bg-lamarr-dark">
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute -top-24 -left-24 w-96 h-96 bg-lamarr-blue rounded-full blur-[120px] opacity-40"></div>
+            <div class="absolute top-1/2 right-0 w-80 h-80 bg-lamarr-cyan rounded-full blur-[150px] opacity-20"></div>
+        </div>
+
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="flex flex-col md:block">
+                
+                <!-- 1. Título -->
+                <div class="order-1 md:order-none mb-8 md:mb-10">
+                    <div class="inline-block px-4 py-1 rounded-full border border-lamarr-cyan/30 bg-lamarr-cyan/10 text-lamarr-cyan text-xs font-bold tracking-widest uppercase mb-6 animate-[slideUp_0.5s_ease-out]">
+                        Ecosistema Enterprise
                     </div>
 
-                    <!-- VISUAL ORB -->
-                    <div class="hero-visual reveal">
-                        <div class="floating-orb-container">
-                            <div class="glass-orb">
-                                <!-- Centro: Lamarr Logo -->
-                                <img src="img/infinity-modern-bluedark.png" alt="Lamarr" class="center-logo">
-                                
-                                <!-- Satélite 1: Google Cloud -->
-                                <div class="satellite sat-1" title="Google Cloud">
-                                    <img src="img/google-cloud-icon.png" alt="Google Cloud" class="logo-cloud">
+                    <h1 class="text-3xl xs:text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-tight mb-6 text-white tracking-tight animate-[slideUp_0.8s_ease-out] px-2 md:px-0">
+                        ¿Tu infraestructura impulsa tu negocio o <span class="text-lamarr-cyan text-glow">lo está frenando?</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl font-light text-lamarr-text max-w-3xl mx-auto leading-relaxed animate-[slideUp_1s_ease-out] px-4 md:px-0">
+                        La mayoría de las empresas tienen los datos, pero les falta la visión. Conecta SAP, Nube e IA para dejar de apagar incendios y empezar a predecir el futuro.
+                    </p>
+                </div>
+                
+                <!-- 2. Video Container (CORREGIDO: Fuente Pexels Estable) -->
+                <div class="order-2 md:order-none mb-8 md:mb-12 w-[calc(100%+2rem)] -mx-4 md:w-full md:max-w-5xl md:mx-auto relative group animate-[zoomIn_1.4s_ease-out]">
+                    <div id="video-container" class="relative w-full shadow-2xl shadow-lamarr-cyan/10 md:rounded-xl md:border-2 md:border-white/10 overflow-hidden bg-black aspect-video group/video">
+                        
+                        <!-- Loader Spinner -->
+                        <div id="video-loader" class="absolute inset-0 z-0 flex items-center justify-center bg-black/50 hidden">
+                            <div class="loader"></div>
+                        </div>
+
+                        <!-- Video Real (Fuente Pexels CDN estable: Abstract Blue Network) -->
+                        <video id="hero-video" class="w-full h-full object-cover cursor-pointer" 
+                               poster="https://images.pexels.com/videos/3129671/free-video-3129671.jpg?auto=compress&cs=tinysrgb&fit=crop&h=720&w=1280" 
+                               playsinline 
+                               preload="auto">
+                             <!-- Video de Pexels: Red Neuronal Abstracta / Data Connections (Enterprise/Tech) -->
+                            <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4">
+                            Tu navegador no soporta video HTML5.
+                        </video>
+
+                        <!-- Overlay & Play Button -->
+                        <div id="video-overlay" class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/30 transition-all duration-300 z-10 cursor-pointer">
+                            <button id="main-play-btn" class="w-20 h-20 rounded-full bg-lamarr-cyan/20 backdrop-blur-sm border border-lamarr-cyan flex items-center justify-center transform transition-transform duration-300 hover:scale-110 active:scale-95 group hover:bg-lamarr-cyan/30">
+                                <i class="fa-solid fa-play text-3xl text-white ml-2 group-hover:text-white transition-colors"></i>
+                            </button>
+                            
+                            <!-- Texto Informativo (Visible en Movil ahora) -->
+                            <div class="absolute bottom-6 left-6 right-6 text-left pointer-events-none">
+                                <p class="text-lamarr-cyan font-bold text-xs md:text-sm uppercase tracking-wider mb-1 drop-shadow-md">Tecnología Enterprise</p>
+                                <h3 class="text-white text-lg md:text-xl font-bold drop-shadow-lg">Infraestructura AWS & Cloud Híbrida</h3>
+                            </div>
+                        </div>
+
+                        <!-- Controles Nativos Personalizados -->
+                        <div id="video-controls" class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center gap-4 opacity-0 transition-opacity duration-300 pointer-events-none z-20">
+                            <button id="control-play-pause-btn" class="text-white hover:text-lamarr-cyan w-8">
+                                <i id="play-pause-icon" class="fa-solid fa-play"></i>
+                            </button>
+                            <!-- Barra de progreso interactiva -->
+                            <div class="flex-grow h-1 bg-white/30 rounded-full overflow-hidden relative cursor-pointer pointer-events-auto" id="progress-container">
+                                <div id="progress-bar" class="h-full bg-lamarr-cyan w-0 transition-all duration-100"></div>
+                            </div>
+                            <button id="control-mute-btn" class="text-white hover:text-lamarr-cyan w-8">
+                                <i id="mute-icon" class="fa-solid fa-volume-high"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 3. Botón CTA Principal -->
+                <div class="order-3 md:order-none flex flex-col justify-center animate-[slideUp_1.2s_ease-out] w-full max-w-2xl mx-auto px-4">
+                    <button onclick="document.getElementById('diagnostico').scrollIntoView({behavior: 'smooth'})" class="btn-primary rounded-full px-8 py-4 md:px-12 md:py-5 text-lg md:text-xl w-full md:w-auto mx-auto shadow-xl font-bold tracking-wide uppercase">
+                        Quiero liberar el potencial de mis datos
+                    </button>
+                    <p class="mt-4 text-sm text-gray-500">Sesión de estrategia gratuita • Sin compromiso</p>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Social Proof Bar -->
+    <div class="bg-gradient-to-r from-lamarr-blue via-[#0a1535] to-lamarr-blue border-y border-lamarr-cyan/30 relative z-20 shadow-[0_0_30px_rgba(0,212,255,0.15)] overflow-hidden">
+        <!-- Efecto de brillo animado en el fondo -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[linear-gradient(45deg,transparent_25%,rgba(0,212,255,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-[pulse_4s_ease-in-out_infinite]"></div>
+        
+        <div class="container mx-auto px-4 py-10 relative z-10">
+            <div class="flex flex-col items-center justify-center text-center">
+                <p class="text-xl md:text-3xl font-heading font-bold text-white tracking-wide leading-tight">
+                    <i class="fa-solid fa-handshake-simple text-lamarr-cyan mr-3 text-2xl md:text-4xl align-middle"></i>
+                    No busques un proveedor. <br class="md:hidden">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-lamarr-cyan to-white font-extrabold">Busca un Partner que entienda tu negocio.</span>
+                </p>
+                <p class="text-sm md:text-base text-lamarr-text mt-3 font-light max-w-2xl">
+                    Tecnología sin estrategia es solo gasto. Nosotros ponemos la arquitectura al servicio de tu rentabilidad.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección Problema -->
+    <section id="problema" class="py-16 md:py-24 bg-lamarr-dark relative overflow-hidden animated-section">
+        <!-- Grid de fondo sutil -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+        
+        <div class="container mx-auto px-4 max-w-5xl relative z-10">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white mb-4">La Verdad Incómoda del Enterprise</h2>
+                <div class="w-24 h-1.5 bg-lamarr-cyan mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">¿Por qué el 80% de las migraciones a la nube no generan el retorno esperado?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- Card 1 -->
+                <div class="group relative bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-lamarr-cyan/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 text-red-400 mx-auto">
+                        <i class="fa-solid fa-triangle-exclamation text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white text-center mb-3">Cambiar de Lugar no es Innovar</h3>
+                    <p class="text-gray-400 text-center leading-relaxed">
+                        Mover servidores "Legacy" a la nube sin una reingeniería real (Lift & Shift) solo traslada tus problemas de ineficiencia y costos a un servidor más caro.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-lamarr-cyan/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center mb-6 text-red-400 mx-auto">
+                        <i class="fa-solid fa-database text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white text-center mb-3">Tener Datos no es tener Respuestas</h3>
+                    <p class="text-gray-400 text-center leading-relaxed">
+                        Tus datos están secuestrados en silos desconectados. Si tu SAP no habla fluidamente con tu Nube y tu IA, estás operando a ciegas en un mercado veloz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección Solución -->
+    <section id="solucion" class="py-16 md:py-24 bg-gradient-to-br from-lamarr-blue to-black relative animated-section overflow-hidden">
+        <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-lamarr-cyan/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-20">
+            <div class="flex flex-col lg:flex-row items-center gap-10 md:gap-16">
+                <!-- Text Content -->
+                <div class="w-full lg:w-5/12 text-center lg:text-left">
+                    <span class="text-lamarr-cyan font-bold tracking-widest uppercase text-xs bg-lamarr-cyan/10 px-3 py-1 rounded-full mb-4 inline-block border border-lamarr-cyan/20">Nuestro Enfoque</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-white mb-6 leading-tight">No necesitas más software. <br><span class="text-lamarr-cyan">Necesitas Arquitectura.</span></h2>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed font-light">
+                        En Lamarr Tech no vendemos parches. Diseñamos ecosistemas vivos donde tu ERP es el corazón, la Nube es el músculo y la IA es el cerebro.
+                    </p>
+                    
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border-l-4 border-lamarr-cyan mb-10 relative shadow-sm text-left">
+                        <p class="text-gray-200 font-medium text-lg italic">
+                            "La verdadera transformación ocurre cuando la tecnología deja de ser un gasto y se convierte en el motor de tus ganancias."
+                        </p>
+                    </div>
+                    
+                    <button onclick="document.getElementById('diagnostico').scrollIntoView({behavior: 'smooth'})" class="btn-outline w-full md:w-auto px-10 py-4 rounded-full inline-block text-lg transition-all transform hover:scale-105 mb-8 lg:mb-0">
+                        Habla con un Arquitecto Senior
+                    </button>
+                </div>
+                
+                <!-- Cards Grid -->
+                <div class="w-full lg:w-7/12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Columna Izquierda Desktop -->
+                        <div class="space-y-6 mt-0 lg:mt-12">
+                            <!-- Card 1: SAP -->
+                            <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center group border border-white/5 hover:border-lamarr-cyan/50 transition-all">
+                                <div class="w-16 h-16 bg-lamarr-blue rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-900/20 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-cube text-2xl text-white"></i>
                                 </div>
-                                <!-- Satélite 2: AWS -->
-                                <div class="satellite sat-2" title="AWS">
-                                    <img src="img/aws-logo-blanco.png" alt="AWS" class="logo-cloud">
+                                <h4 class="font-bold text-white text-xl mb-2">SAP Modernizado</h4>
+                                <p class="text-sm text-gray-400">Tu Core de negocio, optimizado para la era cloud.</p>
+                            </div>
+
+                            <!-- Card 2: Cloud -->
+                            <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center group border border-white/5 hover:border-lamarr-cyan/50 transition-all">
+                                <div class="w-16 h-16 bg-lamarr-cyan/20 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/10 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-cloud text-2xl text-lamarr-cyan"></i>
                                 </div>
-                                <!-- Satélite 3: Huawei Cloud -->
-                                <div class="satellite sat-3" title="Huawei Cloud">
-                                    <img src="img/logos/huawei blanco.png" alt="Huawei" class="logo-cloud">
+                                <h4 class="font-bold text-white text-xl mb-2">Multi-Cloud Híbrida</h4>
+                                <p class="text-sm text-gray-400">AWS y Google trabajando juntos, no compitiendo.</p>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha Desktop -->
+                        <div class="space-y-6">
+                            <!-- Card 3: Data & AI -->
+                            <div class="glass-card p-8 rounded-2xl flex flex-col items-center text-center group border border-white/5 hover:border-lamarr-cyan/50 transition-all">
+                                <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-brain text-2xl text-white"></i>
                                 </div>
-                                
-                                <div class="orbit-ring"></div>
+                                <h4 class="font-bold text-white text-xl mb-2">Inteligencia Accionable</h4>
+                                <p class="text-sm text-gray-400">Deja de reportar el pasado. Empieza a predecir el futuro.</p>
+                            </div>
+
+                            <!-- Card 4: Security -->
+                            <div class="bg-gradient-to-br from-lamarr-cyan to-blue-600 p-8 rounded-2xl flex flex-col items-center text-center group text-white shadow-lg transition-all hover:scale-[1.02]">
+                                <div class="w-16 h-16 bg-black/20 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm shadow-inner">
+                                    <i class="fa-solid fa-shield-halved text-2xl text-white"></i>
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Escudo Digital</h4>
+                                <p class="text-sm text-white/80">Seguridad proactiva que te permite dormir tranquilo.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- NUEVA SECCIÓN: EL FLUJO DE VALOR -->
-        <section class="flow-section">
-            <div class="container">
-                <h2 class="section-title reveal">El Flujo de Valor Continuo</h2>
-                <p class="section-subtitle reveal">Optimizamos cada etapa de tu ciclo de vida digital con una metodología probada.</p>
-                
-                <div class="flow-container reveal">
-                    <div class="flow-line-animated"></div>
-
-                    <!-- Step 1: CORE -->
-                    <div class="flow-step">
-                        <div class="step-icon-box"><i class="fa-solid fa-server"></i></div>
-                        <h4>CORE (SAP)</h4>
-                        <p>Optimización y Migración segura de SAP B1/HANA.</p>
-                    </div>
-
-                    <!-- Step 2: INTEGRATE -->
-                    <div class="flow-step">
-                        <div class="step-icon-box"><i class="fa-solid fa-network-wired"></i></div>
-                        <h4>INTEGRATE</h4>
-                        <p>Conexión fluida entre sistemas On-Premise y Cloud.</p>
-                    </div>
-
-                    <!-- Step 3: SECURE -->
-                    <div class="flow-step">
-                        <div class="step-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h4>SECURE</h4>
-                        <p>Ciberseguridad nativa y Continuidad Operativa (DRP).</p>
-                    </div>
-
-                    <!-- Step 4: INNOVATE -->
-                    <div class="flow-step">
-                        <div class="step-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
-                        <h4>INNOVATE</h4>
-                        <p>Data Lakes y Modelos Predictivos de IA para el negocio.</p>
-                    </div>
-                </div>
+        </div>
+    </section>
+    
+    <!-- Sección Beneficios -->
+    <section id="beneficios" class="py-16 md:py-24 animated-section bg-lamarr-dark relative">
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white">Lo que ganas con Lamarr</h2>
+                <div class="w-20 h-1 bg-lamarr-cyan mx-auto mt-4 rounded-full"></div>
             </div>
-        </section>
 
-        <!-- SECCIÓN: SOLUCIONES ESPECIALIZADAS -->
-        <section class="solutions-section">
-            <div class="container">
-                <h2 class="section-title text-center reveal">Soluciones Especializadas</h2>
-                <p class="section-subtitle reveal" style="margin-bottom: 50px;">Módulos de servicio diseñados para escalar contigo.</p>
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-4 px-4 md:grid md:grid-cols-4 md:gap-6 md:pb-0 md:mx-0 md:px-0 hide-scrollbar items-stretch">
                 
-                <div class="tech-grid-4 reveal">
-                    <!-- Card 1 -->
-                    <div class="glass-card-pro">
-                        <i class="fa-solid fa-cube card-icon-pro"></i>
-                        <h3>SAP Services</h3>
-                        <p>El corazón de tu operación, modernizado y en la nube.</p>
-                        <ul class="tech-checklist">
-                            <li><i class="fa-solid fa-check"></i> Migración Cloud (Lift & Shift)</li>
-                            <li><i class="fa-solid fa-check"></i> SAP Upgrades & Patching</li>
-                            <li><i class="fa-solid fa-check"></i> Consultoría Funcional</li>
-                        </ul>
+                <!-- Benefit 1 -->
+                <div class="min-w-[280px] snap-center bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-lamarr-cyan/50 transition-all flex flex-col justify-center h-full group">
+                    <div class="mb-4 text-lamarr-cyan group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-rocket text-3xl"></i>
                     </div>
-                    <!-- Card 2: Multi-Cloud (UPDATED ICON) -->
-                    <div class="glass-card-pro">
-                        <i class="fa-solid fa-cloud card-icon-pro"></i>
-                        <h3>Multi-Cloud</h3>
-                        <p>Arquitectura agnóstica para máxima disponibilidad.</p>
-                        <ul class="tech-checklist">
-                            <li><i class="fa-solid fa-check"></i> Arquitectura AWS / Google / Huawei</li>
-                            <li><i class="fa-solid fa-check"></i> Estrategia FinOps (Ahorro de costos)</li>
-                            <li><i class="fa-solid fa-check"></i> Contenedores y Kubernetes</li>
-                        </ul>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="glass-card-pro">
-                        <i class="fa-solid fa-chart-pie card-icon-pro"></i>
-                        <h3>Data & AI</h3>
-                        <p>Transforma terabytes de datos en insights accionables.</p>
-                        <ul class="tech-checklist">
-                            <li><i class="fa-solid fa-check"></i> Business Intelligence (BI)</li>
-                            <li><i class="fa-solid fa-check"></i> Machine Learning Predictivo</li>
-                            <li><i class="fa-solid fa-check"></i> Data Warehousing</li>
-                        </ul>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="glass-card-pro">
-                        <i class="fa-solid fa-user-shield card-icon-pro"></i>
-                        <h3>Ciberseguridad</h3>
-                        <p>Defensa proactiva para entornos híbridos complejos.</p>
-                        <ul class="tech-checklist">
-                            <li><i class="fa-solid fa-check"></i> Protección Anti-Ransomware</li>
-                            <li><i class="fa-solid fa-check"></i> Disaster Recovery Plan (DRP)</li>
-                            <li><i class="fa-solid fa-check"></i> Auditoría de Vulnerabilidades</li>
-                        </ul>
-                    </div>
+                    <p class="font-bold text-gray-200 text-lg">Agilidad Real</p>
+                    <p class="text-sm text-gray-500 mt-2">Lanza nuevos productos en semanas, no en meses.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- BARRA DE CONFIANZA Y PARTNERS -->
-        <div class="trust-bar reveal">
-            <div class="container">
-                <div class="trust-text">
-                    <i class="fa-solid fa-circle-check" style="color:var(--tech-cyan);"></i> 
-                    Arquitecturas validadas bajo estándares <span>Well-Architected</span> y seguridad de grado empresarial.
+                
+                <!-- Benefit 2 -->
+                <div class="min-w-[280px] snap-center bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-lamarr-cyan/50 transition-all flex flex-col justify-center h-full group">
+                    <div class="mb-4 text-lamarr-cyan group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-piggy-bank text-3xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-200 text-lg">FinOps Inteligente</p>
+                    <p class="text-sm text-gray-500 mt-2">Paga solo por lo que usas. Reduce tu factura cloud hasta un 30%.</p>
                 </div>
-                <!-- CAMBIO: Se eliminó la sección de partners oficiales SAP -->
+                
+                <!-- Benefit 3 -->
+                <div class="min-w-[280px] snap-center bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-lamarr-cyan/50 transition-all flex flex-col justify-center h-full group">
+                    <div class="mb-4 text-lamarr-cyan group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-user-tag text-3xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-200 text-lg">Más que Soporte</p>
+                    <p class="text-sm text-gray-500 mt-2">Usamos tickets para el orden, pero tenemos una política clara: <strong>"Los tickets tienen números, tú tienes nombre"</strong>.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="min-w-[280px] snap-center bg-white/5 border border-white/10 p-8 rounded-2xl hover:border-lamarr-cyan/50 transition-all flex flex-col justify-center h-full group">
+                    <div class="mb-4 text-lamarr-cyan group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-lock text-3xl"></i>
+                    </div>
+                    <p class="font-bold text-gray-200 text-lg">Resiliencia Total</p>
+                    <p class="text-sm text-gray-500 mt-2">Tu operación continúa sin importar lo que pase ahí fuera.</p>
+                </div>
             </div>
         </div>
-
-        <!-- SECCIÓN FINAL: FORMULARIO OPTIMIZADO (REDESIGN) -->
-        <section class="contact-section" id="diagnostico">
-            <div class="glow-bg-form"></div>
-            <div class="container">
-                <!-- PANEL PRINCIPAL GLASS -->
-                <div class="form-glass-panel reveal">
-                    
-                    <div class="form-header-cyber text-center">
-                        <h2>Diagnóstico Inicial</h2>
-                        <p>Cuéntanos tu desafío tecnológico.</p>
+    </section>
+    
+    <!-- Garantía -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-lamarr-blue to-lamarr-dark relative overflow-hidden animated-section">
+        <div class="container mx-auto px-4 max-w-5xl relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-white mb-10 md:mb-12">No es solo tecnología, es confianza</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-20 h-20 bg-lamarr-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform border border-lamarr-cyan/30">
+                        <i class="fa-solid fa-file-contract text-4xl text-lamarr-cyan"></i>
                     </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">SLA por Contrato</h3>
+                    <p class="text-gray-400">Garantizamos tiempos de respuesta y uptime. Lo ponemos por escrito.</p>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="w-20 h-20 bg-lamarr-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform border border-lamarr-cyan/30">
+                        <i class="fa-solid fa-certificate text-4xl text-lamarr-cyan"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Certificación Global</h3>
+                    <p class="text-gray-400">Nuestro equipo está validado por los gigantes de la industria: AWS, SAP y Google.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <!-- Formulario con ID para el script -->
-                    <form class="cyber-form-v2" id="contactForm">
-                        
-                        <!-- Input 1: Nombre -->
-                        <div class="input-group-tech">
-                            <i class="fa-regular fa-user field-icon"></i>
-                            <input type="text" id="nombre" name="nombre" class="cyber-input-tech" placeholder=" " required>
-                            <label for="nombre" class="input-label-tech">Nombre Completo</label>
+    <!-- Bono Especial / CTA -->
+    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-900 to-lamarr-blue text-white relative overflow-hidden animated-section">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none"></div>
+        <div class="container mx-auto px-4 max-w-4xl text-center relative z-10">
+            <div class="inline-block bg-lamarr-cyan text-lamarr-dark font-bold px-6 py-2 rounded-full mb-8 text-sm uppercase tracking-widest shadow-lg shadow-lamarr-cyan/30 animate-pulse">Oportunidad Limitada</div>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold mb-8 leading-tight">¿No sabes por dónde empezar?</h2>
+            
+            <!-- Contador Regresivo -->
+            <div id="countdown-container" class="mb-10 md:mb-12 inline-block">
+                <div id="countdown" class="font-mono text-4xl md:text-6xl font-bold text-lamarr-cyan drop-shadow-lg tracking-wider">04:59:00</div>
+                <p class="text-sm text-gray-500 mt-2 uppercase tracking-widest">Para agendar tu Sesión de Estrategia Gratuita</p>
+            </div>
+            
+            <div class="bg-white/5 p-6 md:p-8 rounded-2xl border border-lamarr-cyan/30 backdrop-blur-sm mb-10 md:mb-12 shadow-xl hover:bg-white/10 transition-colors duration-300">
+                <p class="text-lg md:text-xl mb-4 font-medium text-white">Normalmente cobramos por nuestra auditoría inicial, pero si agendas hoy, te regalamos una <strong>Sesión de Arquitectura de 30 minutos</strong>.</p>
+                <p class="text-base md:text-lg text-lamarr-cyan italic">Analizaremos tus cuellos de botella y te daremos un plan de acción claro. Sin costo.</p>
+            </div>
+            
+            <button onclick="document.getElementById('diagnostico').scrollIntoView({behavior: 'smooth'})" class="btn-primary rounded-full px-8 py-4 md:px-12 md:py-5 text-lg md:text-xl font-bold inline-block transform hover:scale-105 transition-all shadow-2xl hover:shadow-lamarr-cyan/50 w-full md:w-auto uppercase">
+                ¡Quiero mi auditoría gratuita!
+            </button>
+        </div>
+    </section>
+        
+    <!-- Sección de Contacto Final -->
+    <section id="diagnostico" class="py-16 md:py-24 bg-black text-white animated-section relative border-t border-white/10">
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 md:gap-16">
+                <!-- Info Contacto -->
+                <div class="lg:w-1/3 text-center lg:text-left">
+                    <h2 class="text-3xl font-heading font-bold mb-4 text-white">El Futuro no Espera.</h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed">Cada día que pasas con sistemas desconectados es dinero que dejas sobre la mesa. Hablemos hoy mismo.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-lamarr-cyan mx-auto md:mx-0">
+                                <i class="fa-regular fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <a href="mailto:contacto@lamarrtech.cl" class="text-lg font-medium hover:text-lamarr-cyan transition-colors">contacto@lamarrtech.cl</a>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-4">
+                             <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-lamarr-cyan mx-auto md:mx-0">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <a href="tel:+56931993952" class="text-lg font-medium hover:text-lamarr-cyan transition-colors">+56 9 3199 3952</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario Visible -->
+                <div class="lg:w-2/3">
+                    <form id="contactForm" class="contact-form space-y-6 bg-[#0a0f1e] p-6 md:p-8 rounded-2xl border border-gray-800 shadow-2xl relative overflow-hidden">
+                        <!-- Glow effect behind form -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-lamarr-cyan/5 rounded-full blur-[80px] pointer-events-none"></div>
+
+                        <div>
+                            <label for="nombre" class="block text-lamarr-cyan text-sm font-semibold mb-2 text-left">Tu Nombre</label>
+                            <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-lamarr-cyan/50 text-lg transition-all" placeholder="Nombre completo" required>
                         </div>
                         
-                        <!-- Input 2: Email -->
-                        <div class="input-group-tech">
-                            <i class="fa-regular fa-envelope field-icon"></i>
-                            <input type="email" id="email" name="email" class="cyber-input-tech" placeholder=" " required>
-                            <label for="email" class="input-label-tech">Correo Corporativo</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-lamarr-cyan text-sm font-semibold mb-2 text-left">Correo Corporativo</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-lamarr-cyan/50 text-lg transition-all" placeholder="nombre@empresa.com" required>
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-lamarr-cyan text-sm font-semibold mb-2 text-left">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-lamarr-cyan/50 text-lg transition-all" placeholder="+56 9 ..." required>
+                            </div>
                         </div>
-
-                        <!-- Input 3: Empresa -->
-                        <div class="input-group-tech">
-                            <i class="fa-regular fa-building field-icon"></i>
-                            <input type="text" id="empresa" name="empresa" class="cyber-input-tech" placeholder=" " required>
-                            <label for="empresa" class="input-label-tech">Empresa / Organización</label>
-                        </div>
-
-                        <!-- NUEVO: Input Teléfono -->
-                        <div class="input-group-tech">
-                            <i class="fa-solid fa-phone field-icon"></i>
-                            <input type="tel" id="telefono" name="telefono" class="cyber-input-tech" placeholder=" " required>
-                            <label for="telefono" class="input-label-tech">Número de Teléfono</label>
-                        </div>
-
-                        <!-- Input 4: Dropdown -->
-                        <div class="input-group-tech">
-                            <i class="fa-solid fa-list-check field-icon"></i>
-                            <select id="interes" name="interes" class="cyber-input-tech" required>
-                                <option value="" disabled selected></option> 
-                                <option value="sap">Proyecto SAP (Migración/Upgrade)</option>
-                                <option value="data">Estrategia de Datos e IA</option>
-                                <option value="security">Ciberseguridad Empresarial</option>
-                                <option value="cloud">Infraestructura Cloud Híbrida</option>
+                        <div>
+                            <label for="interes" class="block text-lamarr-cyan text-sm font-semibold mb-2 text-left">¿Cuál es tu mayor obstáculo hoy?</label>
+                            <select id="interes" name="interes" class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-lamarr-cyan/50 text-lg transition-all">
+                                <option value="sap">Mi SAP/ERP es lento o costoso</option>
+                                <option value="cloud">Mis costos de Nube se dispararon</option>
+                                <option value="security">Me preocupa la seguridad/Ransomware</option>
+                                <option value="data">Tengo datos pero no insights (IA)</option>
                             </select>
-                            <label for="interes" class="input-label-tech">Área de Interés Principal</label>
                         </div>
-
-                        <!-- NUEVO: Textarea Descripción -->
-                        <div class="input-group-tech">
-                            <i class="fa-regular fa-comment-dots field-icon"></i>
-                            <textarea id="mensaje" name="mensaje" class="cyber-input-tech" placeholder=" " rows="3"></textarea>
-                            <label for="mensaje" class="input-label-tech">Cuéntanos sobre tu problemática</label>
+                        <div>
+                            <label for="mensaje" class="block text-lamarr-cyan text-sm font-semibold mb-2 text-left">Cuéntanos un poco más</label>
+                            <textarea id="mensaje" name="mensaje" rows="3" class="w-full px-4 py-3 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-lamarr-cyan/50 text-lg transition-all" placeholder="Describe brevemente tu situación actual..." required></textarea>
                         </div>
-
-                        <!-- Trigger Button -->
-                        <button type="submit" class="trigger-btn-neon">
-                            Agendar Diagnóstico 360°
-                        </button>
-                        
-                        <div class="form-security-note">
-                            <i class="fa-solid fa-shield-halved text-cyan"></i> 
-                            <span>Tus datos están encriptados y seguros.</span>
+                        <div class="text-center pt-2">
+                            <button type="submit" id="submitBtn" class="w-full px-10 py-4 rounded-full font-bold bg-gradient-to-r from-blue-600 to-lamarr-cyan text-white hover:brightness-110 transition-all text-lg shadow-lg uppercase tracking-wide">
+                                Solicitar Sesión Gratuita
+                            </button>
                         </div>
-
                     </form>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- FOOTER AVANZADO (Tech & Corporate) -->
-    <footer class="tech-footer">
-        <div class="container">
-            <div class="footer-grid">
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-[#010409] text-gray-400 py-12 border-t border-white/5 pb-24 md:pb-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:grid md:grid-cols-3 gap-10 md:gap-10 items-center md:items-start mb-10 text-center md:text-left">
                 
-                <!-- Columna 1: Brand & Bio -->
-                <div class="footer-col footer-brand">
-                    <!-- LOGO ACTUALIZADO: Imagen + Texto -->
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-                        <img src="img/infinity-modern-bluedark.png" alt="Lamarr Tech Logo" style="height: 35px; filter: brightness(0) invert(1);">
-                        <div class="logo-text" style="font-size: 1.8rem; margin: 0;">LAMARR <span>TECH</span></div>
-                    </div>
-                    
-                    <p>Habilitamos el futuro de las empresas Enterprise mediante la unificación de SAP, Nube Híbrida e Inteligencia Artificial.</p>
-                    
-                    <div class="social-icons">
-                        <!-- SOLO LINKEDIN -->
-                        <a href="https://www.linkedin.com/company/lamarr-tech-spa" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
+                <!-- Branding -->
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="img/infinity-modern-bluedark.png" alt="Logo Lamarr" class="h-12 mb-6 filter brightness-0 invert opacity-80">
+                    <p class="text-sm font-light leading-relaxed opacity-80 max-w-xs">
+                        Habilitamos el futuro Enterprise mediante la unificación de SAP, Nube Híbrida e IA.
+                    </p>
                 </div>
 
-                <!-- Columna 2: Links Rápidos -->
-                <div class="footer-col">
-                    <h4>Ecosistema</h4>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Modernización SAP</a></li>
-                        <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Estrategia Multi-Cloud</a></li>
-                        <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Ciberseguridad & DRP</a></li>
-                        <li><a href="#"><i class="fa-solid fa-chevron-right" style="font-size: 0.7rem; margin-right: 8px;"></i> Data & Analytics</a></li>
+                <!-- Contacto -->
+                <div class="w-full hidden md:block">
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-xs">Contacto</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="mailto:contacto@lamarrtech.cl" class="hover:text-lamarr-cyan transition-colors">contacto@lamarrtech.cl</a></li>
+                        <li><a href="tel:+56931993952" class="hover:text-lamarr-cyan transition-colors">+56 9 3199 3952</a></li>
+                        <li>Av Nueva Providencia 1881, Of 1912</li>
                     </ul>
                 </div>
 
-                <!-- Columna 3: Contacto (ACTUALIZADO) -->
-                <div class="footer-col">
-                    <h4>Contacto Directo</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:contacto@lamarrtech.cl"><i class="fa-regular fa-envelope" style="margin-right: 8px;"></i> contacto@lamarrtech.cl</a></li>
-                        <li><a href="tel:+56931993952"><i class="fa-solid fa-phone" style="margin-right: 8px;"></i> +56 9 3199 3952</a></li>
-                        <li><a href="#"><i class="fa-solid fa-location-dot" style="margin-right: 8px;"></i> Av Nueva Providencia 1881, Of 1912</a></li>
-                    </ul>
+                <!-- Social -->
+                <div class="flex flex-col items-center md:items-end w-full">
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6 text-xs">Síguenos</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.linkedin.com/company/lamarr-tech-spa" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-lamarr-cyan hover:text-black transition-all">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-
             </div>
 
-            <!-- Copyright Bar -->
-            <div class="copyright-bar">
-                <p>&copy; 2025 Lamarr Tech SpA. Todos los derechos reservados.</p>
-                <div class="legal-links">
-                    <a href="#">Privacidad</a>
-                    <a href="#">Términos</a>
-                    <a href="#">Cookies</a>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4 md:gap-0">
+                <div>&copy; 2025 Lamarr Tech SpA | Todos los derechos reservados.</div>
+                <div class="flex gap-4">
+                     <a href="#" class="hover:text-lamarr-cyan">Privacidad</a>
+                     <a href="#" class="hover:text-lamarr-cyan">Términos</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Sticky WhatsApp Button (Mobile) -->
+    <a href="https://wa.me/56931993952" target="_blank" class="fixed bottom-6 right-6 z-[80] md:hidden bg-[#25D366] text-white py-4 px-6 rounded-full shadow-2xl flex items-center gap-3 hover:bg-[#20ba5a] transition-all hover:-translate-y-1 border-2 border-white/20">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="font-bold text-base tracking-wide uppercase">Diagnóstico</span>
+    </a>
+
+    <!-- SCRIPTS DE FUNCIONALIDAD -->
     <script>
-        // SCRIPT: PARTICLES & INTERACTION
-        (function() {
-            const canvas = document.getElementById('tech-particles');
-            const ctx = canvas.getContext('2d');
-            let width, height;
-            let particles = [];
-            
-            const particleColor = 'rgba(0, 212, 255, 0.4)';
-            const lineColor = 'rgba(0, 212, 255, 0.1)';
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Menú Móvil
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            let isMenuOpen = false;
 
-            function resize() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-            }
-
-            class Particle {
-                constructor() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.vx = (Math.random() - 0.5) * 0.3; 
-                    this.vy = (Math.random() - 0.5) * 0.3;
-                    this.size = Math.random() * 2 + 0.5;
-                }
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x < 0 || this.x > width) this.vx *= -1;
-                    if (this.y < 0 || this.y > height) this.vy *= -1;
-                }
-                draw() {
-                    ctx.fillStyle = particleColor;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-
-            function init() {
-                resize();
-                particles = [];
-                for (let i = 0; i < 60; i++) particles.push(new Particle());
-                animate();
-            }
-
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(p => { p.update(); p.draw(); });
-                
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i; j < particles.length; j++) {
-                        const dx = particles[i].x - particles[j].x;
-                        const dy = particles[i].y - particles[j].y;
-                        const dist = Math.sqrt(dx*dx + dy*dy);
-                        if (dist < 100) {
-                            ctx.strokeStyle = lineColor;
-                            ctx.lineWidth = 1;
-                            ctx.beginPath();
-                            ctx.moveTo(particles[i].x, particles[i].y);
-                            ctx.lineTo(particles[j].x, particles[j].y);
-                            ctx.stroke();
-                        }
+            if (mobileMenuBtn && mobileMenuOverlay) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    isMenuOpen = !isMenuOpen;
+                    if (isMenuOpen) {
+                        mobileMenuOverlay.classList.remove('translate-x-full');
+                        document.body.classList.add('overflow-hidden');
+                    } else {
+                        mobileMenuOverlay.classList.add('translate-x-full');
+                        document.body.classList.remove('overflow-hidden');
                     }
-                }
-                requestAnimationFrame(animate);
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        isMenuOpen = false;
+                        mobileMenuOverlay.classList.add('translate-x-full');
+                        document.body.classList.remove('overflow-hidden');
+                    });
+                });
             }
 
-            window.addEventListener('resize', () => { resize(); init(); });
-            init();
-
-            // Intersection Observer
+            // 2. Animaciones al Scroll
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        entry.target.classList.add('active');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.15 });
+            }, { threshold: 0.1 });
 
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            
-            // -----------------------------------------------------------------
-            // SCRIPT DE ENVÍO A GOOGLE SHEETS
-            // -----------------------------------------------------------------
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault(); // Evitar recarga estándar
-                
-                // --- CONFIGURACIÓN CRÍTICA ---
-                // Reemplaza esta URL con la que obtuviste al publicar tu Google Apps Script
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbw0kMexUyHSxtqnKQHRzy7K6D69KqCdzdk629ESZTMcHyHz94kOGtsbANJpaDyyykHx/exec'; 
-                // -----------------------------
+            document.querySelectorAll('.animated-section').forEach((el) => observer.observe(el));
 
-                const form = this;
-                const btn = form.querySelector('button');
-                const originalText = btn.innerText;
-                
-                // 1. Estado de "Cargando"
-                btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Conectando...';
-                btn.style.opacity = '0.8';
-                
-                // Recopilar datos
-                const formData = new FormData(form);
-
-                // 2. Envío con fetch (mode: 'no-cors' es necesario para Google Apps Script)
-                fetch(scriptURL, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'no-cors' 
-                })
-                .then(() => {
-                    // 3. Éxito Visual
-                    btn.innerHTML = '<i class="fa-solid fa-check"></i> SOLICITUD CONFIRMADA';
-                    btn.style.background = 'linear-gradient(90deg, #10b981 0%, #059669 100%)';
-                    btn.style.boxShadow = '0 0 40px rgba(16, 185, 129, 0.6)';
-                    btn.style.opacity = '1';
-                    
-                    // Resetear formulario
-                    form.reset();
-                    
-                    // Volver al estado original después de 4 seg
-                    setTimeout(() => {
-                        btn.innerText = "AGENDAR DIAGNÓSTICO 360°"; 
-                        btn.style.background = 'linear-gradient(90deg, #0056b3 0%, #00d4ff 100%)';
-                        btn.style.boxShadow = '0 0 25px rgba(0, 212, 255, 0.5)';
-                    }, 4000);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Error de Conexión';
-                    btn.style.background = '#ef4444';
-                    
-                    setTimeout(() => {
-                        btn.innerText = originalText; 
-                        btn.style.background = 'linear-gradient(90deg, #0056b3 0%, #00d4ff 100%)';
-                    }, 3000);
-                });
+            // 3. Navbar Scrolled State
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg', 'bg-lamarr-dark/95');
+                } else {
+                    nav.classList.remove('shadow-lg');
+                }
             });
-        })();
+
+            // 4. Contador Regresivo (Bono)
+            function startCountdown() {
+                let endDate = localStorage.getItem('lamarrOfferEnd');
+                if (!endDate || new Date(endDate) < new Date()) {
+                    const now = new Date();
+                    now.setHours(now.getHours() + 4);
+                    endDate = now;
+                    localStorage.setItem('lamarrOfferEnd', endDate);
+                } else {
+                    endDate = new Date(endDate);
+                }
+
+                const countdownEl = document.getElementById("countdown");
+                if (countdownEl) {
+                    const timer = setInterval(() => {
+                        const now = new Date().getTime();
+                        const distance = endDate - now;
+
+                        if (distance < 0) {
+                            clearInterval(timer);
+                            countdownEl.innerHTML = "EXPIRED";
+                            return;
+                        }
+
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        countdownEl.innerHTML = 
+                            (hours < 10 ? "0" + hours : hours) + ":" +
+                            (minutes < 10 ? "0" + minutes : minutes) + ":" +
+                            (seconds < 10 ? "0" + seconds : seconds);
+                    }, 1000);
+                }
+            }
+            startCountdown();
+
+            // 5. Envío de Formulario
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbw0kMexUyHSxtqnKQHRzy7K6D69KqCdzdk629ESZTMcHyHz94kOGtsbANJpaDyyykHx/exec';
+                    
+                    const form = this;
+                    const btn = document.getElementById('submitBtn');
+                    const originalText = btn.innerText;
+
+                    btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ENVIANDO...';
+                    btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+                    const formData = new FormData(form);
+
+                    fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors'})
+                    .then(() => {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡ENVIADO CON ÉXITO!';
+                        btn.classList.remove('from-blue-600', 'to-lamarr-cyan');
+                        btn.classList.add('bg-green-600');
+                        form.reset();
+                        
+                        setTimeout(() => {
+                            btn.innerText = "ENVIAR NUEVA SOLICITUD";
+                            btn.classList.remove('bg-green-600', 'opacity-75', 'cursor-not-allowed');
+                            btn.classList.add('from-blue-600', 'to-lamarr-cyan');
+                        }, 4000);
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        btn.innerHTML = 'ERROR AL ENVIAR';
+                        btn.classList.add('bg-red-600');
+                        setTimeout(() => {
+                            btn.innerText = originalText;
+                            btn.classList.remove('bg-red-600', 'opacity-75', 'cursor-not-allowed');
+                        }, 3000);
+                    });
+                });
+            }
+
+            // 6. Lógica del Reproductor de Video (FIXED & ROBUST WITH LOADER)
+            const videoContainer = document.getElementById('video-container');
+            const video = document.getElementById('hero-video');
+            const overlayVideo = document.getElementById('video-overlay');
+            const videoLoader = document.getElementById('video-loader'); // Nuevo loader
+            const mainPlayBtn = document.getElementById('main-play-btn');
+            const controls = document.getElementById('video-controls');
+            const controlPlayPauseBtn = document.getElementById('control-play-pause-btn');
+            const playPauseIcon = document.getElementById('play-pause-icon');
+            const controlMuteBtn = document.getElementById('control-mute-btn');
+            const muteIcon = document.getElementById('mute-icon');
+            const progressBar = document.getElementById('progress-bar');
+            const progressContainer = document.getElementById('progress-container');
+
+            if (video && overlayVideo && controls) {
+                // Función principal
+                function togglePlay() {
+                    if (video.paused || video.ended) {
+                        video.play().catch(error => {
+                            console.log("Esperando carga de video...", error);
+                            // Si falla por falta de carga, el evento 'waiting' activará el loader
+                        });
+                    } else {
+                        video.pause();
+                    }
+                }
+
+                // Función de actualización visual (Fuente de Verdad)
+                function updatePlayButton() {
+                    if (video.paused) {
+                        // Estado: PAUSADO
+                        overlayVideo.classList.remove('opacity-0', 'pointer-events-none');
+                        controls.classList.add('opacity-0', 'pointer-events-none');
+                        playPauseIcon.classList.remove('fa-pause');
+                        playPauseIcon.classList.add('fa-play');
+                        if (videoLoader) videoLoader.classList.add('hidden'); // Ocultar loader si está pausado
+                    } else {
+                        // Estado: REPRODUCIENDO
+                        overlayVideo.classList.add('opacity-0', 'pointer-events-none');
+                        controls.classList.remove('opacity-0', 'pointer-events-none');
+                        playPauseIcon.classList.remove('fa-play');
+                        playPauseIcon.classList.add('fa-pause');
+                    }
+                }
+
+                // Listeners de UI
+                mainPlayBtn.addEventListener('click', (e) => { e.stopPropagation(); togglePlay(); });
+                overlayVideo.addEventListener('click', togglePlay);
+                video.addEventListener('click', togglePlay);
+                controlPlayPauseBtn.addEventListener('click', (e) => { e.stopPropagation(); togglePlay(); });
+
+                // Listeners del Video (Sincronización)
+                video.addEventListener('play', updatePlayButton);
+                video.addEventListener('pause', updatePlayButton);
+                video.addEventListener('ended', () => {
+                    video.currentTime = 0;
+                    updatePlayButton();
+                });
+
+                // Manejo de Buffering/Carga (Loader)
+                video.addEventListener('waiting', () => {
+                    if (videoLoader) videoLoader.classList.remove('hidden');
+                });
+                video.addEventListener('playing', () => {
+                    if (videoLoader) videoLoader.classList.add('hidden');
+                });
+                // Si ya estaba listo para reproducir
+                video.addEventListener('canplay', () => {
+                    if (videoLoader) videoLoader.classList.add('hidden');
+                });
+
+                // Mute
+                controlMuteBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    video.muted = !video.muted;
+                    if (video.muted) {
+                        muteIcon.classList.remove('fa-volume-high');
+                        muteIcon.classList.add('fa-volume-xmark');
+                    } else {
+                        muteIcon.classList.remove('fa-volume-xmark');
+                        muteIcon.classList.add('fa-volume-high');
+                    }
+                });
+
+                // Barra de progreso
+                video.addEventListener('timeupdate', () => {
+                    if(video.duration) {
+                        const percentage = (video.currentTime / video.duration) * 100;
+                        if(progressBar) progressBar.style.width = `${percentage}%`;
+                    }
+                });
+
+                // Click en barra de progreso
+                if (progressContainer) {
+                    progressContainer.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const rect = progressContainer.getBoundingClientRect();
+                        const pos = (e.clientX - rect.left) / rect.width;
+                        if (video.duration) {
+                             video.currentTime = pos * video.duration;
+                        }
+                    });
+                }
+            }
+        });
     </script>
 </body>
-</html>
+</html>"
